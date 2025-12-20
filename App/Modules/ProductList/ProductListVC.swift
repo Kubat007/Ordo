@@ -11,11 +11,6 @@ final class ProductListVC: BaseVC<ProductListCV, ProductListVM> {
         title = "Список продуктов"
         view.backgroundColor = .systemBackground
         viewModel.loadProducts()
-        print("test")
-        print("какого хуя гит не видит изменнеия?")
-        print("test")
-        print("chatgpt хуесос")
-        
     }
     
     private func setupTableView() {
