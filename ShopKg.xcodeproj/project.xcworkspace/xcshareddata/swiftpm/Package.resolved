@@ -1,0 +1,24 @@
+{
+  "originHash" : "710d98795aefd070adfeee5a69a8f568e3a07aa65a5aafc5f8353b93dea5810b",
+  "pins" : [
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "d30a5fad881137e2267f96a8e3fc35c58999bb94",
+        "version" : "8.6.2"
+      }
+    },
+    {
+      "identity" : "realhttp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/immobiliare/RealHTTP.git",
+      "state" : {
+        "revision" : "fcec34a9996012aa2dc8ae70fc8c0d7075054739",
+        "version" : "1.9.0"
+      }
+    }
+  ],
+  "version" : 3
+}
