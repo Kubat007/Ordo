@@ -1,7 +1,7 @@
 import UIKit
 
 struct TabBarBuilder {
-    static func build(services: ApiServices) -> TabBarVC {
+    static func build(services: Services) -> TabBarVC {
         return TabBarVC(services: services)
     }
 }

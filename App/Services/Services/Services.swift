@@ -1,6 +1,6 @@
 import RealHTTP
 
-protocol ApiServices {
+protocol Services {
     typealias Repos = (
                        auth: AuthRepository,
                        main: MainRepository

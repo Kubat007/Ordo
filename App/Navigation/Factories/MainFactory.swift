@@ -3,13 +3,13 @@ protocol MainFactory {
 }
 
 final class MainFactoryImpl: MainFactory {
-    var services: ApiServices
+    var services: Services
     
     func makeMainVC() -> MainVC {
         return MainBuilder(services: services).build()
     }
     
-    init(services: ApiServices) {
+    init(services: Services) {
         self.services = services
     }
 }

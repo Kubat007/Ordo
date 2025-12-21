@@ -8,29 +8,8 @@
 import UIKit
 var debugImageCalls = false
 
-extension UIImage {
-    @objc convenience init?(debugNamed name: String) {
-        if name.isEmpty {
-            print("⚠️ ВЫЗОВ С ПУСТЫМ ИМЕНЕМ! Stack trace:")
-            Thread.callStackSymbols.forEach { print($0) }
-        }
-        self.init(named: name)
-    }
-    
-    static func safeImage(named name: String) -> UIImage? {
-        if name.isEmpty {
-            print("❌ ПУСТОЕ ИМЯ ИЗОБРАЖЕНИЯ!")
-            return nil
-        }
-        return UIImage(named: name)
-    }
-}
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true

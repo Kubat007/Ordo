@@ -2,13 +2,13 @@ import RealHTTP
 
 import RealHTTP
 
-final class ApiServicesImpl: ApiServices {
+final class ApiServicesImpl: Services {
     var appSettingsManager: AppSettingsManager
     var client: HTTPClient
-    var repository: ApiServices.Repos
+    var repository: Services.Repos
     
     init(
-        repository: ApiServices.Repos,
+        repository: Services.Repos,
         client: HTTPClient,
         appSettingsManager: AppSettingsManager
     ) {

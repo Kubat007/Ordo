@@ -49,7 +49,7 @@ final class ProductListVC: BaseVC<ProductListCV, ProductListVM> {
 }
 
 // MARK: - UITableViewDataSource
-extension ProductListVC: UITableViewDataSource {
+extension ProductListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.products.count
     }
@@ -63,14 +63,9 @@ extension ProductListVC: UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
-}
-
-// MARK: - UITableViewDelegate
-extension ProductListVC: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let product = viewModel.products[indexPath.row]
-        print("Selected product: \(product.name)")
+        viewModel.onMyListAction?()
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -83,7 +78,6 @@ extension ProductListVC: UITableViewDelegate {
     }
 }
 
-// MARK: - ProductListTVCellDelegate
 extension ProductListVC: ProductListTVCellDelegate {
     func deleteTapped(cell: ProductListTVCell) {
         guard let indexPath = contentView.tableView.indexPath(for: cell) else { return }
@@ -98,15 +92,7 @@ extension ProductListVC: ProductListTVCellDelegate {
     }
 }
 
-// MARK: - ProductListVMDelegate
 extension ProductListVC: ProductListVMDelegate {
-    func navigateToMyList(listName: String) {
-//             Навигация к MyListVC через координатор или напрямую
-//        let myListVC = MyListVC(coder: <#NSCoder#>)
-//            myListVC.viewModel.listName = listName
-//        navigationController?.pushViewController(myListVC, animated: true)
-        }
-    
     func didUpdateProducts() {
         let isEmpty = viewModel.products.isEmpty
         contentView.setEmptyState(isEmpty: isEmpty)

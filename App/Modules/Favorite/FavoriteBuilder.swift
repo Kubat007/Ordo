@@ -6,7 +6,7 @@ final class FavoriteBuilder: ModuleBuilder {
     var viewModel: FavoriteVM
     var viewController: FavoriteVC
     
-    required init(services: ApiServices) {
+    required init(services: Services) {
         contentView = FavoriteCV()
         viewModel = FavoriteVM()
         viewModel.services = services

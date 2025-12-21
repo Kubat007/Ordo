@@ -4,13 +4,13 @@ protocol ProductListVMDelegate: AnyObject {
     func didUpdateProducts()
     func didAddProduct(at index: Int)
     func didDeleteProduct(at index: Int)
-    func navigateToMyList(listName: String)
     func failure(with error: String)
 }
 
 final class ProductListVM: BaseVM {
-    var services: ApiServices!
+    var services: Services!
     var products: [ProductListModels.Product] = []
+    var onMyListAction: (() -> Void)?
     
     weak var delegate: ProductListVMDelegate?
     
@@ -26,7 +26,6 @@ final class ProductListVM: BaseVM {
         delegate?.didUpdateProducts()
     }
     
-    // MARK: - Add Product
     func addNewProduct() {
         let newId = (products.map { $0.id }.max() ?? 0) + 1
         let newProduct = ProductListModels.Product(
@@ -38,7 +37,6 @@ final class ProductListVM: BaseVM {
         delegate?.didAddProduct(at: 0)
     }
     
-    // MARK: - Delete Product
     func deleteProduct(at index: Int) {
         guard index < products.count else { return }
         products.remove(at: index)
@@ -54,37 +52,8 @@ final class ProductListVM: BaseVM {
         )
         products.insert(newProduct, at: 0)
         delegate?.didAddProduct(at: 0)
-        
-        delegate?.navigateToMyList(listName: name)
     }
     
-    // MARK: - API Call Example (если нужно делать запросы на сервер)
-    @MainActor
-    func fetchProducts() {
-        Task {
-            do {
-                // let response = try await self.services?.repository.productList.getProducts()
-                // self.products = response ?? []
-                // delegate?.didUpdateProducts()
-            } catch {
-                delegate?.failure(with: error.localizedDescription)
-            }
-        }
-    }
-    
-    @MainActor
-    func createProduct(name: String) {
-        Task {
-            do {
-                // let response = try await self.services?.repository.productList.createProduct(name: name)
-                // delegate?.didAddProduct(at: 0)
-            } catch {
-                delegate?.failure(with: error.localizedDescription)
-            }
-        }
-    }
-    
-    // MARK: - Helper
     private func getCurrentDate() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
@@ -92,7 +61,6 @@ final class ProductListVM: BaseVM {
     }
 }
 
-// MARK: - Models
 enum ProductListModels {
     struct Product {
         let id: Int

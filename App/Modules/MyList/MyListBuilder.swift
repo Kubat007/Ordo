@@ -6,7 +6,7 @@ final class MyListBuilder: ModuleBuilder {
     var viewModel: MyListVM
     var viewController: MyListVC
     
-    required init(services: ApiServices) {
+    required init(services: Services) {
         contentView = MyListCV()
         viewModel = MyListVM()
         viewModel.services = services

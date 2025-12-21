@@ -8,7 +8,7 @@ protocol MainVMDelegate: AnyObject {
 final class MainVM: BaseVM {
     var onProductTapped: ((MainModels.Response.Banner) -> Void)?
     var onSearchTapped: (() -> Void)?
-    var services: ApiServices!
+    var services: Services!
     var bannerList: [MainModels.Response.Banner] = []
     var productList: [MainModels.Response.Products] = []
     var categoryList: [MainModels.Response.Category] = []

@@ -1,9 +1,15 @@
 import UIKit
 
-final class TabBarVC: UITabBarController {
-    private let services: ApiServices
+final class TabBarVC: UITabBarController, TabbarView {
+    var onMainFlowSelect: ((BaseNC) -> Void)?
+    var onFavoriteFlowSelect: ((BaseNC) -> Void)?
+    var onProfileFlowSelect: ((BaseNC) -> Void)?
+    var onMoreFlowSelect: ((BaseNC) -> Void)?
+    var onProductListFlowSelect: ((BaseNC) -> Void)?
     
-    init(services: ApiServices) {
+    private let services: Services
+    
+    init(services: Services) {
         self.services = services
         super.init(nibName: nil, bundle: nil)
     }
@@ -14,48 +20,17 @@ final class TabBarVC: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTabs()
         setupAppearance()
         setupMiddleButton()
+        delegate = self
     }
     
-    private func setupTabs() {
-        let mainVC = createNavController(
-            title: "Главная",
-            image: UIImage(systemName: "house.fill"),
-            viewController: MainBuilder(services: services).build()
-        )
-        
-        let favoritesVC = createNavController(
-            title: "Избранное",
-            image: UIImage(systemName: "heart.fill"),
-            viewController: FavoriteBuilder(services: services).build()
-        )
-        
-        let middleVC = UIViewController()
-        middleVC.tabBarItem = UITabBarItem(title: "", image: nil, tag: 2)
-        middleVC.tabBarItem.isEnabled = false // Отключаем стандартное нажатие
-        
-        let listVC = createNavController(
-            title: "Список",
-            image: UIImage(systemName: "list.bullet"),
-            viewController: ProductListBuilder(services: services).build()
-        )
-        
-        let profileVC = createNavController(
-            title: "Профиль",
-            image: UIImage(systemName: "person.fill"),
-            viewController: createPlaceholderVC(title: "Профиль", color: .systemGreen)
-        )
-        
-        let moreVC = createNavController(
-            title: "Ещё",
-            image: UIImage(systemName: "ellipsis"),
-            viewController: createPlaceholderVC(title: "Ещё", color: .systemGray)
-        )
-        
-        viewControllers = [mainVC, favoritesVC, middleVC, listVC, profileVC, moreVC]
-        selectedIndex = 0
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Запускаем основной поток при первом показе
+        if let firstNav = viewControllers?.first as? BaseNC {
+            onMainFlowSelect?(firstNav)
+        }
     }
     
     private func setupAppearance() {
@@ -104,7 +79,7 @@ final class TabBarVC: UITabBarController {
         view.addSubview(middleButton)
         view.bringSubviewToFront(middleButton)
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -119,8 +94,11 @@ final class TabBarVC: UITabBarController {
     }
     
     @objc private func middleButtonTapped() {
-        selectedIndex = 3
+        if let selectedNav = selectedViewController as? BaseNC {
+            onProductListFlowSelect?(selectedNav)
+        }
         
+        // Анимация нажатия
         if let button = view.subviews.first(where: { $0 is UIButton }) as? UIButton {
             UIView.animate(withDuration: 0.1, animations: {
                 button.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
@@ -132,29 +110,27 @@ final class TabBarVC: UITabBarController {
         }
     }
     
-    private func createNavController(title: String, image: UIImage?, viewController: UIViewController) -> UINavigationController {
-        let navController = BaseNC(rootViewController: viewController)
-        navController.tabBarItem = UITabBarItem(title: title, image: image, selectedImage: nil)
-        navController.tabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
-        return navController
-    }
-    
-    private func createPlaceholderVC(title: String, color: UIColor) -> UIViewController {
-        let vc = UIViewController()
-        vc.view.backgroundColor = color
-        
-        let label = UILabel()
-        label.text = title
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        label.textColor = .white
-        label.frame = vc.view.bounds
-        vc.view.addSubview(label)
-        return vc
-    }
-    
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         viewDidLayoutSubviews()
+    }
+}
+
+extension TabBarVC: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        guard let navController = viewController as? BaseNC else { return }
+        
+        switch tabBarController.selectedIndex {
+        case 0:
+            onMainFlowSelect?(navController)
+        case 1:
+            onFavoriteFlowSelect?(navController)
+        case 3: // Профиль (пропускаем 2 - средняя кнопка)
+            onProfileFlowSelect?(navController)
+        case 4: // Ещё
+            onMoreFlowSelect?(navController)
+        default:
+            break
+        }
     }
 }

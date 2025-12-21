@@ -1,5 +1,5 @@
 final class FavoriteVM: BaseVM {
-    var services: ApiServices!
+    var services: Services!
     
     var favoriteList: [MainModels.Response.Banner] = []
 }

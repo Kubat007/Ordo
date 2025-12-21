@@ -1,11 +1,13 @@
 import UIKit
 
 final class AppCoordinator: BaseCoordinator {
+    private let coordinatorFactory: AppCoordinatorFactory
     private let router: Router
-    var services: ApiServices
+    var services: Services
     
-    init(router: Router, services: ApiServices) {
+    init(router: Router, coordinatorFactory: AppCoordinatorFactory, services: Services) {
         self.router = router
+        self.coordinatorFactory = coordinatorFactory
         self.services = services
         super.init()
     }
@@ -14,29 +16,17 @@ final class AppCoordinator: BaseCoordinator {
         showMainApp()
     }
     
-    private func showMainScreen() {
-        let mainVC = MainBuilder(services: services).build()
-        router.setRootModule(mainVC)
-    }
-
-    private func showSearchScreen() {
-        let searchVM = SearchVM()
-        searchVM.onBackAction = { [weak self] in
-            self?.router.dismissModule()
-        }
-        searchVM.onProductTapped = { [weak self] product in
-            self?.showProductDetail(product)
-        }
-        
-        let searchVC = SearchVC(viewModel: searchVM)
-        let navController = UINavigationController(rootViewController: searchVC)
-        router.present(navController)
-    }
+//    private func showMainApp() {
+//        let tabBarVC = TabBarBuilder.build(services: services)
+//        router.setRootModule(tabBarVC, hideBar: true)
+//    }
     
     private func showMainApp() {
-        let tabBarVC = TabBarBuilder.build(services: services)
-        router.setRootModule(tabBarVC, hideBar: true)
-    }
+            let (tabbarCoordinator, tabbarController) = coordinatorFactory.makeTabbarCoordinator(services: services)
+            self.addDependency(tabbarCoordinator)
+            tabbarCoordinator.start()
+            router.setRootModule(tabbarController, hideBar: true)
+        }
     
     private func showProductDetail(_ product: MainModels.Response.Banner) {
         

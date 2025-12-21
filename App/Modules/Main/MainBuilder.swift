@@ -6,7 +6,7 @@ final class MainBuilder: ModuleBuilder {
      var viewModel: MainVM
      var viewController: MainVC
     
-    required init(services: ApiServices) {
+    required init(services: Services) {
         contentView = MainCV()
         viewModel = MainVM()
         viewModel.services = services

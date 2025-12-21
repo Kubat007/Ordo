@@ -6,7 +6,7 @@ final class ProductListBuilder: ModuleBuilder {
     var viewModel: ProductListVM
     var viewController: ProductListVC
     
-    required init(services: ApiServices) {
+    required init(services: Services) {
         contentView = ProductListCV()
         viewModel = ProductListVM()
         viewModel.services = services

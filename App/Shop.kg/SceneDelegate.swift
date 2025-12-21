@@ -10,7 +10,7 @@ import RealHTTP
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-        private var apiServices: ApiServices!
+        private var apiServices: Services!
         private var appCoordinator: AppCoordinator!
 
         func scene(_ scene: UIScene,
@@ -50,7 +50,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = rootController
             
             let router = AppRouter(rootController: rootController)
-            appCoordinator = AppCoordinator(router: router, services: apiServices) // 👈 и здесь
+            let coordinatorFactory = AppCoordinatorFactoryImpl()
+            appCoordinator = AppCoordinator(
+                        router: router,
+                        coordinatorFactory: coordinatorFactory,
+                        services: apiServices
+                    )
             appCoordinator.start()
         }
 
