@@ -94,15 +94,15 @@ extension BaseVC {
         switch messageType {
         case .success:
             backgroundColor = UIColor(named: "success") ?? UIColor.green
-            iconImage = UIImage.init(named: "") ?? UIImage()
+            iconImage = UIImage(systemName: "checkmark.circle") ?? UIImage()
             titleLabelText = "Success" //L10n.Toast.Success.title.localized(by: viewModel.config.value)
         case .error:
             backgroundColor = UIColor(named: "error") ?? UIColor.red
-            iconImage = UIImage.init(named: "") ?? UIImage()
+            iconImage = UIImage(systemName: "xmark.circle") ?? UIImage()
             titleLabelText = "Error" //L10n.Toast.Error.title.localized(by: viewModel.config.value)
         case .warning:
             backgroundColor = UIColor(named: "warning") ?? UIColor.yellow
-            iconImage = UIImage.init(named: "") ?? UIImage()
+            iconImage = UIImage(systemName: "exclamationmark.triangle") ?? UIImage()
             titleLabelText = "Warning" //L10n.Toast.Warning.title.localized(by: viewModel.config.value)
         }
         toast.showToast(

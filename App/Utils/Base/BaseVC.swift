@@ -93,16 +93,16 @@ extension BaseVC {
         var titleLabelText: String
         switch messageType {
         case .success:
-            backgroundColor = UIColor(named: "success") ?? UIColor.green
-            iconImage = UIImage.init(named: "") ?? UIImage()
+            backgroundColor = Asset.Colors.success.color
+            iconImage = Asset.Images.toastSuccess.image
             titleLabelText = "Success" //L10n.Toast.Success.title.localized(by: viewModel.config.value)
         case .error:
-            backgroundColor = UIColor(named: "error") ?? UIColor.red
-            iconImage = UIImage.init(named: "") ?? UIImage()
+            backgroundColor = Asset.Colors.error.color
+            iconImage = Asset.Images.toastError.image
             titleLabelText = "Error" //L10n.Toast.Error.title.localized(by: viewModel.config.value)
         case .warning:
-            backgroundColor = UIColor(named: "warning") ?? UIColor.yellow
-            iconImage = UIImage.init(named: "") ?? UIImage()
+            backgroundColor = Asset.Colors.warning.color
+            iconImage = Asset.Images.toastError.image
             titleLabelText = "Warning" //L10n.Toast.Warning.title.localized(by: viewModel.config.value)
         }
         toast.showToast(

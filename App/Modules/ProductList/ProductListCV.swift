@@ -43,7 +43,7 @@ extension ProductListCV {
     private func makeImageView() -> UIImageView {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
-        image.image = UIImage(named: "emtyList")
+        image.image = UIImage(named: "Images/emtyList")
         return image
     }
     

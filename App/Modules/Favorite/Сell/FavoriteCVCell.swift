@@ -72,7 +72,7 @@ private extension FavoriteCVCell {
     func makeButton() -> UIButton {
         let button = UIButton()
         button.layer.cornerRadius = 12.5
-        button.setImage(UIImage(named: "basket_ic"), for: .normal)
+        button.setImage(UIImage(named: "Images/basket_ic"), for: .normal)
         button.backgroundColor = UIColor(red: 0.10, green: 0.35, blue: 0.85, alpha: 1.00)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)

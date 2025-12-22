@@ -82,11 +82,11 @@ extension MainVC: MainVMDelegate {
 
 extension MainVC: ProductCellDelegate {
     func favTapped(cell: ProductCell, productId: Int) {
-            let isFavorite = cell.favButton.tintColor == .red
-            let message = isFavorite ? "Добавлено в избранное" : "Удалено из избранного"
-            toast(with: message, messageType: isFavorite ? .success : .warning)
-             viewModel.sendFavoriteProduct(productId: productId)
-        }
+        let isFavorite = cell.favButton.tintColor == .red
+        let message = isFavorite ? "Добавлено в избранное" : "Удалено из избранного"
+        toast(with: message, messageType: isFavorite ? .success : .warning)
+//        viewModel.sendFavoriteProduct(productId: productId)
+    }
     
     func basketTapped(cell: ProductCell) {
         toast(with: "Добавлено в корзину", messageType: .success)

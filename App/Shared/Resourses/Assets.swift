@@ -25,7 +25,7 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum Asset {
 //  public static let accentColor = ColorAsset(name: "AccentColor")
-//  public enum Colors {
+  public enum Colors {
 //    public static let _121212 = ColorAsset(name: "Colors/121212")
 //    public static let _232837 = ColorAsset(name: "Colors/232837")
 //    public static let _292929 = ColorAsset(name: "Colors/292929")
@@ -73,11 +73,11 @@ public enum Asset {
 //    public static let ffffff = ColorAsset(name: "Colors/FFFFFF")
 //    public static let black = ColorAsset(name: "Colors/black")
 //    public static let c50000 = ColorAsset(name: "Colors/c50000")
-//    public static let error = ColorAsset(name: "Colors/error")
-//    public static let success = ColorAsset(name: "Colors/success")
-//    public static let warning = ColorAsset(name: "Colors/warning")
+    public static let error = ColorAsset(name: "Colors/error")
+    public static let success = ColorAsset(name: "Colors/success")
+    public static let warning = ColorAsset(name: "Colors/warning")
 //    public static let white = ColorAsset(name: "Colors/white")
-//  }
+  }
   public enum Images {
 //    public enum HotButton {
 //      public static let mainCreditIc = ImageAsset(name: "Images/HotButton/main_credit_ic")
@@ -222,8 +222,8 @@ public enum Asset {
 //    public static let starIc = ImageAsset(name: "Images/star_ic")
 //    public static let succesIc = ImageAsset(name: "Images/succes_ic")
 //    public static let takeSelfieImage = ImageAsset(name: "Images/take_selfie_image")
-//    public static let toastError = ImageAsset(name: "Images/toast_error")
-//    public static let toastSuccess = ImageAsset(name: "Images/toast_success")
+    public static let toastError = ImageAsset(name: "Images/toast_error")
+    public static let toastSuccess = ImageAsset(name: "Images/toast_success")
 //    public static let topRightViewBg = ImageAsset(name: "Images/top_right_view_bg")
 //    public static let transferCountryIc = ImageAsset(name: "Images/transfer_country_ic")
 //    public static let transferIc = ImageAsset(name: "Images/transfer_ic")

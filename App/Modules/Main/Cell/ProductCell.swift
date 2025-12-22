@@ -92,7 +92,7 @@ extension ProductCell {
         favButton.tintColor = .gray
         favButton.addTarget(self, action: #selector(favButtonTapped), for: .touchUpInside)
         basketButton.addTarget(self, action: #selector(basketButtonTapped), for: .touchUpInside)
-        basketButton.setImage(UIImage(named: "basket_ic"), for: .normal)
+        basketButton.setImage(UIImage(named: "Images/basket_ic"), for: .normal)
     }
 }
 

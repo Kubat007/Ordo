@@ -56,14 +56,9 @@ final class MainVM: BaseVM {
     
     @MainActor
     func sendFavoriteProduct(productId: Int) {
-        Task {
-            do {
-                let initialize = try await self.services?.repository.main.getCategory()
-                self.categoryList = initialize ?? []
-                delegate?.successCategory()
-            } catch {
-                delegate?.failure(with: error.localizedDescription)
-            }
-        }
+        // TODO: Implement proper favorite product sending logic
+        // For now, we just avoid reloading the entire collection
+        // which causes the button state to reset
+        print("Favorite product with ID \(productId) toggled")
     }
 }
