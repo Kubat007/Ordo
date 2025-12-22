@@ -48,6 +48,7 @@
 		731DA8902EF886ED00290006 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DA88F2EF886E800290006 /* Presentable.swift */; };
 		731DA8922EF8875100290006 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DA8912EF8872100290006 /* Router.swift */; };
 		731DA8952EF8879700290006 /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DA8942EF8878800290006 /* DeepLinkOption.swift */; };
+		731DA8972EF94B1F00290006 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DA8962EF94B1900290006 /* CustomNavigationBar.swift */; };
 		732265C42ECF3B1E00C5319F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732265C32ECF379400C5319F /* AppCoordinator.swift */; };
 		732265C52ECF3B2200C5319F /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732265C02ECF365500C5319F /* AppRouter.swift */; };
 		732265D12ECF43A300C5319F /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732265D02ECF439F00C5319F /* SplashVC.swift */; };
@@ -193,6 +194,7 @@
 		731DA88F2EF886E800290006 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		731DA8912EF8872100290006 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		731DA8942EF8878800290006 /* DeepLinkOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
+		731DA8962EF94B1900290006 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		732265C02ECF365500C5319F /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		732265C32ECF379400C5319F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		732265D02ECF439F00C5319F /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
@@ -503,14 +505,14 @@
 			isa = PBXGroup;
 			children = (
 				73D09DE32EF725A2008AED77 /* Navigation */,
-				73D09DD52EF7256B008AED77 /* Shared */,
-				73D09DB72EF7252E008AED77 /* Utils */,
 				73B00D9E2ECF1440002288DB /* Shop.kg */,
-				732265CE2ECF436F00C5319F /* Modules */,
+				732265CE2ECF436F00C5319F /* Features */,
 				732265CC2ECF434D00C5319F /* Services */,
 				732265CB2ECF434500C5319F /* Models */,
 				732265C32ECF379400C5319F /* AppCoordinator.swift */,
 				732265C02ECF365500C5319F /* AppRouter.swift */,
+				73D09DD52EF7256B008AED77 /* Shared */,
+				73D09DB72EF7252E008AED77 /* Utils */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -535,7 +537,7 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		732265CE2ECF436F00C5319F /* Modules */ = {
+		732265CE2ECF436F00C5319F /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				731DA8852EF8820D00290006 /* More */,
@@ -548,7 +550,7 @@
 				739BCEE22EE8C121004D492C /* MyList */,
 				732265CF2ECF438700C5319F /* Splash */,
 			);
-			path = Modules;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		732265CF2ECF438700C5319F /* Splash */ = {
@@ -769,7 +771,6 @@
 				732265BF2ECF364F00C5319F /* App */,
 				73B00DB52ECF1441002288DB /* Shop.kgTests */,
 				73B00DBF2ECF1441002288DB /* Shop.kgUITests */,
-				73E59B432EE0A55D0040E65A /* Frameworks */,
 				73B00D9D2ECF1440002288DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -787,6 +788,8 @@
 		73D09D9E2EF7252E008AED77 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				73D09DD42EF7256B008AED77 /* Protocols.swift */,
+				73D09DE22EF725A2008AED77 /* BaseCoordinator.swift */,
 				73D09D9A2EF7252E008AED77 /* BaseCV.swift */,
 				73D09D9B2EF7252E008AED77 /* BaseNC.swift */,
 				73D09D9C2EF7252E008AED77 /* BaseVC.swift */,
@@ -827,6 +830,7 @@
 		73D09DAC2EF7252E008AED77 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				731DA8962EF94B1900290006 /* CustomNavigationBar.swift */,
 				731DA8332EF8792300290006 /* PanModal */,
 				73D09DA32EF7252E008AED77 /* ActivityIndicator */,
 				73D09DA62EF7252E008AED77 /* Observer */,
@@ -855,9 +859,6 @@
 		73D09DB72EF7252E008AED77 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				73D09D9E2EF7252E008AED77 /* Base */,
-				73D09DAC2EF7252E008AED77 /* Components */,
-				73D09DB62EF7252E008AED77 /* Extension */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -876,8 +877,9 @@
 		73D09DD52EF7256B008AED77 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				73D09DB62EF7252E008AED77 /* Extension */,
+				73D09DAC2EF7252E008AED77 /* Components */,
 				73D09DD32EF7256B008AED77 /* Resourses */,
-				73D09DD42EF7256B008AED77 /* Protocols.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -922,19 +924,12 @@
 		73D09DE32EF725A2008AED77 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				73D09D9E2EF7252E008AED77 /* Base */,
 				73D09DDD2EF725A2008AED77 /* Coordinators */,
 				73D09DDF2EF725A2008AED77 /* Factories */,
 				73D09DE12EF725A2008AED77 /* Protocols */,
-				73D09DE22EF725A2008AED77 /* BaseCoordinator.swift */,
 			);
 			path = Navigation;
-			sourceTree = "<group>";
-		};
-		73E59B432EE0A55D0040E65A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1126,6 +1121,7 @@
 				73D09DC42EF7252E008AED77 /* Localize+Extensions.swift in Sources */,
 				73D09DC52EF7252E008AED77 /* UIView+Extensions.swift in Sources */,
 				73D09DC72EF7252E008AED77 /* UIDevice+Extensions.swift in Sources */,
+				731DA8972EF94B1F00290006 /* CustomNavigationBar.swift in Sources */,
 				73D09DC82EF7252E008AED77 /* BaseVC.swift in Sources */,
 				73D09DC92EF7252E008AED77 /* BaseVM.swift in Sources */,
 				73D09DCA2EF7252E008AED77 /* ActivityIndicatorViewStyle.swift in Sources */,
