@@ -8,9 +8,9 @@ final class AuthRemoteRepository: AuthRepository {
         self.client = client
     }
     
-//    func login(with phone: String) async throws -> BaseModel<AuthModels.Response.Login> {
-//        try await client.fetch(AuthAPI.Login(phone: phone))
-//    }
+    func sendPhoneNumber(with phone: String) async throws -> AuthModel.Response.PhoneNumberModel {
+        try await client.fetch(AuthApi.SendPhoneNumber(phone: phone))
+    }
 //    
 //    func verifyPhoneNumber(with phone: String, code: String) async throws -> BaseModel<AuthModels.Response.AccessToken> {
 //        try await client.fetch(AuthAPI.VerifyPhoneNumber(msisdn: phone, otp: code, source: "mobile"))

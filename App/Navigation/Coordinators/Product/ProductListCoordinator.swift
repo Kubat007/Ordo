@@ -32,6 +32,6 @@ final class ProductListCoordinator: BaseCoordinator, ProductListCoordinatorResul
     func showMyListVC() {
         let vc = factory.makeMyList()
         vc.viewModel.onBackAction = router.popModule
-        router.push(vc)
+        router.push(vc, hideBottomBar: true)
     }
 }

@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import InputMask
 
 final class AuthVC: BaseVC<AuthCV, AuthVM> {
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         title = ""
         view.backgroundColor = .white
         setupActions()
-//        contentView.phoneTextField.delegate = self
     }
     
     private func setupActions() {
@@ -26,20 +27,21 @@ final class AuthVC: BaseVC<AuthCV, AuthVM> {
             toast(with: "Необходимо согласиться с условиями сервиса", messageType: .warning)
             return
         }
-        guard let phone = contentView.phoneTextField.textField.text, !phone.isEmpty else {
+        
+        let phone = contentView.phoneTextField.getCleanText()
+        
+        guard !phone.isEmpty else {
             toast(with: "Введите номер телефона", messageType: .warning)
             return
         }
-        viewModel.login(phone: phone)
+        viewModel.login(phone: "+996\(phone)")
     }
     
     @objc private func checkboxTapped() {
-        print("test")
         contentView.termsCheckbox.isSelected.toggle()
     }
     
     @objc private func countryCodeTapped() {
-        // Здесь можно открыть picker для выбора страны
         print("Country code picker")
     }
 }
@@ -48,5 +50,15 @@ extension AuthVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension AuthVC: AuthVMDelegate {
+    func successLogin() {
+        viewModel.onVerifyAction?()
+    }
+    
+    func failure(with error: String) {
+        toast(with: "error \(error.description)", messageType: .error)
     }
 }

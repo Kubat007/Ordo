@@ -8,6 +8,7 @@ final class TabBarVC: UITabBarController, TabbarView {
     var onProductListFlowSelect: ((BaseNC) -> Void)?
     
     private let services: Services
+    private var middleButton: UIButton!
     
     init(services: Services) {
         self.services = services
@@ -23,13 +24,59 @@ final class TabBarVC: UITabBarController, TabbarView {
         setupAppearance()
         setupMiddleButton()
         delegate = self
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleTabBarButtonNotification(_:)),
+            name: NSNotification.Name("HideTabBarButton"),
+            object: nil
+        )
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // Запускаем основной поток при первом показе
+        
         if let firstNav = viewControllers?.first as? BaseNC {
             onMainFlowSelect?(firstNav)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+            self?.updateMiddleButtonPosition()
+            self?.middleButton.alpha = 1
+            self?.middleButton.isHidden = false
+        }
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        showMiddleButtonIfNeeded()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateMiddleButtonPosition()
+        view.bringSubviewToFront(middleButton)
+    }
+    
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        viewDidLayoutSubviews()
+    }
+
+    private func showMiddleButtonIfNeeded() {
+        let isTabBarHidden = tabBar.isHidden || tabBar.alpha == 0
+        let shouldShowButton = !isTabBarHidden
+        
+        if middleButton.alpha == 0 && shouldShowButton {
+                self.middleButton.alpha = 1
+        }
+    }
+    
+    @objc private func handleTabBarButtonNotification(_ notification: Notification) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if let shouldHide = notification.userInfo?["hide"] as? Bool {
+                    self.middleButton.alpha = shouldHide ? 0 : 1
+            }
         }
     }
     
@@ -53,7 +100,7 @@ final class TabBarVC: UITabBarController, TabbarView {
     }
     
     private func setupMiddleButton() {
-        let middleButton = UIButton(frame: CGRect(x: 0, y: 0, width: 74, height: 74))
+        middleButton = UIButton(frame: CGRect(x: 0, y: 0, width: 74, height: 74))
         
         middleButton.backgroundColor = .systemBlue
         middleButton.layer.cornerRadius = 37
@@ -68,30 +115,22 @@ final class TabBarVC: UITabBarController, TabbarView {
         let iconImage = UIImage(systemName: "list.bullet", withConfiguration: iconConfig)
         middleButton.setImage(iconImage, for: .normal)
         middleButton.tintColor = .white
-        
-        let tabBarTopY = tabBar.frame.origin.y
-        middleButton.center = CGPoint(
-            x: tabBar.center.x,
-            y: tabBarTopY
-        )
         middleButton.addTarget(self, action: #selector(middleButtonTapped), for: .touchUpInside)
-        
         view.addSubview(middleButton)
         view.bringSubviewToFront(middleButton)
+        middleButton.alpha = 1
+        middleButton.isHidden = false
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        if let middleButton = view.subviews.first(where: { $0 is UIButton }) as? UIButton {
-            let tabBarTopY = tabBar.frame.origin.y
-            
-            middleButton.center = CGPoint(
-                x: tabBar.center.x,
-                y: tabBarTopY
-            )
-        }
+    private func updateMiddleButtonPosition() {
+        let tabBarFrame = tabBar.frame
+        middleButton.center = CGPoint(
+            x: tabBarFrame.midX,
+            y: tabBarFrame.minY
+        )
     }
+    
+    
     
     @objc private func middleButtonTapped() {
         guard let selectedNav = selectedViewController as? BaseNC else { return }
@@ -99,20 +138,13 @@ final class TabBarVC: UITabBarController, TabbarView {
             return
         }
         onProductListFlowSelect?(selectedNav)
-        if let button = view.subviews.first(where: { $0 is UIButton }) as? UIButton {
-            UIView.animate(withDuration: 0.1, animations: {
-                button.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-            }) { _ in
-                UIView.animate(withDuration: 0.1) {
-                    button.transform = .identity
-                }
+        UIView.animate(withDuration: 0.1, animations: {
+            self.middleButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }) { _ in
+            UIView.animate(withDuration: 0.1) {
+                self.middleButton.transform = .identity
             }
         }
-    }
-    
-    override func viewSafeAreaInsetsDidChange() {
-        super.viewSafeAreaInsetsDidChange()
-        viewDidLayoutSubviews()
     }
 }
 

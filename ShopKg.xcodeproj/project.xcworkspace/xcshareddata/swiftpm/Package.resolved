@@ -1,6 +1,15 @@
 {
-  "originHash" : "710d98795aefd070adfeee5a69a8f568e3a07aa65a5aafc5f8353b93dea5810b",
+  "originHash" : "2903fbc2627e434b672b6f7cb5ffb9a0970f0b6bb635c80dd251db1653cd7636",
   "pins" : [
+    {
+      "identity" : "anyformatkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/luximetr/AnyFormatKit",
+      "state" : {
+        "revision" : "ae3a965164005b07f81d6aa066520d7ad14ea54e",
+        "version" : "2.5.2"
+      }
+    },
     {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",

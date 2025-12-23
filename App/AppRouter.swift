@@ -74,7 +74,27 @@ final class AppRouter: NSObject, Router {
             completions[controller] = completion
         }
         controller.hidesBottomBarWhenPushed = hideBottomBar
+        
+        NotificationCenter.default.post(
+                name: NSNotification.Name("HideTabBarButton"),
+                object: nil,
+                userInfo: ["hide": true]
+            )
+        
         rootController?.pushViewController(controller, animated: animated)
+        
+        let originalViewWillDisappear = class_getInstanceMethod(
+                UIViewController.self,
+                #selector(UIViewController.viewWillDisappear(_:))
+            )
+            let swizzledViewWillDisappear = class_getInstanceMethod(
+                UIViewController.self,
+                #selector(UIViewController.tabBarButtonViewWillDisappear(_:))
+            )
+            if let original = originalViewWillDisappear,
+               let swizzled = swizzledViewWillDisappear {
+                method_exchangeImplementations(original, swizzled)
+            }
     }
     
     func popModule()  {

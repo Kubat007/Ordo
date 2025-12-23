@@ -71,28 +71,20 @@ extension AuthCV {
         return view
     }
     
-    private func makeInputField() -> InputView {
-        let field = InputView()
-        field.labelsStackView.isHidden = true
+    private func makeInputField() -> TextField {
+        let field = TextField()
         field.backgroundColor = .clear
-        field.textField.backgroundColor = .clear
-        field.textField.placeholder = "(000)-000-000"
-        field.textField.font = Typography.regular16.font
-        field.textField.textColor = Asset.Colors.black.color
-        field.textField.borderColor = .lightGray
-        field.textField.withKeyboard(for: .number)
-        field.textField.addDoneToolbar()
+        field.font = Typography.semibold14.font
+        field.textColor = Asset.Colors.black.color
+        field.borderColor = .lightGray
+        field.withKeyboard(for: .number)
+        field.addDoneToolbar()
+        let placeholderAttributes: [NSAttributedString.Key: Any] = [.foregroundColor: Asset.Colors._232837.color, .font: Typography.regular14.font]
+            field.attributedPlaceholder = NSAttributedString(
+                string: "(000)-000-000",
+                attributes: placeholderAttributes)
+        field.applyFormat(.phone)
         return field
-    }
-    
-    private func makePhoneTextField() -> UITextField {
-        let textField = UITextField()
-        textField.placeholder = "(000)-000-000"
-        textField.font = Typography.regular16.font
-        textField.textColor = .black
-        textField.keyboardType = .phonePad
-        textField.backgroundColor = .clear
-        return textField
     }
     
     private func makeCheckbox() -> UIButton {
@@ -179,10 +171,10 @@ extension AuthCV {
         phoneCodeLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
 
         phoneTextField.anchor(
-            .top(phoneContainer.topAnchor, constant: 4),
+            .top(phoneContainer.topAnchor, constant: 8),
             .leading(phoneCodeLabel.trailingAnchor, constant: 8),
             .trailing(phoneContainer.trailingAnchor, constant: 12),
-            .bottom(phoneContainer.bottomAnchor, constant: 4)
+            .bottom(phoneContainer.bottomAnchor, constant: 8)
         )
         
         termsCheckbox.anchor(

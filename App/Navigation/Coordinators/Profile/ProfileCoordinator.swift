@@ -31,6 +31,13 @@ final class ProfileCoordinator: BaseCoordinator, ProfileCoordinatorResult {
     func showAuthVC() {
         let vc = factory.makeAuthVC()
         vc.viewModel.onBackAction = router.popModule
-        router.push(vc)
+        vc.viewModel.onVerifyAction = showVerifyVC
+        router.push(vc, hideBottomBar: true)
+    }
+    
+    func showVerifyVC() {
+        let vc = factory.makeVerifyVC()
+        vc.viewModel.onBackAction = router.popModule
+        router.push(vc, hideBottomBar: true)
     }
 }
