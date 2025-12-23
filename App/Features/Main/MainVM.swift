@@ -56,6 +56,14 @@ final class MainVM: BaseVM {
     
     @MainActor
     func sendFavoriteProduct(productId: Int) {
-        print("Favorite product with ID \(productId) toggled")
+        Task {
+            do {
+                let initialize = try await self.services?.repository.main.sendfavoriteProduct(productId: productId)
+//                self.categoryList = initialize ?? []
+                print("succces send Favorite Product \(String(describing: initialize))")
+            } catch {
+                delegate?.failure(with: error.localizedDescription)
+            }
+        }
     }
 }

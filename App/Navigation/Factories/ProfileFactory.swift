@@ -6,14 +6,19 @@
 //
 
 protocol ProfileFactory {
-    func makeMainVC() -> ProfileVC
+    func makeProfileVC() -> ProfileVC
+    func makeAuthVC() -> AuthVC
 }
 
 final class ProfileFactoryImpl: ProfileFactory {
     var services: Services
     
-    func makeMainVC() -> ProfileVC {
+    func makeProfileVC() -> ProfileVC {
         return ProfileBuilder(services: services).build()
+    }
+    
+    func makeAuthVC() -> AuthVC {
+        return AuthBuilder(services: services).build()
     }
     
     init(services: Services) {

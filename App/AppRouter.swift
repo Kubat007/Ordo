@@ -1,7 +1,6 @@
 import UIKit
 
 final class AppRouter: NSObject, Router {
-    
     private weak var rootController: UINavigationController?
     private var completions: [UIViewController : () -> Void]
     

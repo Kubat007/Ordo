@@ -54,12 +54,17 @@ private extension BannersCell {
 
 extension BannersCell {
     public func setConstraints() {
-        logoView.fillSuperview()
+        logoView.anchor(
+            .top(topAnchor),
+            .bottom(bottomAnchor),
+            .leading(leadingAnchor),
+            .trailing(trailingAnchor)
+        )
         
         titleLabel.anchor(
             .centerY(centerYAnchor),
             .trailing(trailingAnchor, constant: 16),
-            .leading(logoView.trailingAnchor, constant: 12)
+            .leading(leadingAnchor, constant: 12)
         )
     }
 }

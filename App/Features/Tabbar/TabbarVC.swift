@@ -94,11 +94,11 @@ final class TabBarVC: UITabBarController, TabbarView {
     }
     
     @objc private func middleButtonTapped() {
-        if let selectedNav = selectedViewController as? BaseNC {
-            onProductListFlowSelect?(selectedNav)
+        guard let selectedNav = selectedViewController as? BaseNC else { return }
+        if let topVC = selectedNav.topViewController, topVC is ProductListVC {
+            return
         }
-        
-        // Анимация нажатия
+        onProductListFlowSelect?(selectedNav)
         if let button = view.subviews.first(where: { $0 is UIButton }) as? UIButton {
             UIView.animate(withDuration: 0.1, animations: {
                 button.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
@@ -119,16 +119,15 @@ final class TabBarVC: UITabBarController, TabbarView {
 extension TabBarVC: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         guard let navController = viewController as? BaseNC else { return }
-        
         switch tabBarController.selectedIndex {
         case 0:
             onMainFlowSelect?(navController)
         case 1:
             onFavoriteFlowSelect?(navController)
-        case 3: // Профиль (пропускаем 2 - средняя кнопка)
-            onProfileFlowSelect?(navController)
-        case 4: // Ещё
+        case 3:
             onMoreFlowSelect?(navController)
+        case 4:
+            onProfileFlowSelect?(navController)
         default:
             break
         }

@@ -36,6 +36,12 @@ enum MainModels {
             let count_of_category_product: Int?
             
         }
+        
+        struct SendFavorite: Codable {
+            let favorite_id: Int?
+            let user: Int?
+            let product: Int?
+        }
     }
     
     enum Request {

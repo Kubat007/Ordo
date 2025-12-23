@@ -85,7 +85,7 @@ extension MainVC: ProductCellDelegate {
         let isFavorite = cell.favButton.tintColor == .red
         let message = isFavorite ? "Добавлено в избранное" : "Удалено из избранного"
         toast(with: message, messageType: isFavorite ? .success : .warning)
-//        viewModel.sendFavoriteProduct(productId: productId)
+        isFavorite ? viewModel.sendFavoriteProduct(productId: productId) : print("Запрос на удаление")
     }
     
     func basketTapped(cell: ProductCell) {

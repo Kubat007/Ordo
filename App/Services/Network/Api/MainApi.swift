@@ -45,4 +45,22 @@ enum MainApi {
             }
         }
     }
+    
+    struct SendFavorite: Codable, APIResourceConvertible {
+        typealias Result = MainModels.Response.SendFavorite
+        let productId: Int
+        
+        private enum CodingKeys: String, CodingKey {
+                case productId
+            }
+        
+        func request() -> HTTPRequest {
+            HTTPRequest {
+                $0.path = "/user_favorites/"
+                $0.method = .post
+                $0.maxRetries = 1
+                $0.body = .json(self)
+            }
+        }
+    }
 }

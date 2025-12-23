@@ -55,8 +55,8 @@ final class AppCoordinatorFactoryImpl: AppCoordinatorFactory {
             let controller = BaseNC()
             controller.navigationBar.isHidden = true
             controller.tabBarItem = UITabBarItem(
-                title: "Профиль",
-                image: UIImage(systemName: "person.fill"),
+                title: "корзина",
+                image: UIImage(systemName: "cart"),
                 tag: 3
             )
             return controller
@@ -66,8 +66,8 @@ final class AppCoordinatorFactoryImpl: AppCoordinatorFactory {
             let controller = BaseNC()
             controller.navigationBar.isHidden = true
             controller.tabBarItem = UITabBarItem(
-                title: "Ещё",
-                image: UIImage(systemName: "ellipsis"),
+                title: "Профиль",
+                image: UIImage(systemName: "person.fill"),
                 tag: 4
             )
             return controller

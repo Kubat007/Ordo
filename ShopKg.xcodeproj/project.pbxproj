@@ -70,6 +70,32 @@
 		7342EAD82ED7880B0051095A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7342EAD72ED788040051095A /* SearchVC.swift */; };
 		7342EADA2ED788730051095A /* SearchProductTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7342EAD92ED788630051095A /* SearchProductTVCell.swift */; };
 		7342EAE32ED792CD0051095A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7342EAE22ED792C70051095A /* SearchView.swift */; };
+		73491E122EF9BE6000E3E469 /* AuthBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E112EF9BE5B00E3E469 /* AuthBuilder.swift */; };
+		73491E142EF9BE6800E3E469 /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E132EF9BE6300E3E469 /* AuthVM.swift */; };
+		73491E162EF9BE6E00E3E469 /* AuthCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E152EF9BE6B00E3E469 /* AuthCV.swift */; };
+		73491E182EF9BE7400E3E469 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E172EF9BE7200E3E469 /* AuthVC.swift */; };
+		73491E1B2EFA988000E3E469 /* AmountValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E1A2EFA987B00E3E469 /* AmountValidator.swift */; };
+		73491E1D2EFA989100E3E469 /* CustomValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E1C2EFA988B00E3E469 /* CustomValidator.swift */; };
+		73491E1F2EFA98A800E3E469 /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E1E2EFA98A200E3E469 /* EmailValidator.swift */; };
+		73491E212EFA98BE00E3E469 /* FullnameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E202EFA98B700E3E469 /* FullnameValidator.swift */; };
+		73491E232EFA98CC00E3E469 /* NameValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E222EFA98C700E3E469 /* NameValidator.swift */; };
+		73491E252EFA98DB00E3E469 /* NumberValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E242EFA98D600E3E469 /* NumberValidator.swift */; };
+		73491E272EFA98EB00E3E469 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E262EFA98E500E3E469 /* PasswordValidator.swift */; };
+		73491E292EFA98FD00E3E469 /* PhoneNumberValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E282EFA98F800E3E469 /* PhoneNumberValidator.swift */; };
+		73491E2B2EFA990A00E3E469 /* QuantityValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E2A2EFA990500E3E469 /* QuantityValidator.swift */; };
+		73491E2D2EFA991A00E3E469 /* ValidationCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E2C2EFA991300E3E469 /* ValidationCodeValidator.swift */; };
+		73491E2F2EFA992800E3E469 /* ZipCodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E2E2EFA992300E3E469 /* ZipCodeValidator.swift */; };
+		73491E312EFA993700E3E469 /* InputFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E302EFA993100E3E469 /* InputFormatter.swift */; };
+		73491E332EFA994600E3E469 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E322EFA994100E3E469 /* InputView.swift */; };
+		73491E352EFA995700E3E469 /* MaskedInputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E342EFA995200E3E469 /* MaskedInputType.swift */; };
+		73491E372EFA996500E3E469 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E362EFA996000E3E469 /* TextField.swift */; };
+		73491E392EFA997600E3E469 /* TextFieldState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E382EFA997100E3E469 /* TextFieldState.swift */; };
+		73491E3B2EFA998400E3E469 /* TextFieldValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E3A2EFA997F00E3E469 /* TextFieldValidationError.swift */; };
+		73491E3D2EFA999200E3E469 /* TextValidatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E3C2EFA998D00E3E469 /* TextValidatorFactory.swift */; };
+		73491E3F2EFA99CE00E3E469 /* Validable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E3E2EFA99C700E3E469 /* Validable.swift */; };
+		73491E412EFA9A7900E3E469 /* Character+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E402EFA9A5A00E3E469 /* Character+Extension.swift */; };
+		73491E432EFA9AAF00E3E469 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E422EFA9AA500E3E469 /* String+Extension.swift */; };
+		73491E452EFA9FFC00E3E469 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E442EFA9FE200E3E469 /* UITextField+Extension.swift */; };
 		737C17B02ED883A500F020D7 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17AF2ED883A000F020D7 /* BaseModel.swift */; };
 		737C17B42ED8848D00F020D7 /* MainApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17B32ED8848900F020D7 /* MainApi.swift */; };
 		737C17B62ED886CA00F020D7 /* RealHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = 737C17B52ED886CA00F020D7 /* RealHTTP */; };
@@ -216,6 +242,32 @@
 		7342EAD72ED788040051095A /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		7342EAD92ED788630051095A /* SearchProductTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProductTVCell.swift; sourceTree = "<group>"; };
 		7342EAE22ED792C70051095A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		73491E112EF9BE5B00E3E469 /* AuthBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBuilder.swift; sourceTree = "<group>"; };
+		73491E132EF9BE6300E3E469 /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
+		73491E152EF9BE6B00E3E469 /* AuthCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCV.swift; sourceTree = "<group>"; };
+		73491E172EF9BE7200E3E469 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		73491E1A2EFA987B00E3E469 /* AmountValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountValidator.swift; sourceTree = "<group>"; };
+		73491E1C2EFA988B00E3E469 /* CustomValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomValidator.swift; sourceTree = "<group>"; };
+		73491E1E2EFA98A200E3E469 /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
+		73491E202EFA98B700E3E469 /* FullnameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullnameValidator.swift; sourceTree = "<group>"; };
+		73491E222EFA98C700E3E469 /* NameValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameValidator.swift; sourceTree = "<group>"; };
+		73491E242EFA98D600E3E469 /* NumberValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberValidator.swift; sourceTree = "<group>"; };
+		73491E262EFA98E500E3E469 /* PasswordValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidator.swift; sourceTree = "<group>"; };
+		73491E282EFA98F800E3E469 /* PhoneNumberValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberValidator.swift; sourceTree = "<group>"; };
+		73491E2A2EFA990500E3E469 /* QuantityValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityValidator.swift; sourceTree = "<group>"; };
+		73491E2C2EFA991300E3E469 /* ValidationCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCodeValidator.swift; sourceTree = "<group>"; };
+		73491E2E2EFA992300E3E469 /* ZipCodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeValidator.swift; sourceTree = "<group>"; };
+		73491E302EFA993100E3E469 /* InputFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFormatter.swift; sourceTree = "<group>"; };
+		73491E322EFA994100E3E469 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		73491E342EFA995200E3E469 /* MaskedInputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskedInputType.swift; sourceTree = "<group>"; };
+		73491E362EFA996000E3E469 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		73491E382EFA997100E3E469 /* TextFieldState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldState.swift; sourceTree = "<group>"; };
+		73491E3A2EFA997F00E3E469 /* TextFieldValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldValidationError.swift; sourceTree = "<group>"; };
+		73491E3C2EFA998D00E3E469 /* TextValidatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextValidatorFactory.swift; sourceTree = "<group>"; };
+		73491E3E2EFA99C700E3E469 /* Validable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validable.swift; sourceTree = "<group>"; };
+		73491E402EFA9A5A00E3E469 /* Character+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Extension.swift"; sourceTree = "<group>"; };
+		73491E422EFA9AA500E3E469 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		73491E442EFA9FE200E3E469 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		737C17AF2ED883A000F020D7 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		737C17B32ED8848900F020D7 /* MainApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApi.swift; sourceTree = "<group>"; };
 		737C17B92ED887CB00F020D7 /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
@@ -540,6 +592,7 @@
 		732265CE2ECF436F00C5319F /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				73491E102EF9BE4600E3E469 /* Auth */,
 				731DA8852EF8820D00290006 /* More */,
 				731DA87E2EF881EB00290006 /* Profile */,
 				7342EAD02ED787DB0051095A /* Search */,
@@ -614,6 +667,42 @@
 				7342EAD12ED787E60051095A /* SearchBuilder.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		73491E102EF9BE4600E3E469 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				73491E172EF9BE7200E3E469 /* AuthVC.swift */,
+				73491E152EF9BE6B00E3E469 /* AuthCV.swift */,
+				73491E132EF9BE6300E3E469 /* AuthVM.swift */,
+				73491E112EF9BE5B00E3E469 /* AuthBuilder.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		73491E192EFA985600E3E469 /* TextInputView */ = {
+			isa = PBXGroup;
+			children = (
+				73491E3C2EFA998D00E3E469 /* TextValidatorFactory.swift */,
+				73491E3A2EFA997F00E3E469 /* TextFieldValidationError.swift */,
+				73491E382EFA997100E3E469 /* TextFieldState.swift */,
+				73491E362EFA996000E3E469 /* TextField.swift */,
+				73491E342EFA995200E3E469 /* MaskedInputType.swift */,
+				73491E322EFA994100E3E469 /* InputView.swift */,
+				73491E302EFA993100E3E469 /* InputFormatter.swift */,
+				73491E2E2EFA992300E3E469 /* ZipCodeValidator.swift */,
+				73491E2C2EFA991300E3E469 /* ValidationCodeValidator.swift */,
+				73491E2A2EFA990500E3E469 /* QuantityValidator.swift */,
+				73491E282EFA98F800E3E469 /* PhoneNumberValidator.swift */,
+				73491E262EFA98E500E3E469 /* PasswordValidator.swift */,
+				73491E242EFA98D600E3E469 /* NumberValidator.swift */,
+				73491E222EFA98C700E3E469 /* NameValidator.swift */,
+				73491E202EFA98B700E3E469 /* FullnameValidator.swift */,
+				73491E1E2EFA98A200E3E469 /* EmailValidator.swift */,
+				73491E1C2EFA988B00E3E469 /* CustomValidator.swift */,
+				73491E1A2EFA987B00E3E469 /* AmountValidator.swift */,
+			);
+			path = TextInputView;
 			sourceTree = "<group>";
 		};
 		737C17AE2ED8839800F020D7 /* BaseModel */ = {
@@ -830,6 +919,7 @@
 		73D09DAC2EF7252E008AED77 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				73491E192EFA985600E3E469 /* TextInputView */,
 				731DA8962EF94B1900290006 /* CustomNavigationBar.swift */,
 				731DA8332EF8792300290006 /* PanModal */,
 				73D09DA32EF7252E008AED77 /* ActivityIndicator */,
@@ -844,6 +934,9 @@
 		73D09DB62EF7252E008AED77 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				73491E442EFA9FE200E3E469 /* UITextField+Extension.swift */,
+				73491E422EFA9AA500E3E469 /* String+Extension.swift */,
+				73491E402EFA9A5A00E3E469 /* Character+Extension.swift */,
 				73D09DAD2EF7252E008AED77 /* CollectionView+Extension.swift */,
 				73D09DAE2EF7252E008AED77 /* EmtyPlaceHolderView.swift */,
 				73D09DAF2EF7252E008AED77 /* Int+Extension.swift */,
@@ -914,6 +1007,7 @@
 		73D09DE12EF725A2008AED77 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				73491E3E2EFA99C700E3E469 /* Validable.swift */,
 				731DA8912EF8872100290006 /* Router.swift */,
 				731DA88F2EF886E800290006 /* Presentable.swift */,
 				73D09DE02EF725A2008AED77 /* Coordinator.swift */,
@@ -1083,7 +1177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				739BCEEB2EE8C161004D492C /* MyListVC.swift in Sources */,
+				73491E2D2EFA991A00E3E469 /* ValidationCodeValidator.swift in Sources */,
 				7342EAC42ED06BFF0051095A /* ProductCell.swift in Sources */,
+				73491E2F2EFA992800E3E469 /* ZipCodeValidator.swift in Sources */,
 				731DA8922EF8875100290006 /* Router.swift in Sources */,
 				739BCEC82EE73B0C004D492C /* FavoriteBuilder.swift in Sources */,
 				7342EAD22ED787F10051095A /* SearchBuilder.swift in Sources */,
@@ -1113,9 +1209,11 @@
 				731DA8632EF87CA600290006 /* MoreCoordinator.swift in Sources */,
 				731DA88B2EF8822500290006 /* MoreCV.swift in Sources */,
 				73D09DC02EF7252E008AED77 /* UIView+Layout.swift in Sources */,
+				73491E2B2EFA990A00E3E469 /* QuantityValidator.swift in Sources */,
 				73D09DC12EF7252E008AED77 /* Int+Extension.swift in Sources */,
 				731DA8842EF8820900290006 /* ProfileVC.swift in Sources */,
 				73D09DC22EF7252E008AED77 /* BaseNC.swift in Sources */,
+				73491E182EF9BE7400E3E469 /* AuthVC.swift in Sources */,
 				73D09DC32EF7252E008AED77 /* ToastView.swift in Sources */,
 				731DA8802EF881FB00290006 /* ProfileVM.swift in Sources */,
 				73D09DC42EF7252E008AED77 /* Localize+Extensions.swift in Sources */,
@@ -1124,11 +1222,14 @@
 				731DA8972EF94B1F00290006 /* CustomNavigationBar.swift in Sources */,
 				73D09DC82EF7252E008AED77 /* BaseVC.swift in Sources */,
 				73D09DC92EF7252E008AED77 /* BaseVM.swift in Sources */,
+				73491E272EFA98EB00E3E469 /* PasswordValidator.swift in Sources */,
 				73D09DCA2EF7252E008AED77 /* ActivityIndicatorViewStyle.swift in Sources */,
+				73491E352EFA995700E3E469 /* MaskedInputType.swift in Sources */,
 				73D09DCB2EF7252E008AED77 /* CollectionView+Extension.swift in Sources */,
 				73D09DCC2EF7252E008AED77 /* Toast.swift in Sources */,
 				731DA8712EF87E0300290006 /* TabbarView.swift in Sources */,
 				731DA8952EF8879700290006 /* DeepLinkOption.swift in Sources */,
+				73491E212EFA98BE00E3E469 /* FullnameValidator.swift in Sources */,
 				731DA85F2EF87C8800290006 /* ProfileCoordinator.swift in Sources */,
 				73D09DCD2EF7252E008AED77 /* Constants.swift in Sources */,
 				731DA87B2EF87E8E00290006 /* TabbarFactory.swift in Sources */,
@@ -1136,18 +1237,27 @@
 				7342EACD2ED7828B0051095A /* CategoryCVCell.swift in Sources */,
 				7342EAD62ED788010051095A /* SearchCV.swift in Sources */,
 				739BCED82EE882A1004D492C /* ProductListVM.swift in Sources */,
+				73491E3D2EFA999200E3E469 /* TextValidatorFactory.swift in Sources */,
+				73491E142EF9BE6800E3E469 /* AuthVM.swift in Sources */,
 				7342EAD42ED787F90051095A /* SearchVM.swift in Sources */,
 				737C17E32ED9FFD000F020D7 /* AuthRepository.swift in Sources */,
 				731DA84B2EF87A0500290006 /* PanModalHeight.swift in Sources */,
 				732265DE2ECF453F00C5319F /* MainCV.swift in Sources */,
+				73491E312EFA993700E3E469 /* InputFormatter.swift in Sources */,
+				73491E252EFA98DB00E3E469 /* NumberValidator.swift in Sources */,
 				732265C52ECF3B2200C5319F /* AppRouter.swift in Sources */,
 				7342EAD82ED7880B0051095A /* SearchVC.swift in Sources */,
+				73491E332EFA994600E3E469 /* InputView.swift in Sources */,
+				73491E392EFA997600E3E469 /* TextFieldState.swift in Sources */,
 				737C17B02ED883A500F020D7 /* BaseModel.swift in Sources */,
 				731DA8652EF87CB100290006 /* MoreCoordinatorResult.swift in Sources */,
 				737C17C32ED8B44700F020D7 /* ResponseLogValidator.swift in Sources */,
+				73491E1D2EFA989100E3E469 /* CustomValidator.swift in Sources */,
 				739BCECC2EE73B22004D492C /* FavoriteCV.swift in Sources */,
 				737C17C52ED8C7D600F020D7 /* BannersCell.swift in Sources */,
 				731DA8512EF87A3700290006 /* PanModalPresentable+LayoutHelpers.swift in Sources */,
+				73491E122EF9BE6000E3E469 /* AuthBuilder.swift in Sources */,
+				73491E412EFA9A7900E3E469 /* Character+Extension.swift in Sources */,
 				732265E32ECF78AE00C5319F /* TabbarVC.swift in Sources */,
 				739BCECE2EE73B29004D492C /* FavoriteVC.swift in Sources */,
 				732265D32ECF43AE00C5319F /* SplashCV.swift in Sources */,
@@ -1175,29 +1285,39 @@
 				732265E02ECF454400C5319F /* MainVC.swift in Sources */,
 				732265D72ECF43E600C5319F /* SplashBuilder.swift in Sources */,
 				732265D52ECF43B800C5319F /* SplashVM.swift in Sources */,
+				73491E232EFA98CC00E3E469 /* NameValidator.swift in Sources */,
 				731DA87D2EF881E600290006 /* ProfileBuilder.swift in Sources */,
 				731DA8792EF87E8400290006 /* FavoriteFactory.swift in Sources */,
 				732265DA2ECF452A00C5319F /* MainBuilder.swift in Sources */,
+				73491E372EFA996500E3E469 /* TextField.swift in Sources */,
 				73D09DE42EF725A2008AED77 /* MainFactory.swift in Sources */,
 				731DA85B2EF87C6D00290006 /* FavoriteCoordinator.swift in Sources */,
+				73491E3F2EFA99CE00E3E469 /* Validable.swift in Sources */,
 				73D09DE52EF725A2008AED77 /* MainCoordinatorResult.swift in Sources */,
 				73D09DE62EF725A2008AED77 /* Coordinator.swift in Sources */,
+				73491E3B2EFA998400E3E469 /* TextFieldValidationError.swift in Sources */,
 				73D09DE72EF725A2008AED77 /* MainCoordinator.swift in Sources */,
 				73D09DE82EF725A2008AED77 /* BaseCoordinator.swift in Sources */,
 				731DA86D2EF87D0700290006 /* TabbarCoordinatorResult.swift in Sources */,
 				73D09DD62EF7256B008AED77 /* Typography.swift in Sources */,
 				73D09DD72EF7256B008AED77 /* Fonts.swift in Sources */,
+				73491E292EFA98FD00E3E469 /* PhoneNumberValidator.swift in Sources */,
 				731DA86F2EF87D8B00290006 /* AppCoordinatorFactory.swift in Sources */,
 				73D09DD82EF7256B008AED77 /* Protocols.swift in Sources */,
 				731DA8892EF8821E00290006 /* MoreVM.swift in Sources */,
 				731DA8362EF8793F00290006 /* DimmedView.swift in Sources */,
 				731DA83E2EF8798A00290006 /* PanModalAnimator.swift in Sources */,
 				731DA88D2EF8822A00290006 /* MoreVC.swift in Sources */,
+				73491E452EFA9FFC00E3E469 /* UITextField+Extension.swift in Sources */,
 				73D09DD92EF7256B008AED77 /* Resourses.swift in Sources */,
+				73491E432EFA9AAF00E3E469 /* String+Extension.swift in Sources */,
 				731DA8482EF879E900290006 /* UIViewController+PanModalPresenter.swift in Sources */,
 				73D09DDA2EF7256B008AED77 /* Assets.swift in Sources */,
 				737C180E2EDA244C00F020D7 /* Environmrnt.swift in Sources */,
+				73491E162EF9BE6E00E3E469 /* AuthCV.swift in Sources */,
+				73491E1B2EFA988000E3E469 /* AmountValidator.swift in Sources */,
 				731DA8612EF87C9400290006 /* ProfileCoordinatorResult.swift in Sources */,
+				73491E1F2EFA98A800E3E469 /* EmailValidator.swift in Sources */,
 				731DA83B2EF8796A00290006 /* PanModalPresentationController.swift in Sources */,
 				739BCED62EE88293004D492C /* ProductListBuilder.swift in Sources */,
 				732265DC2ECF453700C5319F /* MainVM.swift in Sources */,

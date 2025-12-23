@@ -98,8 +98,8 @@ extension ProductListCV {
             .top(safeAreaLayoutGuide.topAnchor, constant: 116),
             .leading(leadingAnchor),
             .trailing(trailingAnchor),
-            .height(90),
-            .width(60)
+            .height(90)
+//            .width(60)
         )
         
         emtylabel.anchor(

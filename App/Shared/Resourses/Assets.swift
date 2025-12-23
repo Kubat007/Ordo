@@ -164,8 +164,8 @@ public enum Asset {
 //    public static let examplePassportBackImage = ImageAsset(name: "Images/example_passport_back_image")
 //    public static let examplePassportImage = ImageAsset(name: "Images/example_passport_image")
 //    public static let expensesIc = ImageAsset(name: "Images/expenses_ic")
-//    public static let eye = ImageAsset(name: "Images/eye")
-//    public static let eyeHidden = ImageAsset(name: "Images/eye_hidden")
+    public static let eye = ImageAsset(name: "Images/eye")
+    public static let eyeHidden = ImageAsset(name: "Images/eye_hidden")
 //    public static let filterIc = ImageAsset(name: "Images/filter_ic")
 //    public static let gbPresentImage = ImageAsset(name: "Images/gb_present_image")
 //    public static let goldCalendarIc = ImageAsset(name: "Images/gold_calendar-ic")
@@ -229,6 +229,7 @@ public enum Asset {
 //    public static let transferIc = ImageAsset(name: "Images/transfer_ic")
 //    public static let unidentImg = ImageAsset(name: "Images/unident_img")
 //    public static let visaCardIc = ImageAsset(name: "Images/visa_card_ic")
+      public static let ordoLogo = ImageAsset(name: "Images/ordo_logo")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

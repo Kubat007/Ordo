@@ -24,8 +24,9 @@ final class ProductListCoordinator: BaseCoordinator, ProductListCoordinatorResul
     
     private func showMain() {
         let vc = ProductListBuilder(services: services).build()
+        vc.hidesBottomBarWhenPushed = true
         vc.viewModel.onMyListAction = showMyListVC
-        router.setRootModule(vc, hideBar: true)
+        router.push(vc)
     }
     
     func showMyListVC() {
