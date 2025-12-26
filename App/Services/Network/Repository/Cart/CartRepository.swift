@@ -1,0 +1,10 @@
+//
+//  CartRepository.swift
+//  ShopKg
+//
+//  Created by Kubat Muktarbek on 27/12/25.
+//
+
+protocol CartRepository {
+    func getCart() async throws -> CartModel.Response.GetCartModel
+}

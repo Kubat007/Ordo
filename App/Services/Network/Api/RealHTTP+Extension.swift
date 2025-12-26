@@ -8,7 +8,10 @@ public protocol APIResourceConvertible {
 public extension HTTPClient {
     func fetch<T: APIResourceConvertible>(_ convertible: T) async throws -> T.Result {
         let result = try await convertible.request().fetch(self)
-//        print(result)
+        
+        if result.statusCode.rawValue == 204 && T.Result.self == EmptyResponse.self {
+        return EmptyResponse() as! T.Result
+    }
         return try result.decode(T.Result.self)
     }
 }

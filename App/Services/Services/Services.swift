@@ -3,10 +3,10 @@ import RealHTTP
 protocol Services {
     typealias Repos = (
                        auth: AuthRepository,
-                       main: MainRepository
+                       main: MainRepository,
 //                       profile: ProfileRepository,
 //                       campaign: CampaignRepository,
-//                       payment: PaymentRepository,
+                       cart: CartRepository
 //                       gov: GovRemoteRepository,
 //                       usefull: UsefullRepository
     )

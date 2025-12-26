@@ -11,6 +11,13 @@ struct BaseModel<T: Decodable>: Decodable {
     let message: String?
 }
 
+struct BaseArrayItemModel<T: Decodable>: Decodable {
+    let count: Int?
+    let success: Bool?
+    let items: [T]?
+    let message: String?
+}
+
 struct BaseArrayModel<T: Decodable>: Decodable {
     let count: Int?
     let success: Bool?

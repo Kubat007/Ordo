@@ -4,8 +4,14 @@ import UIKit
 
 
 final class MainRemoteRepository: MainRepository {
+    private let client: HTTPClient
+    
+    init(client: HTTPClient) {
+        self.client = client
+    }
+    
     func sendfavoriteProduct(productId: Int) async throws -> MainModels.Response.SendFavorite {
-        try await client.fetch(MainApi.SendFavorite(productId: productId))
+        try await client.fetch(MainApi.SendFavorite(product: productId))
     }
     
     func getCategory() async throws -> [MainModels.Response.Category] {
@@ -20,10 +26,12 @@ final class MainRemoteRepository: MainRepository {
         try await client.fetch(MainApi.GetBanner())
     }
     
-    private let client: HTTPClient
+    func getFavorites() async throws -> BaseArrayModel<MainModels.Response.GetFavorites> {
+        try await client.fetch(MainApi.GetFavorites())
+    }
     
-    init(client: HTTPClient) {
-        self.client = client
+    func deleteFavorite(productId: Int) async throws -> EmptyResponse {
+        try await client.fetch(MainApi.DeleteFavorite(productId: productId))
     }
 }
 

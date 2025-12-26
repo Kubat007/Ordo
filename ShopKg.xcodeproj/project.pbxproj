@@ -108,6 +108,11 @@
 		736D559F2EFB252900C6F077 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D559E2EFB252400C6F077 /* AuthManager.swift */; };
 		736D55A62EFB31BB00C6F077 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D55A52EFB31AB00C6F077 /* ProfileCell.swift */; };
 		736D55A82EFB31F800C6F077 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D55A72EFB31F700C6F077 /* ProfileHeaderView.swift */; };
+		736D560F2EFF0D7300C6F077 /* MoreTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D560E2EFF0D6F00C6F077 /* MoreTVCell.swift */; };
+		736D56122EFF188100C6F077 /* CartRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56112EFF187600C6F077 /* CartRepository.swift */; };
+		736D56142EFF188F00C6F077 /* CartRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56132EFF188700C6F077 /* CartRemoteRepository.swift */; };
+		736D56162EFF18F400C6F077 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56152EFF18EF00C6F077 /* CartModel.swift */; };
+		736D56182EFF1A2900C6F077 /* CartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56172EFF1A2500C6F077 /* CartApi.swift */; };
 		737C17B02ED883A500F020D7 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17AF2ED883A000F020D7 /* BaseModel.swift */; };
 		737C17B42ED8848D00F020D7 /* MainApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17B32ED8848900F020D7 /* MainApi.swift */; };
 		737C17B62ED886CA00F020D7 /* RealHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = 737C17B52ED886CA00F020D7 /* RealHTTP */; };
@@ -291,6 +296,11 @@
 		736D559E2EFB252400C6F077 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		736D55A52EFB31AB00C6F077 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		736D55A72EFB31F700C6F077 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		736D560E2EFF0D6F00C6F077 /* MoreTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTVCell.swift; sourceTree = "<group>"; };
+		736D56112EFF187600C6F077 /* CartRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRepository.swift; sourceTree = "<group>"; };
+		736D56132EFF188700C6F077 /* CartRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRemoteRepository.swift; sourceTree = "<group>"; };
+		736D56152EFF18EF00C6F077 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		736D56172EFF1A2500C6F077 /* CartApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApi.swift; sourceTree = "<group>"; };
 		737C17AF2ED883A000F020D7 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		737C17B32ED8848900F020D7 /* MainApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApi.swift; sourceTree = "<group>"; };
 		737C17B92ED887CB00F020D7 /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
@@ -554,6 +564,7 @@
 		731DA8852EF8820D00290006 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				736D560D2EFF0D5C00C6F077 /* Cell */,
 				731DA88C2EF8822700290006 /* MoreVC.swift */,
 				731DA88A2EF8822100290006 /* MoreCV.swift */,
 				731DA8882EF8821A00290006 /* MoreVM.swift */,
@@ -574,6 +585,7 @@
 		731DA8932EF8877C00290006 /* MainModels */ = {
 			isa = PBXGroup;
 			children = (
+				736D56152EFF18EF00C6F077 /* CartModel.swift */,
 				736D558F2EFAF21C00C6F077 /* AuthModel.swift */,
 				7342EAC02ED06B800051095A /* MainModels.swift */,
 				731DA8942EF8878800290006 /* DeepLinkOption.swift */,
@@ -761,6 +773,23 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		736D560D2EFF0D5C00C6F077 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				736D560E2EFF0D6F00C6F077 /* MoreTVCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		736D56102EFF187000C6F077 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				736D56132EFF188700C6F077 /* CartRemoteRepository.swift */,
+				736D56112EFF187600C6F077 /* CartRepository.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
 		737C17AE2ED8839800F020D7 /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -784,6 +813,7 @@
 		737C17B22ED8848300F020D7 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				736D56172EFF1A2500C6F077 /* CartApi.swift */,
 				736D55912EFAF2DF00C6F077 /* AuthApi.swift */,
 				737C17BD2ED88B1700F020D7 /* RealHTTP+Extension.swift */,
 				737C17B32ED8848900F020D7 /* MainApi.swift */,
@@ -794,6 +824,7 @@
 		737C17B72ED887AC00F020D7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				736D56102EFF187000C6F077 /* Cart */,
 				737C17DF2ED9FFB700F020D7 /* Auth */,
 				737C17B82ED887C700F020D7 /* Main */,
 			);
@@ -1248,6 +1279,7 @@
 				739BCEDF2EE8AB9B004D492C /* ProductListTVCell.swift in Sources */,
 				732265C42ECF3B1E00C5319F /* AppCoordinator.swift in Sources */,
 				731DA8402EF8799C00290006 /* PanModalPresentationAnimator.swift in Sources */,
+				736D56182EFF1A2900C6F077 /* CartApi.swift in Sources */,
 				731DA8382EF8794E00290006 /* PanContainerView.swift in Sources */,
 				739BCEE72EE8C14C004D492C /* MyListVM.swift in Sources */,
 				731DA8692EF87CCA00290006 /* ProductListCoordinatorResult.swift in Sources */,
@@ -1269,11 +1301,13 @@
 				731DA8752EF87E6E00290006 /* MoreFactory.swift in Sources */,
 				736D559C2EFAFAFD00C6F077 /* VerifyVC.swift in Sources */,
 				73D09DBE2EF7252E008AED77 /* ActivityIndicatorOverlayView.swift in Sources */,
+				736D56142EFF188F00C6F077 /* CartRemoteRepository.swift in Sources */,
 				73D09DBF2EF7252E008AED77 /* Observable.swift in Sources */,
 				731DA8632EF87CA600290006 /* MoreCoordinator.swift in Sources */,
 				731DA88B2EF8822500290006 /* MoreCV.swift in Sources */,
 				73D09DC02EF7252E008AED77 /* UIView+Layout.swift in Sources */,
 				73491E2B2EFA990A00E3E469 /* QuantityValidator.swift in Sources */,
+				736D560F2EFF0D7300C6F077 /* MoreTVCell.swift in Sources */,
 				73D09DC12EF7252E008AED77 /* Int+Extension.swift in Sources */,
 				731DA8842EF8820900290006 /* ProfileVC.swift in Sources */,
 				736D55982EFAFAF000C6F077 /* VerifyVM.swift in Sources */,
@@ -1308,6 +1342,7 @@
 				73491E142EF9BE6800E3E469 /* AuthVM.swift in Sources */,
 				7342EAD42ED787F90051095A /* SearchVM.swift in Sources */,
 				737C17E32ED9FFD000F020D7 /* AuthRepository.swift in Sources */,
+				736D56122EFF188100C6F077 /* CartRepository.swift in Sources */,
 				731DA84B2EF87A0500290006 /* PanModalHeight.swift in Sources */,
 				732265DE2ECF453F00C5319F /* MainCV.swift in Sources */,
 				73491E312EFA993700E3E469 /* InputFormatter.swift in Sources */,
@@ -1324,6 +1359,7 @@
 				739BCECC2EE73B22004D492C /* FavoriteCV.swift in Sources */,
 				737C17C52ED8C7D600F020D7 /* BannersCell.swift in Sources */,
 				731DA8512EF87A3700290006 /* PanModalPresentable+LayoutHelpers.swift in Sources */,
+				736D56162EFF18F400C6F077 /* CartModel.swift in Sources */,
 				73491E122EF9BE6000E3E469 /* AuthBuilder.swift in Sources */,
 				73491E412EFA9A7900E3E469 /* Character+Extension.swift in Sources */,
 				732265E32ECF78AE00C5319F /* TabbarVC.swift in Sources */,

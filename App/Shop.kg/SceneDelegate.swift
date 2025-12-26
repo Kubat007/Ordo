@@ -28,11 +28,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let client = makeClient()
             let mainRepository = MainRemoteRepository(client: client)
             let authRepository = AuthRemoteRepository(client: client)
+            let cartRepository = CartRemoteRepository(client: client)
             
             apiServices = ApiServicesImpl(
                 repository: ( 
                     auth: authRepository,
-                    main: mainRepository
+                    main: mainRepository,
+                    cart: cartRepository
                 ),
                 client: client,
                 appSettingsManager: AppSettingsManager()
@@ -100,38 +102,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 .init(name: "Brand", value: deviceBrand)
 //                .init(name: "Language", value: getLanguage())
         )
-//        client.headers.set(.authorization, Defaults[.credentials].bearerToken())
+            let token = AuthManager.shared.getToken() ?? ""
+            client.headers.set(.authorization, "Token \(token)")
         
 //        let responseMessageValidator = ResponseMessageValidator()
         let responseLogValidator = ResponseLogValidator()
-//        let refreshTokenValidator = RefreshTokenValidator(client: client)
         
-//        let authValidator = HTTPAltRequestValidator(statusCodes: [.unauthorized]) { request, response in
-            // If triggered here you'll specify the alt call to execute in order to refresh a JWT session token
-            // before any retry of the initial failed request.
-//            var silentLogin = AuthAPI.RefreshIdToken(refreshToken: Defaults[.credentials].refreshToken)
-//            return silentLogin.request()
-//        } onReceiveAltResponse: { request, response in
-            // Once you have received response from your `refreshToken` call
-            // you can do anything you need to use it.
-            // In this example we'll set the global client's authorization header.
-//            let accessToken = try response.decode(BaseModel<AuthModels.Response.AccessToken>.self)
-//            Defaults[.credentials] = accessToken.data
-//            client.headers.set(.authorization, "Bearer \(accessToken.data.accessToken)")
-//        }
-
-//        refreshTokenValidator.handlerLogOut = { [weak self] in
-//            guard let self = self else { return }
-//            DispatchQueue.main.async {
-//                guard let appCoordinator = self.appCoordinator as? AppCoordinator else { return }
-//                appCoordinator.start()
-//            }
-//        }
-        
-        // append at the top of the validators chain
-//        client.validators.insert(authValidator, at: 0)
-//        client.validators.insert(refreshTokenValidator, at: 0)
-//        client.validators.append(responseLogValidator)
+        client.validators.append(responseLogValidator)
 //        client.validators.append(responseMessageValidator)
         return client
     }

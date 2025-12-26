@@ -42,6 +42,17 @@ enum MainModels {
             let user: Int?
             let product: Int?
         }
+        
+        struct GetFavorites: Codable {
+            let id: Int?
+            let product_id: Int?
+            let product_title: String?
+            let product_price: Int?
+            let product_currency: String?
+            let currency_value: String?
+            let product_images: String?
+            let city: String?
+        }
     }
     
     enum Request {

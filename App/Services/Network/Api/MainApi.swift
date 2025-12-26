@@ -48,10 +48,10 @@ enum MainApi {
     
     struct SendFavorite: Codable, APIResourceConvertible {
         typealias Result = MainModels.Response.SendFavorite
-        let productId: Int
+        let product: Int
         
         private enum CodingKeys: String, CodingKey {
-                case productId
+                case product
             }
         
         func request() -> HTTPRequest {
@@ -63,4 +63,31 @@ enum MainApi {
             }
         }
     }
+    
+    struct GetFavorites: Codable, APIResourceConvertible {
+        typealias Result = BaseArrayModel<MainModels.Response.GetFavorites>
+        
+        func request() -> HTTPRequest {
+            HTTPRequest {
+                $0.path = "/my_profile_favorites/"
+                $0.method = .get
+                $0.maxRetries = 1
+            }
+        }
+    }
+    
+    struct DeleteFavorite: Codable, APIResourceConvertible {
+        typealias Result = EmptyResponse
+        let productId: Int
+        
+        func request() -> HTTPRequest {
+            HTTPRequest {
+                $0.path = "/user_favorites/\(productId)/"
+                $0.method = .delete
+                $0.maxRetries = 1
+            }
+        }
+    }
 }
+
+struct EmptyResponse: Codable {}

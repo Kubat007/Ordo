@@ -14,6 +14,7 @@ public enum Typography {
     case semibold15
     case semibold16
     case semibold17
+    case semibold18
     case semibold20
     case semibold32
     case medium11
@@ -56,6 +57,8 @@ public enum Typography {
             return UIFont.systemFont(ofSize: 16.adaptToScreenSize, weight: .semibold)
         case .semibold17:
             return UIFont.systemFont(ofSize: 17.adaptToScreenSize, weight: .semibold)
+        case .semibold18:
+            return UIFont.systemFont(ofSize: 18.adaptToScreenSize, weight: .semibold)
         case .semibold20:
             return UIFont.systemFont(ofSize: 20.adaptToScreenSize, weight: .semibold)
         case .semibold32:

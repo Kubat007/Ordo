@@ -2,21 +2,25 @@ import UIKit
 import Foundation
 
 protocol FavoriteCVCellDelegate: AnyObject {
-    func basketTapped(cell: ProductCell)
+    func basketTapped(cell: FavoriteCVCell)
+    func favTapped(cell: FavoriteCVCell, productId: Int)
 }
 
 final class FavoriteCVCell: UICollectionViewCell {
     lazy var container = makeContentView()
     lazy var logoView = makeImageView()
     lazy var titleLabel = makeLabel()
-    private lazy var basketButton = makeButton()
-    
-    weak var delegate: ProductCellDelegate?
+    private lazy var basketButton = makeButton(image: "Images/basket_ic", action: #selector(basketButtonTapped), color: UIColor(red: 0.10, green: 0.35, blue: 0.85, alpha: 1.00), radius: 12.5)
+    lazy var favButton = makeButton(image: "heart.fill", action: #selector(favButtonTapped), color: .clear, radius: 0)
+    weak var delegate: FavoriteCVCellDelegate?
+    var productId: Int = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setSubviews()
         setConstraints()
+        favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        favButton.tintColor = .red
     }
     
     required init?(coder: NSCoder) {
@@ -28,23 +32,37 @@ final class FavoriteCVCell: UICollectionViewCell {
        
     }
     
-//    func setup(with productList: MainModels.Response.Products) {
-//        titleLabel.text = productList.title
-//    }
+    func setup(with productList: MainModels.Response.GetFavorites) {
+        logoView.kf.setImage(with: URL(string: productList.product_images ?? ""))
+        titleLabel.text = productList.product_title
+        productId = productList.id ?? 0
+    }
     
 }
 
 extension FavoriteCVCell: BaseCV {
     public func setSubviews() {
         addSubview(container)
-        addSubview(logoView)
-        addSubview(titleLabel)
-        addSubview(basketButton)
+        container.addSubview(logoView)
+        container.addSubview(titleLabel)
+        container.addSubview(basketButton)
+        container.addSubview(favButton)
     }
     
     @objc func basketButtonTapped() {
-//        delegate?.basketTapped(cell: self)
+        delegate?.basketTapped(cell: self)
     }
+    
+    @objc func favButtonTapped() {
+            if favButton.tintColor == .red {
+                favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                favButton.tintColor = .gray
+            } else {
+                favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                favButton.tintColor = .red
+            }
+            delegate?.favTapped(cell: self, productId: productId)
+        }
 }
 
 private extension FavoriteCVCell {
@@ -69,14 +87,14 @@ private extension FavoriteCVCell {
         return label
     }
     
-    func makeButton() -> UIButton {
+    func makeButton(image: String, action: Selector, color: UIColor, radius: CGFloat) -> UIButton {
         let button = UIButton()
-        button.layer.cornerRadius = 12.5
-        button.setImage(UIImage(named: "Images/basket_ic"), for: .normal)
-        button.backgroundColor = UIColor(red: 0.10, green: 0.35, blue: 0.85, alpha: 1.00)
+        button.layer.cornerRadius = radius
+        button.setImage(UIImage(named: image), for: .normal)
+        button.backgroundColor = color
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        button.addTarget(self, action: #selector(basketButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: action, for: .touchUpInside)
         return button
     }
 }
@@ -103,6 +121,13 @@ extension FavoriteCVCell {
             .trailing(container.trailingAnchor, constant: 16),
             .height(25),
             .width(25)
+        )
+        
+        favButton.anchor(
+            .top(logoView.topAnchor, constant: 8),
+            .trailing(container.trailingAnchor, constant: 16),
+            .height(32),
+            .width(32)
         )
     }
 }
