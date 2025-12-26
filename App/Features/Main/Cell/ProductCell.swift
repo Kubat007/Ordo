@@ -3,7 +3,7 @@ import Foundation
 import Kingfisher
 
 protocol ProductCellDelegate: AnyObject {
-    func basketTapped(cell: ProductCell)
+    func basketTapped(cell: ProductCell, model: MainModels.Response.Products?)
     func favTapped(cell: ProductCell, productId: Int)
 }
 
@@ -15,6 +15,7 @@ final class ProductCell: UICollectionViewCell {
     lazy var basketButton = makeButton(color: UIColor(red: 0.10, green: 0.35, blue: 0.85, alpha: 1.00), radius: 12.5)
     
     var productId: Int = 0
+    var model: MainModels.Response.Products?
     weak var delegate: ProductCellDelegate?
     
     override init(frame: CGRect) {
@@ -43,16 +44,17 @@ final class ProductCell: UICollectionViewCell {
     }
     
     func configure(with productList: MainModels.Response.Products) {
-            productId = productList.id
-            if let firstImage = productList.images_gallery.first,
-               let imageUrl = URL(string: firstImage.image) {
-                logoView.kf.setImage(with: imageUrl)
-            } else {
-                logoView.image = nil
-            }
-            titleLabel.text = productList.title
-//            updateFavoriteButton()
+        productId = productList.id
+        model = productList
+        if let firstImage = productList.images_gallery.first,
+           let imageUrl = URL(string: firstImage.image) {
+            logoView.kf.setImage(with: imageUrl)
+        } else {
+            logoView.image = nil
         }
+        titleLabel.text = productList.title
+        //            updateFavoriteButton()
+    }
     
     func updateFavoriteButton() {
 //        let imageName = favSelected ? Asset.Images.patentDoneIc.image : Asset.Images.icTransferKg.image
@@ -71,7 +73,7 @@ extension ProductCell: BaseCV {
     }
     
     @objc func basketButtonTapped() {
-        delegate?.basketTapped(cell: self)
+        delegate?.basketTapped(cell: self, model: model)
     }
     
     @objc func favButtonTapped() {
@@ -82,7 +84,7 @@ extension ProductCell: BaseCV {
                 favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
                 favButton.tintColor = .red
             }
-            delegate?.favTapped(cell: self, productId: productId)
+        delegate?.favTapped(cell: self, productId: productId)
         }
 }
 

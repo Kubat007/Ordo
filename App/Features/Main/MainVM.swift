@@ -59,7 +59,17 @@ final class MainVM: BaseVM {
         Task {
             do {
                 let initialize = try await self.services?.repository.main.sendfavoriteProduct(productId: productId)
-//                self.categoryList = initialize ?? []
+            } catch {
+                delegate?.failure(with: error.localizedDescription)
+            }
+        }
+    }
+    
+    @MainActor
+    func addCart(model: MainModels.Request.AddCArt) {
+        Task {
+            do {
+                let initialize = try await self.services?.repository.main.addCart(model: model)
                 print("succces send Favorite Product \(String(describing: initialize))")
             } catch {
                 delegate?.failure(with: error.localizedDescription)

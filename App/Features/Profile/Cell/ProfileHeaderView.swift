@@ -10,21 +10,9 @@ import UIKit
 public final class ProfileHeaderView: UIView {
     
     private lazy var avatarImageView = makeAvatarImageView()
-    private lazy var nameLabel = makeLabel(
-        text: "Elbrus",
-        textColor: Asset.Colors.black.color,
-        font: Typography.semibold17.font
-    )
-    private lazy var dateLabel = makeLabel(
-        text: "С нами с 2025-07-30",
-        textColor: .gray,
-        font: Typography.regular14.font
-    )
-    private lazy var phoneLabel = makeLabel(
-        text: "+996705073377",
-        textColor: Asset.Colors.black.color,
-        font: Typography.semibold14.font
-    )
+    private lazy var nameLabel = makeLabel(text: "Elbrus", textColor: Asset.Colors.black.color, font: Typography.semibold17.font)
+    private lazy var dateLabel = makeLabel(text: "С нами с 2025-07-30", textColor: .gray, font: Typography.regular14.font)
+    private lazy var phoneLabel = makeLabel(text: "+996705073377", textColor: Asset.Colors.black.color, font: Typography.semibold14.font)
     
     override public init(frame: CGRect) {
         super.init(frame: frame)

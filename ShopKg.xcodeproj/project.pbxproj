@@ -113,6 +113,7 @@
 		736D56142EFF188F00C6F077 /* CartRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56132EFF188700C6F077 /* CartRemoteRepository.swift */; };
 		736D56162EFF18F400C6F077 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56152EFF18EF00C6F077 /* CartModel.swift */; };
 		736D56182EFF1A2900C6F077 /* CartApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56172EFF1A2500C6F077 /* CartApi.swift */; };
+		736D561D2EFF304500C6F077 /* BottomSheetCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D561C2EFF304000C6F077 /* BottomSheetCart.swift */; };
 		737C17B02ED883A500F020D7 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17AF2ED883A000F020D7 /* BaseModel.swift */; };
 		737C17B42ED8848D00F020D7 /* MainApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17B32ED8848900F020D7 /* MainApi.swift */; };
 		737C17B62ED886CA00F020D7 /* RealHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = 737C17B52ED886CA00F020D7 /* RealHTTP */; };
@@ -301,6 +302,7 @@
 		736D56132EFF188700C6F077 /* CartRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRemoteRepository.swift; sourceTree = "<group>"; };
 		736D56152EFF18EF00C6F077 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		736D56172EFF1A2500C6F077 /* CartApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartApi.swift; sourceTree = "<group>"; };
+		736D561C2EFF304000C6F077 /* BottomSheetCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetCart.swift; sourceTree = "<group>"; };
 		737C17AF2ED883A000F020D7 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		737C17B32ED8848900F020D7 /* MainApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApi.swift; sourceTree = "<group>"; };
 		737C17B92ED887CB00F020D7 /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
@@ -790,6 +792,14 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
+		736D561B2EFF303800C6F077 /* BottomSheets */ = {
+			isa = PBXGroup;
+			children = (
+				736D561C2EFF304000C6F077 /* BottomSheetCart.swift */,
+			);
+			path = BottomSheets;
+			sourceTree = "<group>";
+		};
 		737C17AE2ED8839800F020D7 /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1042,6 +1052,7 @@
 		73D09DB72EF7252E008AED77 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				736D561B2EFF303800C6F077 /* BottomSheets */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1315,6 +1326,7 @@
 				73491E182EF9BE7400E3E469 /* AuthVC.swift in Sources */,
 				73D09DC32EF7252E008AED77 /* ToastView.swift in Sources */,
 				731DA8802EF881FB00290006 /* ProfileVM.swift in Sources */,
+				736D561D2EFF304500C6F077 /* BottomSheetCart.swift in Sources */,
 				73D09DC42EF7252E008AED77 /* Localize+Extensions.swift in Sources */,
 				73D09DC52EF7252E008AED77 /* UIView+Extensions.swift in Sources */,
 				73D09DC72EF7252E008AED77 /* UIDevice+Extensions.swift in Sources */,

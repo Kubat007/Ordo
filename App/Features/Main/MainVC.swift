@@ -88,7 +88,27 @@ extension MainVC: ProductCellDelegate {
         isFavorite ? viewModel.sendFavoriteProduct(productId: productId) : print("Запрос на удаление")
     }
     
-    func basketTapped(cell: ProductCell) {
-        toast(with: "Добавлено в корзину", messageType: .success)
+    func basketTapped(cell: ProductCell, model: MainModels.Response.Products?) {
+        let sheet = BottomSheetCart()
+        let model = BottomSheetCartModel(
+            title: model?.title ?? "",
+            price: "\(model?.price ?? 0)", currencyName: model?.currency_name ?? "",
+            image: model?.images_gallery.first?.image ?? "",
+            count: 1
+        )
+        sheet.configure(model)
+        sheet.onCountChanged = { [weak self] newCount in
+            guard let self = self else { return }
+            print("Новое количество:", newCount)
+        }
+        sheet.modalPresentationStyle = .overFullScreen
+        present(sheet, animated: false)
+
+//        let model = MainModels.Request.AddCArt(
+//            product_id: productId,
+//            quantity: quantity
+//        )
+//        viewModel.addCart(model: model)
+//        toast(with: "Добавлено в корзину", messageType: .success)
     }
 }

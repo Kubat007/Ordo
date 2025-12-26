@@ -75,5 +75,10 @@ enum MainModels {
             var amount: Double?
             var image: String?
         }
+        
+        struct AddCArt: Codable {
+            var product_id: Int?
+            var quantity: Int?
+        }
     }
 }

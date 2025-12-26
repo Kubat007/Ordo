@@ -8,19 +8,9 @@
 import UIKit
 
 final class ProfileCell: UITableViewCell {
-    
     static let identifier = "ProfileCell"
-    
-    private lazy var titleLabel = makeLabel(
-        textColor: Asset.Colors.black.color,
-        font: Typography.semibold16.font
-    )
-    
-    private lazy var subtitleLabel = makeLabel(
-        textColor: .gray,
-        font: Typography.regular14.font
-    )
-    
+    private lazy var titleLabel = makeLabel(textColor: Asset.Colors.black.color, font: Typography.semibold16.font)
+    private lazy var subtitleLabel = makeLabel(textColor: .gray, font: Typography.regular14.font)
     private lazy var arrowImageView = makeArrowImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

@@ -7,8 +7,6 @@ protocol MainRepository {
     func sendfavoriteProduct(productId: Int) async throws -> MainModels.Response.SendFavorite
     func getFavorites() async throws -> BaseArrayModel<MainModels.Response.GetFavorites>
     func deleteFavorite(productId: Int) async throws -> EmptyResponse
-    
-//    func getProductDetail(id: String) async throws -> BaseModel<Product>
-//    func getCategories() async throws -> BaseArrayModel<Category>
+    func addCart(model: MainModels.Request.AddCArt) async throws -> BaseIntModel
 }
 

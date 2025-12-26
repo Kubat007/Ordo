@@ -33,5 +33,9 @@ final class MainRemoteRepository: MainRepository {
     func deleteFavorite(productId: Int) async throws -> EmptyResponse {
         try await client.fetch(MainApi.DeleteFavorite(productId: productId))
     }
+    
+    func addCart(model: MainModels.Request.AddCArt) async throws -> BaseIntModel {
+        try await client.fetch(MainApi.AdddCart(model: model))
+    }
 }
 
