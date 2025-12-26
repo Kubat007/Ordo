@@ -8,32 +8,53 @@
 import UIKit
 
 public final class ProfileCV: UIView {
+    lazy var loginViewBigContainer = makeView()
     private lazy var avatarImageView = makeAvatarImageView()
-    private lazy var titleLabel = makeLabel(text: "Войдите или зарегистрируйтесь", textColor: .black, font: Typography.regular14.font)
+    private lazy var titleLabel = makeLabel(text: "Войдите или зарегистрируйтесь", textColor: .black, font: Typography.bold18.font)
     private lazy var subtitleLabel = makeLabel(text: "Добавляйте объявления в избранное, чтобы посмотреть их позже", textColor: .systemGray, font: Typography.regular14.font)
     lazy var authButton = makeAuthButton()
+    
+    lazy var tableView = makeTableView()
+    let headerView = ProfileHeaderView()
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
         setSubviews()
         setConstraints()
+        setupTable()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupTable() {
+        tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileCell.identifier)
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        tableView.backgroundColor = .clear
+        
+        headerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120)
+        tableView.tableHeaderView = headerView
+    }
 }
 
 extension ProfileCV: BaseCV {
     public func setSubviews() {
-        addSubview(avatarImageView)
-        addSubview(titleLabel)
-        addSubview(subtitleLabel)
-        addSubview(authButton)
+        addSubview(loginViewBigContainer)
+        loginViewBigContainer.addSubview(avatarImageView)
+        loginViewBigContainer.addSubview(titleLabel)
+        loginViewBigContainer.addSubview(subtitleLabel)
+        loginViewBigContainer.addSubview(authButton)
+        addSubview(tableView)
     }
 }
 
 extension ProfileCV {
+    private func makeView() -> UIView {
+        let view = UIView()
+        return view
+    }
+    
     private func makeAvatarImageView() -> UIImageView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -65,34 +86,49 @@ extension ProfileCV {
         button.layer.cornerRadius = 10
         return button
     }
+    
+    func makeTableView() -> UITableView {
+        let table = UITableView()
+        table.register(ProfileCell.self, forCellReuseIdentifier: "ProfileCell")
+        table.backgroundColor = .clear
+        table.separatorStyle = .singleLine
+        table.rowHeight = 80
+        table.showsVerticalScrollIndicator = false
+        table.isHidden = true
+        return table
+    }
 }
 
 extension ProfileCV {
     public func setConstraints() {
+        loginViewBigContainer.fillSuperview()
+        
         avatarImageView.anchor(
-            .top(safeAreaLayoutGuide.topAnchor, constant: 80),
-            .centerX(centerXAnchor),
+            .top(loginViewBigContainer.safeAreaLayoutGuide.topAnchor, constant: 80),
+            .centerX(loginViewBigContainer.centerXAnchor),
             .width(120),
             .height(120)
         )
         
         titleLabel.anchor(
             .top(avatarImageView.bottomAnchor, constant: 24),
-            .leading(leadingAnchor, constant: 32),
-            .trailing(trailingAnchor, constant: 32)
+            .leading(loginViewBigContainer.leadingAnchor, constant: 32),
+            .trailing(loginViewBigContainer.trailingAnchor, constant: 32)
         )
         
         subtitleLabel.anchor(
             .top(titleLabel.bottomAnchor, constant: 12),
-            .leading(leadingAnchor, constant: 32),
-            .trailing(trailingAnchor, constant: 32)
+            .leading(loginViewBigContainer.leadingAnchor, constant: 32),
+            .trailing(loginViewBigContainer.trailingAnchor, constant: 32)
         )
         
         authButton.anchor(
             .top(subtitleLabel.bottomAnchor, constant: 32),
-            .leading(leadingAnchor, constant: 32),
-            .trailing(trailingAnchor, constant: 32),
+            .leading(loginViewBigContainer.leadingAnchor, constant: 32),
+            .trailing(loginViewBigContainer.trailingAnchor, constant: 32),
             .height(48)
         )
+        
+        tableView.fillSuperview()
     }
 }

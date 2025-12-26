@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import InputMask
 
 final class AuthVC: BaseVC<AuthCV, AuthVM> {
     override func viewDidLoad() {
@@ -54,8 +53,8 @@ extension AuthVC: UITextFieldDelegate {
 }
 
 extension AuthVC: AuthVMDelegate {
-    func successLogin() {
-        viewModel.onVerifyAction?()
+    func successLogin(phone: String) {
+        viewModel.onVerifyAction?(phone)
     }
     
     func failure(with error: String) {

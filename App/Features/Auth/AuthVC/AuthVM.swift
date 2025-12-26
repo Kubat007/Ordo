@@ -6,7 +6,7 @@
 //
 
 protocol AuthVMDelegate: AnyObject {
-    func successLogin()
+    func successLogin(phone: String)
     func failure(with error: String)
 }
 
@@ -16,7 +16,7 @@ final class AuthVM: BaseVM {
     var services: Services!
     weak var delegate: AuthVMDelegate?
     var onBackAction: DefaultNavigationCallback?
-    var onVerifyAction: (() -> Void)?
+    var onVerifyAction: ((_ phoneNumber: String) -> Void)?
     
     @MainActor
     func login(phone: String) {
@@ -27,8 +27,8 @@ final class AuthVM: BaseVM {
     private func loginUser(phone: String) {
         Task {
             do {
-                let initialize = try await self.services?.repository.auth.sendPhoneNumber(with: phone)
-                delegate?.successLogin()
+                _ = try await self.services?.repository.auth.sendPhoneNumber(with: phone)
+                delegate?.successLogin(phone: phone)
             } catch {
                 delegate?.failure(with: error.localizedDescription)
             }

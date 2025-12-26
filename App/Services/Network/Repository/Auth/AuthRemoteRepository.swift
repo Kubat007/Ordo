@@ -11,11 +11,11 @@ final class AuthRemoteRepository: AuthRepository {
     func sendPhoneNumber(with phone: String) async throws -> AuthModel.Response.PhoneNumberModel {
         try await client.fetch(AuthApi.SendPhoneNumber(phone: phone))
     }
-//    
-//    func verifyPhoneNumber(with phone: String, code: String) async throws -> BaseModel<AuthModels.Response.AccessToken> {
-//        try await client.fetch(AuthAPI.VerifyPhoneNumber(msisdn: phone, otp: code, source: "mobile"))
-//    }
-//    
+    
+    func verifyPhoneNumber(with phone: String, code: String) async throws -> AuthModel.Response.PhoneNumberModel {
+        try await client.fetch(AuthApi.Login(phone: phone, code: code))
+    }
+    
 //    func refreshToken(token: String) async throws -> BaseModel<AuthModels.Response.AccessToken> {
 //        try await client.fetch(AuthAPI.RefreshIdToken(refreshToken: token))
 //    }

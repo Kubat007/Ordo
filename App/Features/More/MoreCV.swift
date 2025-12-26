@@ -12,6 +12,7 @@ public final class MoreCV: UIView {
         super.init(frame: frame)
         setSubviews()
         setConstraints()
+        
     }
     
     required init?(coder: NSCoder) {

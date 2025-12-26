@@ -105,6 +105,9 @@
 		736D55982EFAFAF000C6F077 /* VerifyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D55972EFAFAEB00C6F077 /* VerifyVM.swift */; };
 		736D559A2EFAFAF700C6F077 /* VerifyCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D55992EFAFAF300C6F077 /* VerifyCV.swift */; };
 		736D559C2EFAFAFD00C6F077 /* VerifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D559B2EFAFAFA00C6F077 /* VerifyVC.swift */; };
+		736D559F2EFB252900C6F077 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D559E2EFB252400C6F077 /* AuthManager.swift */; };
+		736D55A62EFB31BB00C6F077 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D55A52EFB31AB00C6F077 /* ProfileCell.swift */; };
+		736D55A82EFB31F800C6F077 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D55A72EFB31F700C6F077 /* ProfileHeaderView.swift */; };
 		737C17B02ED883A500F020D7 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17AF2ED883A000F020D7 /* BaseModel.swift */; };
 		737C17B42ED8848D00F020D7 /* MainApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17B32ED8848900F020D7 /* MainApi.swift */; };
 		737C17B62ED886CA00F020D7 /* RealHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = 737C17B52ED886CA00F020D7 /* RealHTTP */; };
@@ -285,6 +288,9 @@
 		736D55972EFAFAEB00C6F077 /* VerifyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyVM.swift; sourceTree = "<group>"; };
 		736D55992EFAFAF300C6F077 /* VerifyCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCV.swift; sourceTree = "<group>"; };
 		736D559B2EFAFAFA00C6F077 /* VerifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyVC.swift; sourceTree = "<group>"; };
+		736D559E2EFB252400C6F077 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		736D55A52EFB31AB00C6F077 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		736D55A72EFB31F700C6F077 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		737C17AF2ED883A000F020D7 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		737C17B32ED8848900F020D7 /* MainApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApi.swift; sourceTree = "<group>"; };
 		737C17B92ED887CB00F020D7 /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
@@ -559,6 +565,8 @@
 		731DA88E2EF882FF00290006 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				736D55A72EFB31F700C6F077 /* ProfileHeaderView.swift */,
+				736D55A52EFB31AB00C6F077 /* ProfileCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -618,8 +626,7 @@
 				732265E12ECF782400C5319F /* Tabbar */,
 				732265D82ECF451D00C5319F /* Main */,
 				739BCEC62EE73AAC004D492C /* Favorite */,
-				739BCED42EE88282004D492C /* ProductList */,
-				739BCEE22EE8C121004D492C /* MyList */,
+				736D559D2EFB22F500C6F077 /* List */,
 				732265CF2ECF438700C5319F /* Splash */,
 			);
 			path = Features;
@@ -691,6 +698,7 @@
 		73491E102EF9BE4600E3E469 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				736D559E2EFB252400C6F077 /* AuthManager.swift */,
 				736D55932EFAFAA300C6F077 /* AuthVC */,
 				736D55942EFAFABC00C6F077 /* VerifyVC */,
 			);
@@ -742,6 +750,15 @@
 				736D55952EFAFADE00C6F077 /* VerifyBuilder.swift */,
 			);
 			path = VerifyVC;
+			sourceTree = "<group>";
+		};
+		736D559D2EFB22F500C6F077 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				739BCED42EE88282004D492C /* ProductList */,
+				739BCEE22EE8C121004D492C /* MyList */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		737C17AE2ED8839800F020D7 /* BaseModel */ = {
@@ -1237,6 +1254,7 @@
 				731DA8432EF879B600290006 /* PanModalPresentationDelegate.swift in Sources */,
 				732265D12ECF43A300C5319F /* SplashVC.swift in Sources */,
 				731DA8872EF8821700290006 /* MoreBuilder.swift in Sources */,
+				736D55A82EFB31F800C6F077 /* ProfileHeaderView.swift in Sources */,
 				737C17FF2EDA15C900F020D7 /* AppModel.swift in Sources */,
 				731DA8462EF879DA00290006 /* PanModalPresenter.swift in Sources */,
 				73D09DB82EF7252E008AED77 /* UISearchBar + Extension.swift in Sources */,
@@ -1286,6 +1304,7 @@
 				7342EAD62ED788010051095A /* SearchCV.swift in Sources */,
 				739BCED82EE882A1004D492C /* ProductListVM.swift in Sources */,
 				73491E3D2EFA999200E3E469 /* TextValidatorFactory.swift in Sources */,
+				736D55A62EFB31BB00C6F077 /* ProfileCell.swift in Sources */,
 				73491E142EF9BE6800E3E469 /* AuthVM.swift in Sources */,
 				7342EAD42ED787F90051095A /* SearchVM.swift in Sources */,
 				737C17E32ED9FFD000F020D7 /* AuthRepository.swift in Sources */,
@@ -1362,6 +1381,7 @@
 				73491E452EFA9FFC00E3E469 /* UITextField+Extension.swift in Sources */,
 				73D09DD92EF7256B008AED77 /* Resourses.swift in Sources */,
 				73491E432EFA9AAF00E3E469 /* String+Extension.swift in Sources */,
+				736D559F2EFB252900C6F077 /* AuthManager.swift in Sources */,
 				731DA8482EF879E900290006 /* UIViewController+PanModalPresenter.swift in Sources */,
 				73D09DDA2EF7256B008AED77 /* Assets.swift in Sources */,
 				737C180E2EDA244C00F020D7 /* Environmrnt.swift in Sources */,

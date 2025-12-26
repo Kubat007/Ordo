@@ -35,9 +35,16 @@ final class ProfileCoordinator: BaseCoordinator, ProfileCoordinatorResult {
         router.push(vc, hideBottomBar: true)
     }
     
-    func showVerifyVC() {
+    func showVerifyVC(phoneNumber: String) {
         let vc = factory.makeVerifyVC()
         vc.viewModel.onBackAction = router.popModule
+        vc.viewModel.phoneNumber = phoneNumber
+        vc.viewModel.onProfileAction = showMain
         router.push(vc, hideBottomBar: true)
+    }
+    
+    private func showProfileVC() {
+        let vc = factory.makeProfileVC()
+        router.push(vc)
     }
 }
