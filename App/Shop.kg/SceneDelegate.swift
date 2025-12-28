@@ -125,15 +125,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let deviceId = deviceID ?? ""
             let token = AuthManager.shared.getToken() ?? ""
             
-            client.headers = HTTPHeaders([
+            client.headers = HTTPHeaders(arrayLiteral:
                 .init(name: "DeviceId", value: deviceId),
                 .init(name: "OS", value: OS),
                 .init(name: "Version", value: systemVersion),
                 .init(name: "Source", value: deviceName),
                 .init(name: "Model", value: deviceModel.rawValue),
-                .init(name: "Brand", value: deviceBrand),
-                .authorization("Token \(token)")
-            ])
+                .init(name: "Brand", value: deviceBrand)
+            )
+            client.headers.set(.authorization, "Token \(token)")
         
             // Add validators if needed
             let responseLogValidator = ResponseLogValidator()

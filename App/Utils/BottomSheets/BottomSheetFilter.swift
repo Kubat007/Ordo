@@ -15,14 +15,14 @@ final class FilterBottomSheetCV: UIView {
     private lazy var priceLabel = makeLabel("Цена", Typography.semibold14.font)
     lazy var fromField = makeTextField("Цена, от")
     lazy var toField = makeTextField("Цена, до")
-    lazy var currencyButton = makeCurrencyButton()
+    lazy var currencyButton = makeButton(text: "KGS", textColor: .blue, color: UIColor(white: 0.95, alpha: 1), radius: 8)
 
     private lazy var sortLabel = makeLabel("Сортировать", Typography.semibold14.font)
     lazy var dateAscButton = makeToggleButton("По дате: возрастание")
     lazy var dateDescButton = makeToggleButton("По дате: убывание")
     lazy var expensiveButton = makeToggleButton("Дороже")
     lazy var cheapButton = makeToggleButton("Дешевле")
-    lazy var showButton = makeShowButton()
+    lazy var showButton = makeButton(text: "Показать", textColor: .white, color: Asset.Colors.b0B0B0.color, radius: 12)
     private var state = FilterState()
 
     override init(frame: CGRect) {
@@ -73,37 +73,19 @@ private extension FilterBottomSheetCV {
     func updateUI() {
         updateButton(dateAscButton, selected: state.dateSort == .asc)
         updateButton(dateDescButton, selected: state.dateSort == .desc)
-
         updateButton(expensiveButton, selected: state.priceSort == .expensive)
         updateButton(cheapButton, selected: state.priceSort == .cheap)
-
-        showButton.backgroundColor = state.isValid
-        ? Asset.Colors._4Ab3Ff.color
-        : Asset.Colors.b0B0B0.color
+        showButton.backgroundColor = state.isValid ? Asset.Colors._4Ab3Ff.color : Asset.Colors.b0B0B0.color
     }
 
     func updateButton(_ button: UIButton, selected: Bool) {
-        button.backgroundColor = selected
-        ? Asset.Colors.black.color.withAlphaComponent(0.12)
-        : .clear
-
-        button.setTitleColor(
-            selected ? Asset.Colors._4Ab3Ff.color : Asset.Colors.b0B0B0.color,
-            for: .normal
-        )
-
-        button.setImage(
-            selected ? UIImage(systemName: "checkmark") : nil,
-            for: .normal
-        )
-
+        button.backgroundColor = selected ? Asset.Colors._4Ab3Ff.color.withAlphaComponent(0.5) : .clear
+        button.layer.cornerRadius = 8
+        button.setTitleColor(selected ? Asset.Colors.white.color : Asset.Colors.b0B0B0.color,for: .normal)
         button.tintColor = Asset.Colors._4Ab3Ff.color
         button.semanticContentAttribute = .forceRightToLeft
-        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: -8)
     }
 }
-
-// MARK: - Factory
 
 private extension FilterBottomSheetCV {
     func makeLabel(_ text: String, _ font: UIFont) -> UILabel {
@@ -141,12 +123,13 @@ private extension FilterBottomSheetCV {
         )
         return f
     }
-
-    func makeCurrencyButton() -> UIButton {
-        let b = UIButton(type: .system)
-        b.setTitle("KGS", for: .normal)
-        b.backgroundColor = UIColor(white: 0.95, alpha: 1)
-        b.layer.cornerRadius = 8
+    
+    func makeButton(text: String, textColor: UIColor, color: UIColor, radius: CGFloat) -> UIButton {
+        let b = UIButton()
+        b.setTitle(text, for: .normal)
+        b.layer.cornerRadius = radius
+        b.backgroundColor = color
+        b.setTitleColor(textColor, for: .normal)
         return b
     }
 
@@ -156,17 +139,7 @@ private extension FilterBottomSheetCV {
         b.contentHorizontalAlignment = .left
         return b
     }
-
-    func makeShowButton() -> UIButton {
-        let b = UIButton(type: .system)
-        b.setTitle("Показать", for: .normal)
-        b.setTitleColor(.white, for: .normal)
-        b.layer.cornerRadius = 12
-        return b
-    }
 }
-
-// MARK: - Layout
 
 extension FilterBottomSheetCV: BaseCV {
     func setSubviews() {
@@ -248,11 +221,10 @@ extension FilterBottomSheetCV: BaseCV {
         )
 
         showButton.anchor(
-//            .top(cheapButton.bottomAnchor, constant: 24),
             .leading(leadingAnchor, constant: 16),
             .trailing(trailingAnchor, constant: 16),
             .height(52),
-            .bottom(bottomAnchor, constant: 16)
+            .bottom(bottomAnchor, constant: 32)
         )
     }
 }
