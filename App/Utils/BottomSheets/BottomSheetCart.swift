@@ -19,9 +19,10 @@ struct BottomSheetCartModel {
 final class BottomSheetCart: UIViewController {
     private lazy var dimView = makeView(color: UIColor.black.withAlphaComponent(0.4), radius: 0, alpha: 0)
     private lazy var containerView = makeContainerView()
-    private lazy var grabber = makeView(color: .systemGray3, radius: 2, alpha: 0)
+    private lazy var grabber = makeView(color: .systemGray3, radius: 2, alpha: 1)
+    private lazy var titleMainLabel = makeLabel(text: "Укажите количество товаров", textColor: .black, font: Typography.bold14.font, alignment: .center)
     private lazy var imageView = makeImageView()
-    private lazy var titleLabel = makeLabel(text: "Груша лесная красавица", textColor: .black, font: Typography.semibold16.font, alignment: .center)
+    private lazy var titleLabel = makeLabel(text: "Груша лесная красавица", textColor: .black, font: Typography.semibold16.font, alignment: .left)
     private lazy var priceLabel = makeLabel(text: "150.0 KGS", textColor: .black, font: Typography.semibold14.font, alignment: .left)
     private lazy var quantityLabel = makeLabel(text: "Количество:", textColor: .black, font: Typography.semibold16.font, alignment: .left)
     private lazy var minusButton = makeCounterButton(title: "–", action: #selector(minusButtonTapped))
@@ -30,10 +31,10 @@ final class BottomSheetCart: UIViewController {
     private lazy var addButton = makeAddButton()
     
     private var containerBottomConstraint: NSLayoutConstraint?
-    private let containerHeight: CGFloat = 420
+    private let containerHeight: CGFloat = 360
     private var model: BottomSheetCartModel?
     private var currentCount: Int = 1
-    var onCountChanged: ((Int) -> Void)?
+    var onAddToCart: ((Int) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,7 @@ private extension BottomSheetCart {
     func setSubviews() {
         view.addSubview(dimView)
         view.addSubview(containerView)
-        
+        containerView.addSubview(titleMainLabel)
         containerView.addSubview(grabber)
         containerView.addSubview(imageView)
         containerView.addSubview(titleLabel)
@@ -77,13 +78,18 @@ extension BottomSheetCart {
         guard currentCount > 1 else { return }
         currentCount -= 1
         countLabel.text = "\(currentCount)"
-        onCountChanged?(currentCount)
+        onAddToCart?(currentCount)
     }
     
     func plusButtonTapped() {
         currentCount += 1
         countLabel.text = "\(currentCount)"
-        onCountChanged?(currentCount)
+        onAddToCart?(currentCount)
+    }
+    
+    func addButtonTapped() {
+        onAddToCart?(currentCount)
+        dismiss(animated: true)
     }
 }
 
@@ -91,18 +97,15 @@ private extension BottomSheetCart {
     func setupGestures() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissSheet))
         dimView.addGestureRecognizer(tap)
-        
         let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         containerView.addGestureRecognizer(pan)
     }
     
     @objc func handlePan(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: view)
-        
         if translation.y > 0 {
             containerBottomConstraint?.constant = translation.y
         }
-        
         if gesture.state == .ended {
             if translation.y > 120 {
                 dismissSheet()
@@ -114,7 +117,6 @@ private extension BottomSheetCart {
     
     func animateShow() {
         containerBottomConstraint?.constant = 0
-        
         UIView.animate(withDuration: 0.3) {
             self.dimView.alpha = 1
             self.view.layoutIfNeeded()
@@ -123,7 +125,6 @@ private extension BottomSheetCart {
     
     @objc func dismissSheet() {
         containerBottomConstraint?.constant = containerHeight
-        
         UIView.animate(
             withDuration: 0.25,
             animations: {
@@ -190,6 +191,7 @@ private extension BottomSheetCart {
         button.backgroundColor = UIColor(red: 0.10, green: 0.15, blue: 0.50, alpha: 1)
         button.layer.cornerRadius = 14
         button.titleLabel?.font = Typography.bold16.font
+        button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         return button
     }
 }
@@ -218,8 +220,13 @@ extension BottomSheetCart {
             .height(4)
         )
         
-        imageView.anchor(
+        titleMainLabel.anchor(
             .top(grabber.bottomAnchor, constant: 16),
+            .centerX(containerView.centerXAnchor)
+        )
+        
+        imageView.anchor(
+            .top(titleMainLabel.bottomAnchor, constant: 16),
             .leading(containerView.leadingAnchor, constant: 16),
             .width(80),
             .height(80)

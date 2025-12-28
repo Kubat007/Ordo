@@ -10,7 +10,8 @@ protocol ProductCellDelegate: AnyObject {
 final class ProductCell: UICollectionViewCell {
     lazy var container = makeContentView()
     lazy var logoView = makeImageView()
-    lazy var titleLabel = makeLabel()
+    lazy var priceLabel = makeLabel(font: Typography.bold16.font)
+    lazy var titleLabel = makeLabel(font: Typography.regular14.font)
     lazy var favButton = makeButton(color: .clear, radius: 0)
     lazy var basketButton = makeButton(color: UIColor(red: 0.10, green: 0.35, blue: 0.85, alpha: 1.00), radius: 12.5)
     
@@ -53,7 +54,7 @@ final class ProductCell: UICollectionViewCell {
             logoView.image = nil
         }
         titleLabel.text = productList.title
-        //            updateFavoriteButton()
+        priceLabel.text = "\(productList.price) \(productList.currency_name)"
     }
     
     func updateFavoriteButton() {
@@ -67,6 +68,7 @@ extension ProductCell: BaseCV {
     public func setSubviews() {
         addSubview(container)
         addSubview(logoView)
+        addSubview(priceLabel)
         addSubview(titleLabel)
         addSubview(favButton)
         addSubview(basketButton)
@@ -112,11 +114,11 @@ private extension ProductCell {
         return image
     }
     
-    func makeLabel() -> UILabel {
+    func makeLabel(font: UIFont) -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = UIColor.black
-        label.font = Typography.regular14.font
+        label.font = font
         return label
     }
     
@@ -138,11 +140,17 @@ extension ProductCell {
             .top(container.topAnchor),
             .trailing(container.trailingAnchor),
             .leading(container.leadingAnchor),
-            .bottom(container.bottomAnchor, constant: 32)
+            .bottom(container.bottomAnchor, constant: 82)
+        )
+        
+        priceLabel.anchor(
+            .top(logoView.bottomAnchor, constant: 4),
+            .trailing(container.trailingAnchor, constant: 16),
+            .leading(container.leadingAnchor, constant: 16)
         )
         
         titleLabel.anchor(
-            .top(logoView.bottomAnchor, constant: 4),
+            .top(priceLabel.bottomAnchor, constant: 4),
             .trailing(container.trailingAnchor, constant: 16),
             .leading(container.leadingAnchor, constant: 16)
         )

@@ -54,6 +54,15 @@ extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
             fatalError("Unknown section")
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+            if kind == UICollectionView.elementKindSectionHeader && indexPath.section == 0 {
+                let header = contentView.mainCollection.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionHeaderView1.defaultReuseIdentifier, for: indexPath) as? CollectionHeaderView1
+                header?.configure(title: "Категории")
+                return header ?? UIView() as! UICollectionReusableView
+            }
+            return UICollectionReusableView()
+        }
 }
 
 extension MainVC: UITextFieldDelegate {
@@ -78,6 +87,10 @@ extension MainVC: MainVMDelegate {
     func failure(with error: String) {
         toast(with: "error \(error.description)", messageType: .error)
     }
+    
+    func successBasket() {
+        toast(with: "Добавлено в корзину", messageType: .success)
+    }
 }
 
 extension MainVC: ProductCellDelegate {
@@ -90,25 +103,22 @@ extension MainVC: ProductCellDelegate {
     
     func basketTapped(cell: ProductCell, model: MainModels.Response.Products?) {
         let sheet = BottomSheetCart()
-        let model = BottomSheetCartModel(
+        let bottomModel = BottomSheetCartModel(
             title: model?.title ?? "",
             price: "\(model?.price ?? 0)", currencyName: model?.currency_name ?? "",
             image: model?.images_gallery.first?.image ?? "",
             count: 1
         )
-        sheet.configure(model)
-        sheet.onCountChanged = { [weak self] newCount in
+        sheet.configure(bottomModel)
+        sheet.onAddToCart = { [weak self] quantity in
             guard let self = self else { return }
-            print("Новое количество:", newCount)
+            let cartModel = MainModels.Request.AddCArt(
+                product_id: model?.id,
+                quantity: quantity
+            )
+            self.viewModel.addCart(model: cartModel)
         }
         sheet.modalPresentationStyle = .overFullScreen
         present(sheet, animated: false)
-
-//        let model = MainModels.Request.AddCArt(
-//            product_id: productId,
-//            quantity: quantity
-//        )
-//        viewModel.addCart(model: model)
-//        toast(with: "Добавлено в корзину", messageType: .success)
     }
 }

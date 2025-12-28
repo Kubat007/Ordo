@@ -2,6 +2,7 @@ protocol MainVMDelegate: AnyObject {
     func successBanners()
     func successProductes()
     func successCategory()
+    func successBasket()
     func failure(with error: String)
 }
 
@@ -58,7 +59,7 @@ final class MainVM: BaseVM {
     func sendFavoriteProduct(productId: Int) {
         Task {
             do {
-                let initialize = try await self.services?.repository.main.sendfavoriteProduct(productId: productId)
+                _ = try await self.services?.repository.main.sendfavoriteProduct(productId: productId)
             } catch {
                 delegate?.failure(with: error.localizedDescription)
             }
@@ -69,8 +70,8 @@ final class MainVM: BaseVM {
     func addCart(model: MainModels.Request.AddCArt) {
         Task {
             do {
-                let initialize = try await self.services?.repository.main.addCart(model: model)
-                print("succces send Favorite Product \(String(describing: initialize))")
+                _ = try await self.services?.repository.main.addCart(model: model)
+                delegate?.successBasket()
             } catch {
                 delegate?.failure(with: error.localizedDescription)
             }
