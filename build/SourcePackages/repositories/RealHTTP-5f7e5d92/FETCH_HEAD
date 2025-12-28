@@ -1,0 +1,89 @@
+c7d05e27f79df2199d90cb8a3ceb8bdfdbc2579c	not-for-merge	branch 'bug/70-fix-for-stubber-ignoreQueryParameters' of https://github.com/immobiliare/RealHTTP
+6a0b34b37660b0dad03c65b3ec83b19d81e2faad	not-for-merge	branch 'feature/62-fix-headers-priority' of https://github.com/immobiliare/RealHTTP
+7305fa93da6c873119a6c924d6b0bfdfa95ac5ce	not-for-merge	branch 'feature/65-httpstubrequest-match-public' of https://github.com/immobiliare/RealHTTP
+a7fc6ef671050ad339cb8d4f31a942a112236a1e	not-for-merge	branch 'feature/67-values-encoding-explicit' of https://github.com/immobiliare/RealHTTP
+bc2173534bdcac5bd9ff72b14831350f731fd295	not-for-merge	branch 'feature/71-validate-method-HTTPAltRequestValidator' of https://github.com/immobiliare/RealHTTP
+cd69c883fdac4d6112805f95b4a3ad70accad570	not-for-merge	branch 'feature/75-fix-weak-delegate' of https://github.com/immobiliare/RealHTTP
+d251e21746023d5f332957aa9a1768b65b5bf623	not-for-merge	branch 'feature/82-removeignore-setcookie-curl' of https://github.com/immobiliare/RealHTTP
+9cce78b17223f35b1508a510e857b017234c373e	not-for-merge	branch 'feature/set-cookie-header' of https://github.com/immobiliare/RealHTTP
+73b95228333be3d39b48ae2031d559230d70e2de	not-for-merge	branch 'fix/44-concurrent-httpdataloader-access' of https://github.com/immobiliare/RealHTTP
+a86956d48b7c029a7645307cf0c85c123bb3048b	not-for-merge	branch 'fix/46-httpmetrics' of https://github.com/immobiliare/RealHTTP
+aefc5a4297ad0a60c381bc85bafa648b31b1949f	not-for-merge	branch 'fix/48-thread-safety' of https://github.com/immobiliare/RealHTTP
+78ddd39196f30771ac97f9f4f35422311f74a654	not-for-merge	branch 'fix/query-param-encoding' of https://github.com/immobiliare/RealHTTP
+8f1ea50a8456eaf08af25113b9c5986a998bc7f2	not-for-merge	branch 'main' of https://github.com/immobiliare/RealHTTP
+b33706a65436cee4632745479568716b841dca11	not-for-merge	branch 'new-validator-modifiers' of https://github.com/immobiliare/RealHTTP
+73f01ab9c9aa2d09ba008a724b3829f452b4bd78	not-for-merge	'refs/pull/1/head' of https://github.com/immobiliare/RealHTTP
+7691365d23d1776f8d87cdfef288b79c3efa7e7c	not-for-merge	'refs/pull/10/head' of https://github.com/immobiliare/RealHTTP
+1e60d0f7c16f3622980466e53128b1c0b680f6c7	not-for-merge	'refs/pull/11/head' of https://github.com/immobiliare/RealHTTP
+ef9554d6aa0a5f8861db55128d4f635a16ee6cc2	not-for-merge	'refs/pull/12/head' of https://github.com/immobiliare/RealHTTP
+f620a3f44c151965e2a9bee31a9a3923489cd7f8	not-for-merge	'refs/pull/16/head' of https://github.com/immobiliare/RealHTTP
+c19cb6b4d8a8ec0a9aa36f7736eee5c0f32bad60	not-for-merge	'refs/pull/2/head' of https://github.com/immobiliare/RealHTTP
+ad8794a667bd33b07a18c60a23b66104669308c4	not-for-merge	'refs/pull/22/head' of https://github.com/immobiliare/RealHTTP
+4b8f439f4becc453c606470fb761601eb14b2dfb	not-for-merge	'refs/pull/25/head' of https://github.com/immobiliare/RealHTTP
+45cea68e41fbfabb55ef903dadbff7ab7f879a82	not-for-merge	'refs/pull/29/head' of https://github.com/immobiliare/RealHTTP
+80b739c5756e35f172ba984f8b98d5e6df0cdca1	not-for-merge	'refs/pull/30/head' of https://github.com/immobiliare/RealHTTP
+db28e746f505d656c600ec060962eef5fff71fad	not-for-merge	'refs/pull/32/head' of https://github.com/immobiliare/RealHTTP
+e05eaf700159b4286792fdf48b38ac2d86ad5419	not-for-merge	'refs/pull/36/head' of https://github.com/immobiliare/RealHTTP
+58c61faf2e69cea40a64ec797dc78894bdaa4512	not-for-merge	'refs/pull/37/head' of https://github.com/immobiliare/RealHTTP
+5031c792fb75c2dac880bcede668bfe671bcf83b	not-for-merge	'refs/pull/39/head' of https://github.com/immobiliare/RealHTTP
+d83a0828cc6bb6eb016fa66a5dd33ad58d3ee8ee	not-for-merge	'refs/pull/4/head' of https://github.com/immobiliare/RealHTTP
+b33706a65436cee4632745479568716b841dca11	not-for-merge	'refs/pull/41/head' of https://github.com/immobiliare/RealHTTP
+5d13324a8a418fd70ab50a648924560e282e9cfb	not-for-merge	'refs/pull/42/head' of https://github.com/immobiliare/RealHTTP
+73b95228333be3d39b48ae2031d559230d70e2de	not-for-merge	'refs/pull/45/head' of https://github.com/immobiliare/RealHTTP
+a86956d48b7c029a7645307cf0c85c123bb3048b	not-for-merge	'refs/pull/47/head' of https://github.com/immobiliare/RealHTTP
+aefc5a4297ad0a60c381bc85bafa648b31b1949f	not-for-merge	'refs/pull/49/head' of https://github.com/immobiliare/RealHTTP
+4e8b291c27f71dd873001666ff5b2f4fa057c03c	not-for-merge	'refs/pull/5/head' of https://github.com/immobiliare/RealHTTP
+d5c61cd717e8787f5f74f132741d5c2875cd3ad9	not-for-merge	'refs/pull/50/head' of https://github.com/immobiliare/RealHTTP
+f81eb5fc399a7ab5eb72fe42e6c7076e5a10e642	not-for-merge	'refs/pull/52/head' of https://github.com/immobiliare/RealHTTP
+1f63233a721b65de38013145bb51a39eb9c4baf1	not-for-merge	'refs/pull/55/head' of https://github.com/immobiliare/RealHTTP
+6a0b34b37660b0dad03c65b3ec83b19d81e2faad	not-for-merge	'refs/pull/63/head' of https://github.com/immobiliare/RealHTTP
+f22fdfaab10d49e2163cc5cee4f609a73bf86d8f	not-for-merge	'refs/pull/66/head' of https://github.com/immobiliare/RealHTTP
+634d3fca1b644efc78d1c22ec59962d04a4af374	not-for-merge	'refs/pull/68/head' of https://github.com/immobiliare/RealHTTP
+d69ad01e17cb10cdd4b7d6930d32a3fc7fb86c98	not-for-merge	'refs/pull/69/head' of https://github.com/immobiliare/RealHTTP
+5542738919fbcc02501f08c9d650cee4148cd850	not-for-merge	'refs/pull/7/head' of https://github.com/immobiliare/RealHTTP
+bc2173534bdcac5bd9ff72b14831350f731fd295	not-for-merge	'refs/pull/72/head' of https://github.com/immobiliare/RealHTTP
+a7fc6ef671050ad339cb8d4f31a942a112236a1e	not-for-merge	'refs/pull/73/head' of https://github.com/immobiliare/RealHTTP
+c7d05e27f79df2199d90cb8a3ceb8bdfdbc2579c	not-for-merge	'refs/pull/74/head' of https://github.com/immobiliare/RealHTTP
+cd69c883fdac4d6112805f95b4a3ad70accad570	not-for-merge	'refs/pull/76/head' of https://github.com/immobiliare/RealHTTP
+5c630311ba56963907e5a3aebc8536b793b59eda	not-for-merge	'refs/pull/77/head' of https://github.com/immobiliare/RealHTTP
+d251e21746023d5f332957aa9a1768b65b5bf623	not-for-merge	'refs/pull/83/head' of https://github.com/immobiliare/RealHTTP
+4294b52d235666ea0d01bb5e8abe74b20389b1b4	not-for-merge	'refs/pull/84/head' of https://github.com/immobiliare/RealHTTP
+9cce78b17223f35b1508a510e857b017234c373e	not-for-merge	'refs/pull/85/head' of https://github.com/immobiliare/RealHTTP
+347f5b727a5c56712c4ba8919abf2f295acdc73b	not-for-merge	'refs/pull/86/head' of https://github.com/immobiliare/RealHTTP
+556bddc74823f90b819c690121b67a95faa5f6c1	not-for-merge	'refs/pull/86/merge' of https://github.com/immobiliare/RealHTTP
+fc471993e7c140aa37353f0defbc2aae8524deca	not-for-merge	'refs/pull/89/head' of https://github.com/immobiliare/RealHTTP
+2d7895c5ffa60a28c444c153a2330b5957b3d27f	not-for-merge	'refs/pull/89/merge' of https://github.com/immobiliare/RealHTTP
+d43252449d7ca5cff37820fa41ddfe66adf14397	not-for-merge	'refs/pull/92/head' of https://github.com/immobiliare/RealHTTP
+d43252449d7ca5cff37820fa41ddfe66adf14397	not-for-merge	'refs/pull/93/head' of https://github.com/immobiliare/RealHTTP
+275d20e00e826dbba2f0315d474bf80c94320525	not-for-merge	tag '0.9.15' of https://github.com/immobiliare/RealHTTP
+01326d2260eb9842e8bfaa9cc913ed446e63b797	not-for-merge	tag '0.9.16' of https://github.com/immobiliare/RealHTTP
+e5c3b1796611e3d0321ea5387191494676b7522a	not-for-merge	tag '0.9.17' of https://github.com/immobiliare/RealHTTP
+48252b9de9dfc92169b4665928e64421c63d8b0e	not-for-merge	tag '0.9.18' of https://github.com/immobiliare/RealHTTP
+a968d0ee383a20dead695437ea0c3e04310a6df0	not-for-merge	tag '0.9.19' of https://github.com/immobiliare/RealHTTP
+b7d8a9293a7c17354626e3980cef455ab4fe0fde	not-for-merge	tag '0.9.20' of https://github.com/immobiliare/RealHTTP
+9d2d292d6b5496e11789ae5386915ed1ac2dd142	not-for-merge	tag '0.9.9' of https://github.com/immobiliare/RealHTTP
+50005eeb2fda3432d20966b402631c74e167a7e5	not-for-merge	tag '1.0.0' of https://github.com/immobiliare/RealHTTP
+00e5ac0fa1027d8fec89ecca246517920a1cd0e8	not-for-merge	tag '1.0.1' of https://github.com/immobiliare/RealHTTP
+0d6bf24ef44ecdb99871f77716d8f46696868649	not-for-merge	tag '1.0.2' of https://github.com/immobiliare/RealHTTP
+9b4dbd76f8b32a50429c5b527535eb6a9b25baaa	not-for-merge	tag '1.2.0' of https://github.com/immobiliare/RealHTTP
+55a4e4f05808e3fc8043a9584ebfa20ed5481964	not-for-merge	tag '1.2.1' of https://github.com/immobiliare/RealHTTP
+a1ac527935617f4eacfd722d9492477dcb490897	not-for-merge	tag '1.3.0' of https://github.com/immobiliare/RealHTTP
+24cf1a9578485063ef8a78c71c1adfd3a9e36241	not-for-merge	tag '1.3.1' of https://github.com/immobiliare/RealHTTP
+8b00ff74e52e4d3ca69e60e006dd7c63c12f1557	not-for-merge	tag '1.3.2' of https://github.com/immobiliare/RealHTTP
+eb05c5c7b86053401154b0de0337940bb32e3979	not-for-merge	tag '1.4.0' of https://github.com/immobiliare/RealHTTP
+93814b1cbf527e946e05806409abdf6bd07b5448	not-for-merge	tag '1.5.0' of https://github.com/immobiliare/RealHTTP
+978237e8894270b4f22371a43530df2f221c6bca	not-for-merge	tag '1.5.1' of https://github.com/immobiliare/RealHTTP
+12c5e2d21f34ee5fa1036a354e8e5bc2db5bf561	not-for-merge	tag '1.5.2' of https://github.com/immobiliare/RealHTTP
+2a5c967e3334e9f7813fc5e09cf59bab1aa366fa	not-for-merge	tag '1.6.0' of https://github.com/immobiliare/RealHTTP
+d145b386645810138b595f9a239695d5e7ce7344	not-for-merge	tag '1.6.1' of https://github.com/immobiliare/RealHTTP
+2118e5d2d88447b065ebd1d54a835a1a6e650517	not-for-merge	tag '1.6.2' of https://github.com/immobiliare/RealHTTP
+55af00f48c140d810dc93b03eb740a4e4380e9e4	not-for-merge	tag '1.7.0' of https://github.com/immobiliare/RealHTTP
+a247dc7251af53cc8dc73f03cdd5545432bff741	not-for-merge	tag '1.7.1' of https://github.com/immobiliare/RealHTTP
+9a13c55e02dc746fbd2e77472ca545f74894cecb	not-for-merge	tag '1.7.2' of https://github.com/immobiliare/RealHTTP
+317da1b39b6d0699172a181584d31e93b782ee2d	not-for-merge	tag '1.7.3' of https://github.com/immobiliare/RealHTTP
+090e711429ce7b9ea2520a5d296eb9d550767886	not-for-merge	tag '1.7.4' of https://github.com/immobiliare/RealHTTP
+51697c00589b61ba402131c226c1d6a958e4e704	not-for-merge	tag '1.8.0' of https://github.com/immobiliare/RealHTTP
+d904f5592e4810875a7c26b5dc392c7584a64bed	not-for-merge	tag '1.8.1' of https://github.com/immobiliare/RealHTTP
+757eda1d61475dc95e86c9b6fb61dfdaa53bd2e3	not-for-merge	tag '1.8.2' of https://github.com/immobiliare/RealHTTP
+c0ffb265eae8684da02ad20cfcc147c23463ad95	not-for-merge	tag '1.8.3' of https://github.com/immobiliare/RealHTTP
+fcec34a9996012aa2dc8ae70fc8c0d7075054739	not-for-merge	tag '1.9.0' of https://github.com/immobiliare/RealHTTP

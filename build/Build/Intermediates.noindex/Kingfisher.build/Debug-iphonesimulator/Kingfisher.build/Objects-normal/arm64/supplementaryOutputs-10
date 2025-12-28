@@ -1,0 +1,36 @@
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/Kingfisher/Sources/Image/ImageTransition.swift":
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageTransition.dia"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageTransition.d"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageTransition.swiftconstvalues"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageTransition.o"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageTransition.swiftdeps"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/Kingfisher/Sources/Image/ImageProcessor.swift":
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageProcessor.o"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageProcessor.swiftconstvalues"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageProcessor.dia"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageProcessor.d"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageProcessor.swiftdeps"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/Kingfisher/Sources/Image/ImageDrawing.swift":
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageDrawing.o"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageDrawing.swiftdeps"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageDrawing.dia"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageDrawing.swiftconstvalues"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageDrawing.d"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/Kingfisher/Sources/Image/Image.swift":
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Image.swiftconstvalues"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Image.swiftdeps"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Image.dia"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Image.o"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/Image.d"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/Kingfisher/Sources/Image/ImageFormat.swift":
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageFormat.d"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageFormat.swiftconstvalues"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageFormat.swiftdeps"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageFormat.o"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageFormat.dia"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/Kingfisher/Sources/Image/ImageProgressive.swift":
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageProgressive.dia"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageProgressive.swiftdeps"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageProgressive.swiftconstvalues"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageProgressive.o"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/Kingfisher.build/Debug-iphonesimulator/Kingfisher.build/Objects-normal/arm64/ImageProgressive.d"

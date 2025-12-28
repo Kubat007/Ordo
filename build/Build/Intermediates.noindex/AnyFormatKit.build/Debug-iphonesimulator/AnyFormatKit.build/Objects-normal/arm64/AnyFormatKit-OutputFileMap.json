@@ -1,0 +1,268 @@
+{
+  "" : {
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/AnyFormatKit-master.dia",
+    "emit-module-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/AnyFormatKit-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/AnyFormatKit-master-emit-module.dia",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/AnyFormatKit-master.swiftdeps"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/Controllers/TextFieldControllers/TextFieldInputController.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldInputController.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldInputController.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldInputController.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldInputController.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldInputController.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldInputController.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldInputController.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldInputController~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/Controllers/TextFieldControllers/TextFieldStartInputController.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldStartInputController.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldStartInputController.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldStartInputController.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldStartInputController.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldStartInputController.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldStartInputController.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldStartInputController.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFieldStartInputController~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/Controllers/TextViewControllers/TextViewInputController.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewInputController.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewInputController.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewInputController.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewInputController.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewInputController.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewInputController.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewInputController.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewInputController~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/Controllers/TextViewControllers/TextViewStartInputController.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewStartInputController.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewStartInputController.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewStartInputController.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewStartInputController.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewStartInputController.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewStartInputController.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewStartInputController.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextViewStartInputController~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/Extensions/String+Extension.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/String+Extension.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/String+Extension.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/String+Extension.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/String+Extension.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/String+Extension.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/String+Extension.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/String+Extension.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/String+Extension~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/Extensions/UITextField+Extension.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextField+Extension.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextField+Extension.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextField+Extension.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextField+Extension.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextField+Extension.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextField+Extension.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextField+Extension.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextField+Extension~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/Extensions/UITextView+Extension.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextView+Extension.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextView+Extension.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextView+Extension.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextView+Extension.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextView+Extension.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextView+Extension.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextView+Extension.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/UITextView+Extension~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/DefaultFormatters/Formatters/DefaultTextFormatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextFormatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextFormatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextFormatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextFormatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextFormatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextFormatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextFormatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextFormatter~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/DefaultFormatters/Formatters/DefaultTextInputFormatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextInputFormatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextInputFormatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextInputFormatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextInputFormatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextInputFormatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextInputFormatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextInputFormatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultTextInputFormatter~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/DefaultFormatters/Helpers/DefaultCaretPositionCorrector.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultCaretPositionCorrector.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultCaretPositionCorrector.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultCaretPositionCorrector.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultCaretPositionCorrector.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultCaretPositionCorrector.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultCaretPositionCorrector.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultCaretPositionCorrector.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultCaretPositionCorrector~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/DefaultFormatters/Helpers/DefaultRangeCalculator.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultRangeCalculator.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultRangeCalculator.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultRangeCalculator.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultRangeCalculator.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultRangeCalculator.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultRangeCalculator.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultRangeCalculator.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/DefaultRangeCalculator~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/PlaceholderFormatters/Formatters/PlaceholderTextFormatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextFormatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextFormatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextFormatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextFormatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextFormatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextFormatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextFormatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextFormatter~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/PlaceholderFormatters/Formatters/PlaceholderTextInputFormatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextInputFormatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextInputFormatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextInputFormatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextInputFormatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextInputFormatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextInputFormatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextInputFormatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderTextInputFormatter~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/PlaceholderFormatters/Helpers/PlaceholderCaretPositionCalculator.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderCaretPositionCalculator.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderCaretPositionCalculator.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderCaretPositionCalculator.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderCaretPositionCalculator.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderCaretPositionCalculator.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderCaretPositionCalculator.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderCaretPositionCalculator.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderCaretPositionCalculator~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/PlaceholderFormatters/Helpers/PlaceholderRangeCalculator.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderRangeCalculator.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderRangeCalculator.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderRangeCalculator.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderRangeCalculator.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderRangeCalculator.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderRangeCalculator.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderRangeCalculator.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/PlaceholderRangeCalculator~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/SumFormatters/Formatters/SumTextFormatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextFormatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextFormatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextFormatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextFormatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextFormatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextFormatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextFormatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextFormatter~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/SumFormatters/Formatters/SumTextInputFormatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatter~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/SumFormatters/Helpers/SumFormatParser.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumFormatParser.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumFormatParser.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumFormatParser.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumFormatParser.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumFormatParser.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumFormatParser.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumFormatParser.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumFormatParser~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/SumFormatters/Helpers/SumTextInputFormatterCaretPositionCalculator.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatterCaretPositionCalculator.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatterCaretPositionCalculator.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatterCaretPositionCalculator.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatterCaretPositionCalculator.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatterCaretPositionCalculator.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatterCaretPositionCalculator.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatterCaretPositionCalculator.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/SumTextInputFormatterCaretPositionCalculator~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/TextFormatter/CaretPositioner.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/CaretPositioner.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/CaretPositioner.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/CaretPositioner.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/CaretPositioner.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/CaretPositioner.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/CaretPositioner.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/CaretPositioner.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/CaretPositioner~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/TextFormatter/FormattedTextValue.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/FormattedTextValue.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/FormattedTextValue.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/FormattedTextValue.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/FormattedTextValue.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/FormattedTextValue.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/FormattedTextValue.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/FormattedTextValue.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/FormattedTextValue~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/TextFormatter/TextFormatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFormatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFormatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFormatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFormatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFormatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFormatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFormatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextFormatter~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/TextFormatter/TextInputFormatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextInputFormatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextInputFormatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextInputFormatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextInputFormatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextInputFormatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextInputFormatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextInputFormatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextInputFormatter~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/TextFormatter/TextNumberFormatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberFormatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberFormatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberFormatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberFormatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberFormatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberFormatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberFormatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberFormatter~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/TextFormatter/TextNumberUnformatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberUnformatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberUnformatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberUnformatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberUnformatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberUnformatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberUnformatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberUnformatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextNumberUnformatter~partial.swiftmodule"
+  },
+  "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/AnyFormatKit/Source/TextFormatter/TextFormatter/TextUnformatter.swift" : {
+    "const-values" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextUnformatter.swiftconstvalues",
+    "dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextUnformatter.d",
+    "diagnostics" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextUnformatter.dia",
+    "index-unit-output-path" : "/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextUnformatter.o",
+    "llvm-bc" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextUnformatter.bc",
+    "object" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextUnformatter.o",
+    "swift-dependencies" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextUnformatter.swiftdeps",
+    "swiftmodule" : "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/AnyFormatKit.build/Debug-iphonesimulator/AnyFormatKit.build/Objects-normal/arm64/TextUnformatter~partial.swiftmodule"
+  }
+}

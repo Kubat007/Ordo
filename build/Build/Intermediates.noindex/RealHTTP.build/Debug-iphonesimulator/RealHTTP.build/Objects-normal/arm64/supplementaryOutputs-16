@@ -1,0 +1,42 @@
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Client/Internal/HTTPBody/JSON/JSONEncodable.swift":
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/JSONEncodable.o"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/JSONEncodable.d"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/JSONEncodable.swiftconstvalues"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/JSONEncodable.dia"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/JSONEncodable.swiftdeps"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Client/Internal/HTTPBody/JSON/HTTPBody+JSON.swift":
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+JSON.dia"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+JSON.o"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+JSON.swiftconstvalues"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+JSON.d"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+JSON.swiftdeps"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Client/Internal/HTTPBody/Multipart/HTTPBody+Multipart.swift":
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+Multipart.swiftconstvalues"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+Multipart.d"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+Multipart.o"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+Multipart.swiftdeps"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+Multipart.dia"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Client/Internal/HTTPBody/JSON/JSONSerializable.swift":
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/JSONSerializable.o"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/JSONSerializable.swiftconstvalues"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/JSONSerializable.d"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/JSONSerializable.swiftdeps"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/JSONSerializable.dia"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Client/Internal/HTTPBody/Multipart/Support/MultipartForm+Boundary.swift":
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/MultipartForm+Boundary.dia"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/MultipartForm+Boundary.swiftconstvalues"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/MultipartForm+Boundary.d"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/MultipartForm+Boundary.o"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/MultipartForm+Boundary.swiftdeps"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Client/Internal/HTTPBody/Multipart/HTTPBody+FormValues.swift":
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+FormValues.o"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+FormValues.dia"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+FormValues.swiftconstvalues"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+FormValues.swiftdeps"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPBody+FormValues.d"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Client/Internal/HTTPBody/Multipart/Support/MultipartForm+Item.swift":
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/MultipartForm+Item.dia"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/MultipartForm+Item.d"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/MultipartForm+Item.swiftdeps"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/MultipartForm+Item.swiftconstvalues"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/MultipartForm+Item.o"

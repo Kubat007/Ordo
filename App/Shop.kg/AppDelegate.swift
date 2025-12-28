@@ -6,12 +6,17 @@
 //
 
 import UIKit
+
+// MARK: - Launch Time Measurement
+var appLaunchStartTime: CFAbsoluteTime = CFAbsoluteTimeGetCurrent()
 var debugImageCalls = false
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Measure time from app launch to didFinishLaunching
+        let launchTime = CFAbsoluteTimeGetCurrent() - appLaunchStartTime
+        print("⏱️ [PERFORMANCE] didFinishLaunching: \(String(format: "%.3f", launchTime))s")
         return true
     }
 

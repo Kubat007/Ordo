@@ -1,0 +1,36 @@
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Stubber/DataTypes/Stub Request/HTTPStubRequest.swift":
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubRequest.swiftconstvalues"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubRequest.d"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubRequest.swiftdeps"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubRequest.dia"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubRequest.o"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Stubber/DataTypes/Support/HTTPStubDataConvertible.swift":
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubDataConvertible.d"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubDataConvertible.o"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubDataConvertible.dia"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubDataConvertible.swiftconstvalues"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubDataConvertible.swiftdeps"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Stubber/DataTypes/Support/HTTPStub+Extension.swift":
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStub+Extension.d"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStub+Extension.swiftdeps"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStub+Extension.swiftconstvalues"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStub+Extension.o"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStub+Extension.dia"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Stubber/DataTypes/Stub Response/HTTPEchoResponse.swift":
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPEchoResponse.dia"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPEchoResponse.o"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPEchoResponse.swiftdeps"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPEchoResponse.d"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPEchoResponse.swiftconstvalues"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Stubber/DataTypes/Support/Foundation+Stubber.swift":
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/Foundation+Stubber.dia"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/Foundation+Stubber.swiftconstvalues"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/Foundation+Stubber.swiftdeps"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/Foundation+Stubber.d"
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/Foundation+Stubber.o"
+"/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/SourcePackages/checkouts/RealHTTP/Sources/RealHTTP/Stubber/DataTypes/Stub Response/HTTPStubResponse.swift":
+  object: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubResponse.o"
+  diagnostics: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubResponse.dia"
+  const-values: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubResponse.swiftconstvalues"
+  dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubResponse.d"
+  swift-dependencies: "/Users/kubatmuktarbek/Desktop/ShopKg/ordo-market/build/Build/Intermediates.noindex/RealHTTP.build/Debug-iphonesimulator/RealHTTP.build/Objects-normal/arm64/HTTPStubResponse.swiftdeps"

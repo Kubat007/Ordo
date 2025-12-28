@@ -1,0 +1,4 @@
+module RealHTTP {
+header "RealHTTP-Swift.h"
+export *
+}

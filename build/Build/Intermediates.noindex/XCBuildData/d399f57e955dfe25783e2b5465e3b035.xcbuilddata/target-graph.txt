@@ -1,0 +1,17 @@
+Target dependency graph (8 targets)
+Target 'Shop.kg' in project 'ShopKg'
+➜ Explicit dependency on target 'Kingfisher' in project 'Kingfisher'
+➜ Explicit dependency on target 'AnyFormatKit' in project 'AnyFormatKit'
+➜ Explicit dependency on target 'RealHTTP' in project 'RealHTTP'
+Target 'RealHTTP' in project 'RealHTTP'
+➜ Explicit dependency on target 'RealHTTP' in project 'RealHTTP'
+Target 'RealHTTP' in project 'RealHTTP' (no dependencies)
+Target 'AnyFormatKit' in project 'AnyFormatKit'
+➜ Explicit dependency on target 'AnyFormatKit' in project 'AnyFormatKit'
+Target 'AnyFormatKit' in project 'AnyFormatKit' (no dependencies)
+Target 'Kingfisher' in project 'Kingfisher'
+➜ Explicit dependency on target 'Kingfisher' in project 'Kingfisher'
+➜ Explicit dependency on target 'Kingfisher_Kingfisher' in project 'Kingfisher'
+Target 'Kingfisher' in project 'Kingfisher'
+➜ Explicit dependency on target 'Kingfisher_Kingfisher' in project 'Kingfisher'
+Target 'Kingfisher_Kingfisher' in project 'Kingfisher' (no dependencies)

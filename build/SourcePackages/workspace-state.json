@@ -1,0 +1,61 @@
+{
+  "object" : {
+    "artifacts" : [
+
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "anyformatkit",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/luximetr/AnyFormatKit",
+          "name" : "AnyFormatKit"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "ae3a965164005b07f81d6aa066520d7ad14ea54e",
+            "version" : "2.5.2"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "AnyFormatKit"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "kingfisher",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/onevcat/Kingfisher.git",
+          "name" : "Kingfisher"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "d30a5fad881137e2267f96a8e3fc35c58999bb94",
+            "version" : "8.6.2"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "Kingfisher"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "realhttp",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/immobiliare/RealHTTP.git",
+          "name" : "RealHTTP"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "fcec34a9996012aa2dc8ae70fc8c0d7075054739",
+            "version" : "1.9.0"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "RealHTTP"
+      }
+    ]
+  },
+  "version" : 6
+}

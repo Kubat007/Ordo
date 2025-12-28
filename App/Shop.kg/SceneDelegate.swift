@@ -10,25 +10,49 @@ import RealHTTP
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-        private var apiServices: Services!
-        private var appCoordinator: AppCoordinator!
+    private var apiServices: Services!
+    private var appCoordinator: AppCoordinator!
+    
+    // Performance tracking
+    private var sceneConnectTime: CFAbsoluteTime = 0
+    private var windowSetupTime: CFAbsoluteTime = 0
+    private var servicesSetupTime: CFAbsoluteTime = 0
 
         func scene(_ scene: UIScene,
                    willConnectTo session: UISceneSession,
                    options connectionOptions: UIScene.ConnectionOptions) {
+            sceneConnectTime = CFAbsoluteTimeGetCurrent()
+            print("🚀 [PERFORMANCE] Scene willConnect started")
+            
             guard let windowScene = (scene as? UIWindowScene) else { return }
-                    
+            
+            let startWindow = CFAbsoluteTimeGetCurrent()
             setupWindow(with: windowScene)
-                    
+            windowSetupTime = CFAbsoluteTimeGetCurrent() - startWindow
+            print("⏱️ [PERFORMANCE] Window setup: \(String(format: "%.3f", windowSetupTime))s")
+            
             // Register fonts asynchronously to speed up launch
+            let fontStart = CFAbsoluteTimeGetCurrent()
             DispatchQueue.global(qos: .userInitiated).async {
                 FontFamily.registerAllCustomFonts()
+                let fontTime = CFAbsoluteTimeGetCurrent() - fontStart
+                print("🔤 [PERFORMANCE] Fonts registered: \(String(format: "%.3f", fontTime))s (async)")
             }
-                    
+            
             // Setup services and start coordinator on main thread after window is ready
             DispatchQueue.main.async { [weak self] in
+                let servicesStart = CFAbsoluteTimeGetCurrent()
                 self?.setupServices()
+                self?.servicesSetupTime = CFAbsoluteTimeGetCurrent() - servicesStart
+                print("⚙️ [PERFORMANCE] Services setup: \(String(format: "%.3f", self?.servicesSetupTime ?? 0))s")
+                
+                let coordinatorStart = CFAbsoluteTimeGetCurrent()
                 self?.startAppCoordinator()
+                let coordinatorTime = CFAbsoluteTimeGetCurrent() - coordinatorStart
+                print("🎯 [PERFORMANCE] Coordinator started: \(String(format: "%.3f", coordinatorTime))s")
+                
+                let totalTime = CFAbsoluteTimeGetCurrent() - (self?.sceneConnectTime ?? 0)
+                print("✅ [PERFORMANCE] Total app launch: \(String(format: "%.3f", totalTime))s")
             }
         }
         

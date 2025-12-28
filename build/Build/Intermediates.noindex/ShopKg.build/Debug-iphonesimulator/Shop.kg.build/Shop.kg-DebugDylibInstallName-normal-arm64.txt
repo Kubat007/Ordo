@@ -1,0 +1,1 @@
+@rpath/Shop.kg.debug.dylib
