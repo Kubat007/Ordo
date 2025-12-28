@@ -1,0 +1,23 @@
+// Debug Configuration for Fast Build Times
+// Apply this to your Debug build configuration in Xcode
+
+// Swift Compilation
+SWIFT_COMPILATION_MODE = incremental
+SWIFT_OPTIMIZATION_LEVEL = -Onone
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
+SWIFT_WHOLE_MODULE_OPTIMIZATION = NO
+
+// Enable parallel compilation
+SWIFT_PARALLEL_COMPILATION = YES
+
+// Compiler optimization
+GCC_OPTIMIZATION_LEVEL = 0
+
+// Build only active architecture for faster debug builds
+ONLY_ACTIVE_ARCH = YES
+
+// Disable index-while-building for faster compilation
+COMPILER_INDEX_STORE_ENABLE = NO
+
+// Debug information
+DEBUG_INFORMATION_FORMAT = dwarf
