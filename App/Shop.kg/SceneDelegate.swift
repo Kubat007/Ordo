@@ -108,7 +108,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let responseMessageValidator = ResponseMessageValidator()
         let responseLogValidator = ResponseLogValidator()
         
-        client.validators.append(responseLogValidator)
+//        client.validators.append(responseLogValidator)
 //        client.validators.append(responseMessageValidator)
         return client
     }

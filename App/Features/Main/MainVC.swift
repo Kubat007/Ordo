@@ -17,6 +17,13 @@ final class MainVC: BaseVC<MainCV, MainVM> {
     private func setupCollectionView() {
         contentView.mainCollection.dataSource = self
         contentView.mainCollection.delegate = self
+        contentView.filterButton.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func filterButtonTapped() {
+        let vc = FilterBottomSheetVC()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: false)
     }
 }
 

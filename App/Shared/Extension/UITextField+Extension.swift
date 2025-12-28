@@ -187,3 +187,16 @@ class TextFieldDelegateWrapper: NSObject, UITextFieldDelegate {
     }
 }
 
+extension UITextField {
+    func setLeftPadding(_ padding: CGFloat) {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: frame.height))
+        leftView = view
+        leftViewMode = .always
+    }
+    
+    func setRightPadding(_ padding: CGFloat) {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: padding, height: frame.height))
+        rightView = view
+        rightViewMode = .always
+    }
+}
