@@ -28,9 +28,7 @@ final class FilterBottomSheetVC: UIViewController {
 }
 
 private extension FilterBottomSheetVC {
-
     func setupActions() {
-
         contentView.categoryButton.addTarget(self, action: #selector(categoryTapped), for: .touchUpInside)
         contentView.dateAscButton.addTarget(self, action: #selector(sortTapped(_:)), for: .touchUpInside)
         contentView.dateDescButton.addTarget(self, action: #selector(sortTapped(_:)), for: .touchUpInside)
@@ -45,7 +43,6 @@ private extension FilterBottomSheetVC {
     }
 
     @objc func sortTapped(_ sender: UIButton) {
-
         let buttons = [
             contentView.dateAscButton,
             contentView.dateDescButton,

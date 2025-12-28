@@ -17,15 +17,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                    willConnectTo session: UISceneSession,
                    options connectionOptions: UIScene.ConnectionOptions) {
             guard let windowScene = (scene as? UIWindowScene) else { return }
-            
-            setupServices()
+                    
             setupWindow(with: windowScene)
-            startAppCoordinator()
-            FontFamily.registerAllCustomFonts()
+                    
+            // Register fonts asynchronously to speed up launch
+            DispatchQueue.global(qos: .userInitiated).async {
+                FontFamily.registerAllCustomFonts()
+            }
+                    
+            // Setup services and start coordinator on main thread after window is ready
+            DispatchQueue.main.async { [weak self] in
+                self?.setupServices()
+                self?.startAppCoordinator()
+            }
         }
         
         private func setupServices() {
+            // Use lazy initialization for better performance
             let client = makeClient()
+            
+            // Initialize repositories on-demand
             let mainRepository = MainRemoteRepository(client: client)
             let authRepository = AuthRemoteRepository(client: client)
             let cartRepository = CartRemoteRepository(client: client)
@@ -44,6 +55,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         private func setupWindow(with windowScene: UIWindowScene) {
             window = UIWindow(windowScene: windowScene)
             window?.backgroundColor = .systemBackground
+            
+            // Show loading indicator while app initializes
+            let loadingVC = UIViewController()
+            loadingVC.view.backgroundColor = .systemBackground
+            
+            let activityIndicator = UIActivityIndicatorView(style: .large)
+            activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+            activityIndicator.startAnimating()
+            loadingVC.view.addSubview(activityIndicator)
+            
+            NSLayoutConstraint.activate([
+                activityIndicator.centerXAnchor.constraint(equalTo: loadingVC.view.centerXAnchor),
+                activityIndicator.centerYAnchor.constraint(equalTo: loadingVC.view.centerYAnchor)
+            ])
+            
+            window?.rootViewController = loadingVC
             window?.makeKeyAndVisible()
         }
             
@@ -89,27 +116,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-//    private func makeClient(with session: Session) -> HTTPClient {
+//    private func makeClient(with session: Session) -> HTTPClient
         private func makeClient() -> HTTPClient {
             let baseURL = URL(string: "http://167.99.133.138")!
             let client = HTTPClient(baseURL: baseURL)
-        client.headers = HTTPHeaders(arrayLiteral:
-                .init(name: "DeviceId", value: deviceID ?? ""),
+            
+            // Optimize: Build headers once
+            let deviceId = deviceID ?? ""
+            let token = AuthManager.shared.getToken() ?? ""
+            
+            client.headers = HTTPHeaders([
+                .init(name: "DeviceId", value: deviceId),
                 .init(name: "OS", value: OS),
                 .init(name: "Version", value: systemVersion),
                 .init(name: "Source", value: deviceName),
                 .init(name: "Model", value: deviceModel.rawValue),
-                .init(name: "Brand", value: deviceBrand)
-//                .init(name: "Language", value: getLanguage())
-        )
-            let token = AuthManager.shared.getToken() ?? ""
-            client.headers.set(.authorization, "Token \(token)")
+                .init(name: "Brand", value: deviceBrand),
+                .authorization("Token \(token)")
+            ])
         
-//        let responseMessageValidator = ResponseMessageValidator()
-        let responseLogValidator = ResponseLogValidator()
-        
-//        client.validators.append(responseLogValidator)
-//        client.validators.append(responseMessageValidator)
-        return client
-    }
+            // Add validators if needed
+            let responseLogValidator = ResponseLogValidator()
+            client.validators.append(responseLogValidator)
+            
+            return client
+        }
 }

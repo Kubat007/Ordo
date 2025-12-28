@@ -3,6 +3,7 @@ import Foundation
 import Kingfisher
 
 final class BannersCell: UICollectionViewCell {
+    lazy var container = makeContainerView()
     lazy var logoView = makeImageView()
     lazy var titleLabel = makeLabel()
     
@@ -10,6 +11,8 @@ final class BannersCell: UICollectionViewCell {
         super.init(frame: frame)
         setSubviews()
         setConstraints()
+        backgroundColor = .purple
+        container.backgroundColor = Asset.Colors._75D38F.color
     }
     
     required init?(coder: NSCoder) {
@@ -29,12 +32,18 @@ final class BannersCell: UICollectionViewCell {
 
 extension BannersCell: BaseCV {
     public func setSubviews() {
-        addSubview(logoView)
-        addSubview(titleLabel)
+        addSubview(container)
+        container.addSubview(logoView)
+        container.addSubview(titleLabel)
     }
 }
 
 private extension BannersCell {
+    private func makeContainerView() -> UIView {
+        let view = UIView()
+        return view
+    }
+    
     func makeImageView() -> UIImageView {
         let image = UIImageView()
         image.layer.cornerRadius = 18
@@ -54,11 +63,18 @@ private extension BannersCell {
 
 extension BannersCell {
     public func setConstraints() {
-        logoView.anchor(
-            .top(topAnchor),
+        container.anchor(
+            .top(safeAreaLayoutGuide.topAnchor),
             .bottom(bottomAnchor),
             .leading(leadingAnchor),
             .trailing(trailingAnchor)
+        )
+        
+        logoView.anchor(
+            .top(container.topAnchor),
+            .bottom(container.bottomAnchor, constant: 32),
+            .leading(container.leadingAnchor),
+            .trailing(container.trailingAnchor)
         )
         
         titleLabel.anchor(

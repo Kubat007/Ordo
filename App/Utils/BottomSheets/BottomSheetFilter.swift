@@ -8,32 +8,7 @@
 import UIKit
 import Foundation
 
-struct FilterBottomSheetModel {
-    var category: String?
-    var priceFrom: String?
-    var priceTo: String?
-    var currency: Currency = .kgs
-    var sort: SortType?
-}
-
-enum SortType {
-    case dateAsc
-    case dateDesc
-    case expensive
-    case cheap
-}
-
-enum Currency: String, CaseIterable {
-    case kgs = "KGS"
-    case usd = "USD"
-    case eur = "EUR"
-}
-
-import UIKit
-
 final class FilterBottomSheetCV: UIView {
-
-    // MARK: UI
     private lazy var titleLabel = makeLabel("Фильтры", Typography.semibold18.font)
     lazy var categoryButton = makeArrowButton("Выбрать категорию")
 
@@ -47,8 +22,8 @@ final class FilterBottomSheetCV: UIView {
     lazy var dateDescButton = makeToggleButton("По дате: убывание")
     lazy var expensiveButton = makeToggleButton("Дороже")
     lazy var cheapButton = makeToggleButton("Дешевле")
-
     lazy var showButton = makeShowButton()
+    private var state = FilterState()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,13 +31,81 @@ final class FilterBottomSheetCV: UIView {
         layer.cornerRadius = 16
         setSubviews()
         setConstraints()
+        setupActions()
+        updateUI()
     }
 
-    required init?(coder: NSCoder) { fatalError() }
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
 }
 
 private extension FilterBottomSheetCV {
+    func setupActions() {
+        dateAscButton.addTarget(self, action: #selector(dateAscTapped), for: .touchUpInside)
+        dateDescButton.addTarget(self, action: #selector(dateDescTapped), for: .touchUpInside)
+        expensiveButton.addTarget(self, action: #selector(expensiveTapped), for: .touchUpInside)
+        cheapButton.addTarget(self, action: #selector(cheapTapped), for: .touchUpInside)
+    }
 
+    @objc func dateAscTapped() {
+        state.dateSort = state.dateSort == .asc ? nil : .asc
+        updateUI()
+    }
+
+    @objc func dateDescTapped() {
+        state.dateSort = state.dateSort == .desc ? nil : .desc
+        updateUI()
+    }
+
+    @objc func expensiveTapped() {
+        state.priceSort = state.priceSort == .expensive ? nil : .expensive
+        updateUI()
+    }
+
+    @objc func cheapTapped() {
+        state.priceSort = state.priceSort == .cheap ? nil : .cheap
+        updateUI()
+    }
+}
+
+private extension FilterBottomSheetCV {
+    func updateUI() {
+        updateButton(dateAscButton, selected: state.dateSort == .asc)
+        updateButton(dateDescButton, selected: state.dateSort == .desc)
+
+        updateButton(expensiveButton, selected: state.priceSort == .expensive)
+        updateButton(cheapButton, selected: state.priceSort == .cheap)
+
+        showButton.backgroundColor = state.isValid
+        ? Asset.Colors._4Ab3Ff.color
+        : Asset.Colors.b0B0B0.color
+    }
+
+    func updateButton(_ button: UIButton, selected: Bool) {
+        button.backgroundColor = selected
+        ? Asset.Colors.black.color.withAlphaComponent(0.12)
+        : .clear
+
+        button.setTitleColor(
+            selected ? Asset.Colors._4Ab3Ff.color : Asset.Colors.b0B0B0.color,
+            for: .normal
+        )
+
+        button.setImage(
+            selected ? UIImage(systemName: "checkmark") : nil,
+            for: .normal
+        )
+
+        button.tintColor = Asset.Colors._4Ab3Ff.color
+        button.semanticContentAttribute = .forceRightToLeft
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: -8)
+    }
+}
+
+// MARK: - Factory
+
+private extension FilterBottomSheetCV {
     func makeLabel(_ text: String, _ font: UIFont) -> UILabel {
         let l = UILabel()
         l.text = text
@@ -83,11 +126,19 @@ private extension FilterBottomSheetCV {
 
     func makeTextField(_ placeholder: String) -> UITextField {
         let f = UITextField()
-        f.placeholder = placeholder
         f.keyboardType = .numberPad
         f.backgroundColor = UIColor(white: 0.95, alpha: 1)
         f.layer.cornerRadius = 8
+        f.textColor = .black
         f.setLeftPadding(12)
+        f.addDoneToolbar()
+        f.attributedPlaceholder = NSAttributedString(
+            string: placeholder,
+            attributes: [
+                .foregroundColor: UIColor.lightGray,
+                .font: UIFont.systemFont(ofSize: 14)
+            ]
+        )
         return f
     }
 
@@ -102,25 +153,22 @@ private extension FilterBottomSheetCV {
     func makeToggleButton(_ title: String) -> UIButton {
         let b = UIButton(type: .system)
         b.setTitle(title, for: .normal)
-        b.setTitleColor(.gray, for: .normal)
         b.contentHorizontalAlignment = .left
-        b.setImage(UIImage(systemName: "checkmark"), for: .selected)
-        b.tintColor = .systemBlue
         return b
     }
 
     func makeShowButton() -> UIButton {
         let b = UIButton(type: .system)
         b.setTitle("Показать", for: .normal)
-        b.backgroundColor = .systemGray
         b.setTitleColor(.white, for: .normal)
         b.layer.cornerRadius = 12
         return b
     }
 }
 
-extension FilterBottomSheetCV: BaseCV {
+// MARK: - Layout
 
+extension FilterBottomSheetCV: BaseCV {
     func setSubviews() {
         addSubview(titleLabel)
         addSubview(categoryButton)
@@ -137,8 +185,10 @@ extension FilterBottomSheetCV: BaseCV {
     }
 
     func setConstraints() {
-
-        titleLabel.anchor(.top(topAnchor, constant: 16), .centerX(centerXAnchor))
+        titleLabel.anchor(
+            .top(safeAreaLayoutGuide.topAnchor, constant: 16),
+            .leading(leadingAnchor, constant: 32)
+        )
 
         categoryButton.anchor(
             .top(titleLabel.bottomAnchor, constant: 24),
@@ -177,17 +227,32 @@ extension FilterBottomSheetCV: BaseCV {
             .leading(leadingAnchor, constant: 16)
         )
 
-        dateAscButton.anchor(.top(sortLabel.bottomAnchor, constant: 8), .leading(leadingAnchor, constant: 16))
-        dateDescButton.anchor(.top(dateAscButton.bottomAnchor, constant: 8), .leading(leadingAnchor, constant: 16))
-        expensiveButton.anchor(.top(dateDescButton.bottomAnchor, constant: 8), .leading(leadingAnchor, constant: 16))
-        cheapButton.anchor(.top(expensiveButton.bottomAnchor, constant: 8), .leading(leadingAnchor, constant: 16))
+        dateAscButton.anchor(
+            .top(sortLabel.bottomAnchor, constant: 8),
+            .leading(leadingAnchor, constant: 16)
+        )
+
+        dateDescButton.anchor(
+            .top(dateAscButton.bottomAnchor, constant: 8),
+            .leading(leadingAnchor, constant: 16)
+        )
+
+        expensiveButton.anchor(
+            .top(dateDescButton.bottomAnchor, constant: 8),
+            .leading(leadingAnchor, constant: 16)
+        )
+
+        cheapButton.anchor(
+            .top(expensiveButton.bottomAnchor, constant: 8),
+            .leading(leadingAnchor, constant: 16)
+        )
 
         showButton.anchor(
-            .top(cheapButton.bottomAnchor, constant: 24),
+//            .top(cheapButton.bottomAnchor, constant: 24),
             .leading(leadingAnchor, constant: 16),
             .trailing(trailingAnchor, constant: 16),
             .height(52),
-            .bottom(bottomAnchor, constant: -16)
+            .bottom(bottomAnchor, constant: 16)
         )
     }
 }
