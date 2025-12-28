@@ -5,7 +5,8 @@
 ### 1. Удалены дублирующиеся файлы
 - **Было:** 277 Swift файлов
 - **Стало:** 186 Swift файлов
-- **Удалено:** 91 дублирующийся файл
+- **Удалено:** 91 дублирующийся файл (-33%)
+- **Размер проекта:** 10MB
 
 Удалённые папки:
 - ❌ `/Modules` (дубликат `App/Features`)
@@ -29,12 +30,7 @@
 
 ## 📋 Следующие шаги в Xcode:
 
-### Шаг 1: Откройте проект
-```bash
-open ShopKg.xcodeproj
-```
-
-### Шаг 2: Удалите красные ссылки
+### Шаг 1: Удалите красные ссылки в Project Navigator
 В Project Navigator (⌘1) найдите и удалите красные ссылки на:
 - Modules
 - Models (корневая папка)
@@ -53,7 +49,7 @@ open ShopKg.xcodeproj
 2. Нажмите Delete
 3. Выберите "Remove Reference" (НЕ "Move to Trash")
 
-### Шаг 3: Примените конфигурационные файлы (опционально)
+### Шаг 2: Примените конфигурационные файлы (опционально)
 
 #### Вариант A: Ручное применение настроек
 1. Выберите проект в Project Navigator
@@ -71,11 +67,11 @@ open ShopKg.xcodeproj
    - Debug → Based on configuration file: выберите `Configs/Debug.xcconfig`
    - Release → Based on configuration file: выберите `Configs/Release.xcconfig`
 
-### Шаг 4: Clean Build
+### Шаг 3: Clean Build
 1. Нажмите **⌘⇧K** (Product → Clean Build Folder)
 2. Или зажмите Option и выберите Product → Clean Build Folder
 
-### Шаг 5: Первая сборка
+### Шаг 4: Первая сборка
 1. Нажмите **⌘B** для сборки
 2. Первая сборка займёт 5-7 секунд
 3. Следующие сборки будут ещё быстрее (2-4 секунды)
