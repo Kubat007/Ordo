@@ -56,25 +56,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
         
-        private func setupServices() {
-            // Use lazy initialization for better performance
-            let client = makeClient()
-            
-            // Initialize repositories on-demand
-            let mainRepository = MainRemoteRepository(client: client)
-            let authRepository = AuthRemoteRepository(client: client)
-            let cartRepository = CartRemoteRepository(client: client)
-            
-            apiServices = ApiServicesImpl(
-                repository: ( 
-                    auth: authRepository,
-                    main: mainRepository,
-                    cart: cartRepository
-                ),
-                client: client,
-                appSettingsManager: AppSettingsManager()
-            )
-        }
+    private func setupServices() {
+        // Use lazy initialization for better performance
+        let client = makeClient()
+        
+        // Initialize repositories on-demand
+        let mainRepository = MainRemoteRepository(client: client)
+        let authRepository = AuthRemoteRepository(client: client)
+        let cartRepository = CartRemoteRepository(client: client)
+        
+        apiServices = ApiServicesImpl(
+            repository: (
+                auth: authRepository,
+                main: mainRepository,
+                cart: cartRepository
+            ),
+            client: client,
+            appSettingsManager: AppSettingsManager()
+        )
+    }
         
         private func setupWindow(with windowScene: UIWindowScene) {
             window = UIWindow(windowScene: windowScene)
@@ -154,14 +154,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 .init(name: "OS", value: OS),
                 .init(name: "Version", value: systemVersion),
                 .init(name: "Source", value: deviceName),
-                .init(name: "Model", value: deviceModel.rawValue),
+                .init(name: "Model", value: deviceModel),  // Now using fast String lookup
                 .init(name: "Brand", value: deviceBrand)
             )
             client.headers.set(.authorization, "Token \(token)")
         
             // Add validators if needed
             let responseLogValidator = ResponseLogValidator()
-            client.validators.append(responseLogValidator)
+//            client.validators.append(responseLogValidator)
             
             return client
         }

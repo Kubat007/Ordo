@@ -2,12 +2,30 @@ import Foundation
 import RealHTTP
 import UIKit
 
+// MARK: - Device Info (Optimized for fast startup)
 let deviceID = UIDevice.current.identifierForVendor?.uuidString
 let OS = UIDevice.current.systemName
 let systemVersion = UIDevice.current.systemVersion
 let deviceName = UIDevice.current.model
 let deviceBrand = "Apple"
-let deviceModel = UIDevice().type
+
+// Use simple model name instead of slow uname() syscall
+let deviceModel: String = {
+    #if targetEnvironment(simulator)
+    return "Simulator"
+    #else
+    // For real devices, use screen size as approximation (much faster)
+    let height = UIScreen.main.nativeBounds.height
+    switch height {
+    case 2436: return "iPhoneX"
+    case 2688: return "iPhoneXSMax"
+    case 1792: return "iPhoneXR"
+    case 2532: return "iPhone12Pro"
+    case 2778: return "iPhone12ProMax"
+    default: return "iPhone"
+    }
+    #endif
+}()
 
 enum MainApi {
     struct GetBanner: Codable, APIResourceConvertible {
