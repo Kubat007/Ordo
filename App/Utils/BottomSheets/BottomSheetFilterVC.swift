@@ -8,7 +8,6 @@
 import UIKit
 
 final class FilterBottomSheetVC: UIViewController {
-
     private let contentView = FilterBottomSheetCV()
     private var model = FilterBottomSheetModel()
 
