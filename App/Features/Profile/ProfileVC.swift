@@ -8,18 +8,10 @@
 import UIKit
 
 final class ProfileVC: BaseVC<ProfileCV, ProfileVM> {
-   
-    private let items: [(String, String?)] = [
-        ("Заказы", "Ближайшие: не ожидается"),
-        ("Покупки", "Здесь можно оформить заказ заново"),
-        ("Способ оплаты", "Выберите удобный способ оплаты"),
-        ("Новости", nil),
-        ("FAQ", nil),
-        ("Приложение", nil)
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Профиль"
         if AuthManager.shared.isLoggedIn {
             contentView.loginViewBigContainer.isHidden = true
             contentView.tableView.isHidden = false
@@ -29,7 +21,7 @@ final class ProfileVC: BaseVC<ProfileCV, ProfileVM> {
             contentView.loginViewBigContainer.isHidden = false
             contentView.loginViewBigContainer.backgroundColor = Asset.Colors.f7F7Fe.color
         }
-        title = "Профиль"
+        viewModel.setupAppearanceCell()
         setupTable()
     }
     
@@ -44,23 +36,33 @@ final class ProfileVC: BaseVC<ProfileCV, ProfileVM> {
     }
 }
 
-extension ProfileVC: UITableViewDataSource {
+extension ProfileVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
+        viewModel.appearanceSectionCell.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProfileCell.identifier, for: indexPath) as! ProfileCell
-        let item = items[indexPath.row]
-        cell.configure(title: item.0, subtitle: item.1)
+        let item = viewModel.appearanceSectionCell[indexPath.row]
+        cell.configure(model: item)
         return cell
     }
-}
-
-extension ProfileVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: ()
+        case 1: ()
+        case 4: viewModel.onNewsAction?()
+        default: ()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return items[indexPath.row].1 == nil ? 52 : 68
+        switch indexPath.row {
+        case 1...2: return 68
+        default: return 52
+        }
     }
 }
 

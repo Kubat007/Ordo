@@ -9,6 +9,7 @@ protocol ProfileFactory {
     func makeProfileVC() -> ProfileVC
     func makeAuthVC() -> AuthVC
     func makeVerifyVC() -> VerifyVC
+    func makeNewsVC() -> NewsVC
 }
 
 final class ProfileFactoryImpl: ProfileFactory {
@@ -24,6 +25,10 @@ final class ProfileFactoryImpl: ProfileFactory {
     
     func makeVerifyVC() -> VerifyVC {
         return VerifyBuilder(services: services).build()
+    }
+    
+    func makeNewsVC() -> NewsVC {
+        return NewsBuilder(services: services).build()
     }
     
     init(services: Services) {

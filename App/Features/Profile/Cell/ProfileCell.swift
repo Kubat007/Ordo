@@ -17,7 +17,6 @@ final class ProfileCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setSubviews()
         setConstraints()
-        selectionStyle = .none
         backgroundColor = .clear
     }
     
@@ -25,10 +24,9 @@ final class ProfileCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(title: String, subtitle: String?) {
-        titleLabel.text = title
-        subtitleLabel.text = subtitle
-        subtitleLabel.isHidden = subtitle == nil
+    func configure(model: SettingsSectionCellData) {
+        titleLabel.text = model.title
+        subtitleLabel.text = model.desc
     }
 }
 
@@ -76,7 +74,7 @@ extension ProfileCell {
         arrowImageView.anchor(
             .centerY(contentView.centerYAnchor),
             .trailing(contentView.trailingAnchor, constant: 16),
-            .width(12),
+            .width(20),
             .height(20)
         )
     }

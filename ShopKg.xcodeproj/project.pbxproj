@@ -114,6 +114,15 @@
 		736D56342F01661600C6F077 /* BottomSheetFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56332F01660B00C6F077 /* BottomSheetFilter.swift */; };
 		736D56362F01666D00C6F077 /* BottomSheetFilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56352F01665F00C6F077 /* BottomSheetFilterVC.swift */; };
 		736D56392F01A6D800C6F077 /* FilterBSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56382F01A6D100C6F077 /* FilterBSModel.swift */; };
+		736D563C2F02FF5D00C6F077 /* NewsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D563B2F02FF5800C6F077 /* NewsBuilder.swift */; };
+		736D563E2F02FF6400C6F077 /* NewsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D563D2F02FF5F00C6F077 /* NewsVM.swift */; };
+		736D56402F02FF6C00C6F077 /* NewsCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D563F2F02FF6800C6F077 /* NewsCV.swift */; };
+		736D56422F02FF7200C6F077 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56412F02FF6F00C6F077 /* NewsVC.swift */; };
+		736D56452F0303DA00C6F077 /* NewsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56442F0303D600C6F077 /* NewsTVCell.swift */; };
+		736D56472F03065B00C6F077 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56462F03065500C6F077 /* ProfileModel.swift */; };
+		736D564A2F03070000C6F077 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D56492F0306F900C6F077 /* ProfileRepository.swift */; };
+		736D564C2F03070B00C6F077 /* ProfileRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D564B2F03070600C6F077 /* ProfileRemoteRepository.swift */; };
+		736D564E2F03075900C6F077 /* ProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D564D2F03075500C6F077 /* ProfileApi.swift */; };
 		737C17B02ED883A500F020D7 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17AF2ED883A000F020D7 /* BaseModel.swift */; };
 		737C17B42ED8848D00F020D7 /* MainApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17B32ED8848900F020D7 /* MainApi.swift */; };
 		737C17B62ED886CA00F020D7 /* RealHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = 737C17B52ED886CA00F020D7 /* RealHTTP */; };
@@ -303,6 +312,15 @@
 		736D56332F01660B00C6F077 /* BottomSheetFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetFilter.swift; sourceTree = "<group>"; };
 		736D56352F01665F00C6F077 /* BottomSheetFilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetFilterVC.swift; sourceTree = "<group>"; };
 		736D56382F01A6D100C6F077 /* FilterBSModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBSModel.swift; sourceTree = "<group>"; };
+		736D563B2F02FF5800C6F077 /* NewsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBuilder.swift; sourceTree = "<group>"; };
+		736D563D2F02FF5F00C6F077 /* NewsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVM.swift; sourceTree = "<group>"; };
+		736D563F2F02FF6800C6F077 /* NewsCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCV.swift; sourceTree = "<group>"; };
+		736D56412F02FF6F00C6F077 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
+		736D56442F0303D600C6F077 /* NewsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTVCell.swift; sourceTree = "<group>"; };
+		736D56462F03065500C6F077 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		736D56492F0306F900C6F077 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
+		736D564B2F03070600C6F077 /* ProfileRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRemoteRepository.swift; sourceTree = "<group>"; };
+		736D564D2F03075500C6F077 /* ProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileApi.swift; sourceTree = "<group>"; };
 		737C17AF2ED883A000F020D7 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		737C17B32ED8848900F020D7 /* MainApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApi.swift; sourceTree = "<group>"; };
 		737C17B92ED887CB00F020D7 /* MainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRepository.swift; sourceTree = "<group>"; };
@@ -559,6 +577,7 @@
 				731DA8812EF881FE00290006 /* ProfileCV.swift */,
 				731DA87F2EF881F400290006 /* ProfileVM.swift */,
 				731DA87C2EF881DF00290006 /* ProfileBuilder.swift */,
+				736D563A2F02FF4C00C6F077 /* News */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -587,6 +606,7 @@
 		731DA8932EF8877C00290006 /* MainModels */ = {
 			isa = PBXGroup;
 			children = (
+				736D56462F03065500C6F077 /* ProfileModel.swift */,
 				736D56152EFF18EF00C6F077 /* CartModel.swift */,
 				736D558F2EFAF21C00C6F077 /* AuthModel.swift */,
 				7342EAC02ED06B800051095A /* MainModels.swift */,
@@ -806,6 +826,35 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		736D563A2F02FF4C00C6F077 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				736D56432F03039D00C6F077 /* Cell */,
+				736D56412F02FF6F00C6F077 /* NewsVC.swift */,
+				736D563F2F02FF6800C6F077 /* NewsCV.swift */,
+				736D563D2F02FF5F00C6F077 /* NewsVM.swift */,
+				736D563B2F02FF5800C6F077 /* NewsBuilder.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		736D56432F03039D00C6F077 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				736D56442F0303D600C6F077 /* NewsTVCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		736D56482F0306ED00C6F077 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				736D564B2F03070600C6F077 /* ProfileRemoteRepository.swift */,
+				736D56492F0306F900C6F077 /* ProfileRepository.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		737C17AE2ED8839800F020D7 /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,6 +878,7 @@
 		737C17B22ED8848300F020D7 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				736D564D2F03075500C6F077 /* ProfileApi.swift */,
 				736D56172EFF1A2500C6F077 /* CartApi.swift */,
 				736D55912EFAF2DF00C6F077 /* AuthApi.swift */,
 				737C17BD2ED88B1700F020D7 /* RealHTTP+Extension.swift */,
@@ -840,6 +890,7 @@
 		737C17B72ED887AC00F020D7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				736D56482F0306ED00C6F077 /* Profile */,
 				736D56102EFF187000C6F077 /* Cart */,
 				737C17DF2ED9FFB700F020D7 /* Auth */,
 				737C17B82ED887C700F020D7 /* Main */,
@@ -1295,6 +1346,7 @@
 				731DA8922EF8875100290006 /* Router.swift in Sources */,
 				739BCEC82EE73B0C004D492C /* FavoriteBuilder.swift in Sources */,
 				737C17E12ED9FFC700F020D7 /* AuthRemoteRepository.swift in Sources */,
+				736D564E2F03075900C6F077 /* ProfileApi.swift in Sources */,
 				739BCEDF2EE8AB9B004D492C /* ProductListTVCell.swift in Sources */,
 				736D56322F01508F00C6F077 /* UISearchBar+Extension.swift in Sources */,
 				732265C42ECF3B1E00C5319F /* AppCoordinator.swift in Sources */,
@@ -1314,6 +1366,7 @@
 				73D09DBA2EF7252E008AED77 /* Disposable.swift in Sources */,
 				73D09DBB2EF7252E008AED77 /* BaseCV.swift in Sources */,
 				731DA8822EF8820200290006 /* ProfileCV.swift in Sources */,
+				736D563E2F02FF6400C6F077 /* NewsVM.swift in Sources */,
 				73D09DBC2EF7252E008AED77 /* ActivityIndicatorView.swift in Sources */,
 				73D09DBD2EF7252E008AED77 /* EmtyPlaceHolderView.swift in Sources */,
 				736D55902EFAF22100C6F077 /* AuthModel.swift in Sources */,
@@ -1329,10 +1382,12 @@
 				73491E2B2EFA990A00E3E469 /* QuantityValidator.swift in Sources */,
 				736D560F2EFF0D7300C6F077 /* MoreTVCell.swift in Sources */,
 				73D09DC12EF7252E008AED77 /* Int+Extension.swift in Sources */,
+				736D564C2F03070B00C6F077 /* ProfileRemoteRepository.swift in Sources */,
 				731DA8842EF8820900290006 /* ProfileVC.swift in Sources */,
 				736D55982EFAFAF000C6F077 /* VerifyVM.swift in Sources */,
 				73D09DC22EF7252E008AED77 /* BaseNC.swift in Sources */,
 				73491E182EF9BE7400E3E469 /* AuthVC.swift in Sources */,
+				736D56472F03065B00C6F077 /* ProfileModel.swift in Sources */,
 				73D09DC32EF7252E008AED77 /* ToastView.swift in Sources */,
 				731DA8802EF881FB00290006 /* ProfileVM.swift in Sources */,
 				736D561D2EFF304500C6F077 /* BottomSheetCart.swift in Sources */,
@@ -1347,6 +1402,8 @@
 				73491E352EFA995700E3E469 /* MaskedInputType.swift in Sources */,
 				73D09DCB2EF7252E008AED77 /* CollectionView+Extension.swift in Sources */,
 				73D09DCC2EF7252E008AED77 /* Toast.swift in Sources */,
+				736D56452F0303DA00C6F077 /* NewsTVCell.swift in Sources */,
+				736D56402F02FF6C00C6F077 /* NewsCV.swift in Sources */,
 				731DA8712EF87E0300290006 /* TabbarView.swift in Sources */,
 				736D55962EFAFAE700C6F077 /* VerifyBuilder.swift in Sources */,
 				731DA8952EF8879700290006 /* DeepLinkOption.swift in Sources */,
@@ -1388,6 +1445,7 @@
 				739BCEDC2EE882B1004D492C /* ProductListVC.swift in Sources */,
 				739BCEE52EE8C141004D492C /* MyListBuilder.swift in Sources */,
 				737C17B42ED8848D00F020D7 /* MainApi.swift in Sources */,
+				736D564A2F03070000C6F077 /* ProfileRepository.swift in Sources */,
 				737C17BE2ED88B1F00F020D7 /* RealHTTP+Extension.swift in Sources */,
 				737C17BA2ED887D100F020D7 /* MainRepository.swift in Sources */,
 				731DA8532EF87A4500290006 /* PanModalPresentable+UIViewController.swift in Sources */,
@@ -1440,6 +1498,7 @@
 				731DA8482EF879E900290006 /* UIViewController+PanModalPresenter.swift in Sources */,
 				736D56202F0129D300C6F077 /* CollectionHeaderView1.swift in Sources */,
 				73D09DDA2EF7256B008AED77 /* Assets.swift in Sources */,
+				736D563C2F02FF5D00C6F077 /* NewsBuilder.swift in Sources */,
 				737C180E2EDA244C00F020D7 /* Environmrnt.swift in Sources */,
 				73491E162EF9BE6E00E3E469 /* AuthCV.swift in Sources */,
 				736D558C2EFACA9D00C6F077 /* CustomTabbar.swift in Sources */,
@@ -1448,6 +1507,7 @@
 				73491E1F2EFA98A800E3E469 /* EmailValidator.swift in Sources */,
 				731DA83B2EF8796A00290006 /* PanModalPresentationController.swift in Sources */,
 				739BCED62EE88293004D492C /* ProductListBuilder.swift in Sources */,
+				736D56422F02FF7200C6F077 /* NewsVC.swift in Sources */,
 				732265DC2ECF453700C5319F /* MainVM.swift in Sources */,
 				737C17DE2ED9FE1A00F020D7 /* Services.swift in Sources */,
 				731DA8772EF87E7800290006 /* ProfileFactory.swift in Sources */,

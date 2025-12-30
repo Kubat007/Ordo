@@ -79,13 +79,10 @@ public enum Asset {
     public static let white = ColorAsset(name: "Colors/white")
   }
   public enum Images {
-//    public enum HotButton {
-//      public static let mainCreditIc = ImageAsset(name: "Images/HotButton/main_credit_ic")
-//      public static let mainPaymentIc = ImageAsset(name: "Images/HotButton/main_payment_ic")
-//      public static let mainScannerIc = ImageAsset(name: "Images/HotButton/main_scanner_ic")
-//      public static let mainServiceIc = ImageAsset(name: "Images/HotButton/main_service_ic")
-//      public static let mainTransferIc = ImageAsset(name: "Images/HotButton/main_transfer_ic")
-//    }
+    public enum Disclosure {
+      public static let disclosure_left = ImageAsset(name: "Images/Disclosure/disclosure_left")
+      public static let disclosure_right = ImageAsset(name: "Images/Disclosure/disclosure_right")
+    }
 //    public enum Intro {
 //      public static let onboarding1 = ImageAsset(name: "Images/Intro/onboarding_1")
 //      public static let onboarding2 = ImageAsset(name: "Images/Intro/onboarding_2")

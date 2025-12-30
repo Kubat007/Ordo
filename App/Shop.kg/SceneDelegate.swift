@@ -12,75 +12,54 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     private var apiServices: Services!
     private var appCoordinator: AppCoordinator!
-    
-    // Performance tracking
-    private var sceneConnectTime: CFAbsoluteTime = 0
-    private var windowSetupTime: CFAbsoluteTime = 0
-    private var servicesSetupTime: CFAbsoluteTime = 0
 
-        func scene(_ scene: UIScene,
-                   willConnectTo session: UISceneSession,
-                   options connectionOptions: UIScene.ConnectionOptions) {
-            sceneConnectTime = CFAbsoluteTimeGetCurrent()
-            print("🚀 [PERFORMANCE] Scene willConnect started")
-            
+        func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
             guard let windowScene = (scene as? UIWindowScene) else { return }
             
             let startWindow = CFAbsoluteTimeGetCurrent()
             setupWindow(with: windowScene)
-            windowSetupTime = CFAbsoluteTimeGetCurrent() - startWindow
-            print("⏱️ [PERFORMANCE] Window setup: \(String(format: "%.3f", windowSetupTime))s")
             
-            // Register fonts asynchronously to speed up launch
             let fontStart = CFAbsoluteTimeGetCurrent()
             DispatchQueue.global(qos: .userInitiated).async {
                 FontFamily.registerAllCustomFonts()
-                let fontTime = CFAbsoluteTimeGetCurrent() - fontStart
-                print("🔤 [PERFORMANCE] Fonts registered: \(String(format: "%.3f", fontTime))s (async)")
             }
             
-            // Setup services and start coordinator on main thread after window is ready
             DispatchQueue.main.async { [weak self] in
-                let servicesStart = CFAbsoluteTimeGetCurrent()
-                self?.setupServices()
-                self?.servicesSetupTime = CFAbsoluteTimeGetCurrent() - servicesStart
-                print("⚙️ [PERFORMANCE] Services setup: \(String(format: "%.3f", self?.servicesSetupTime ?? 0))s")
-                
-                let coordinatorStart = CFAbsoluteTimeGetCurrent()
-                self?.startAppCoordinator()
-                let coordinatorTime = CFAbsoluteTimeGetCurrent() - coordinatorStart
-                print("🎯 [PERFORMANCE] Coordinator started: \(String(format: "%.3f", coordinatorTime))s")
-                
-                let totalTime = CFAbsoluteTimeGetCurrent() - (self?.sceneConnectTime ?? 0)
-                print("✅ [PERFORMANCE] Total app launch: \(String(format: "%.3f", totalTime))s")
+                self?.setupServicesAsync()
             }
         }
         
-    private func setupServices() {
-        // Use lazy initialization for better performance
-        let client = makeClient()
-        
-        // Initialize repositories on-demand
-        let mainRepository = MainRemoteRepository(client: client)
-        let authRepository = AuthRemoteRepository(client: client)
-        let cartRepository = CartRemoteRepository(client: client)
-        
-        apiServices = ApiServicesImpl(
-            repository: (
-                auth: authRepository,
-                main: mainRepository,
-                cart: cartRepository
-            ),
-            client: client,
-            appSettingsManager: AppSettingsManager()
-        )
+    private func setupServicesAsync() {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let client = self?.makeClient() else { return }
+            
+            let mainRepository = MainRemoteRepository(client: client)
+            let authRepository = AuthRemoteRepository(client: client)
+            let cartRepository = CartRemoteRepository(client: client)
+            let profileRepository = ProfileRemoteRepository(client: client)
+            
+            let apiServices = ApiServicesImpl(
+                repository: (
+                    auth: authRepository,
+                    main: mainRepository,
+                    cart: cartRepository,
+                    profile: profileRepository
+                ),
+                client: client,
+                appSettingsManager: AppSettingsManager()
+            )
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.apiServices = apiServices
+                self?.startAppCoordinator()
+            }
+        }
     }
         
         private func setupWindow(with windowScene: UIWindowScene) {
             window = UIWindow(windowScene: windowScene)
             window?.backgroundColor = .systemBackground
             
-            // Show loading indicator while app initializes
             let loadingVC = UIViewController()
             loadingVC.view.backgroundColor = .systemBackground
             
@@ -154,14 +133,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 .init(name: "OS", value: OS),
                 .init(name: "Version", value: systemVersion),
                 .init(name: "Source", value: deviceName),
-                .init(name: "Model", value: deviceModel),  // Now using fast String lookup
+                .init(name: "Model", value: deviceModel),  // Fast string lookup
                 .init(name: "Brand", value: deviceBrand)
             )
             client.headers.set(.authorization, "Token \(token)")
         
             // Add validators if needed
             let responseLogValidator = ResponseLogValidator()
-//            client.validators.append(responseLogValidator)
+            client.validators.append(responseLogValidator)
             
             return client
         }

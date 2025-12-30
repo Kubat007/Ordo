@@ -4,7 +4,7 @@ protocol Services {
     typealias Repos = (
                        auth: AuthRepository,
                        main: MainRepository,
-//                       profile: ProfileRepository,
+                       profile: ProfileRepository,
 //                       campaign: CampaignRepository,
                        cart: CartRepository
 //                       gov: GovRemoteRepository,

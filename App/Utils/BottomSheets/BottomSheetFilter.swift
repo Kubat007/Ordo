@@ -15,14 +15,14 @@ final class FilterBottomSheetCV: UIView {
     private lazy var priceLabel = makeLabel("Цена", Typography.semibold14.font)
     lazy var fromField = makeTextField("Цена, от")
     lazy var toField = makeTextField("Цена, до")
-    lazy var currencyButton = makeButton(text: "KGS", textColor: .blue, color: UIColor(white: 0.95, alpha: 1), radius: 8)
+    lazy var currencyButton = makeButton(text: "KGS", textColor: .blue, color: UIColor(white: 0.95, alpha: 1), radius: 8, font: Typography.semibold14.font)
 
     private lazy var sortLabel = makeLabel("Сортировать", Typography.semibold14.font)
     lazy var dateAscButton = makeToggleButton("По дате: возрастание")
     lazy var dateDescButton = makeToggleButton("По дате: убывание")
     lazy var expensiveButton = makeToggleButton("Дороже")
     lazy var cheapButton = makeToggleButton("Дешевле")
-    lazy var showButton = makeButton(text: "Показать", textColor: .white, color: Asset.Colors.b0B0B0.color, radius: 12)
+    lazy var showButton = makeButton(text: "Показать", textColor: .white, color: Asset.Colors.b0B0B0.color, radius: 12, font: Typography.semibold14.font)
     private var state = FilterState()
 
     override init(frame: CGRect) {
@@ -79,11 +79,18 @@ private extension FilterBottomSheetCV {
     }
 
     func updateButton(_ button: UIButton, selected: Bool) {
-        button.backgroundColor = selected ? Asset.Colors._4Ab3Ff.color.withAlphaComponent(0.5) : .clear
-        button.layer.cornerRadius = 8
-        button.setTitleColor(selected ? Asset.Colors.white.color : Asset.Colors.b0B0B0.color,for: .normal)
-        button.tintColor = Asset.Colors._4Ab3Ff.color
-        button.semanticContentAttribute = .forceRightToLeft
+        if selected {
+            button.backgroundColor = Asset.Colors._75D38F.color
+            button.setTitleColor(Asset.Colors.white.color, for: .selected)
+            button.tintColor = Asset.Colors._75D38F.color
+            button.layer.borderWidth = 0
+        } else {
+            button.backgroundColor = Asset.Colors.d1D3D9.color
+            button.setTitleColor(Asset.Colors._494949.color, for: .normal)
+            button.layer.borderWidth = 1
+            button.layer.borderColor = UIColor(white: 0.8, alpha: 1).cgColor
+        }
+        button.layer.cornerRadius = 12
     }
 }
 
@@ -99,7 +106,7 @@ private extension FilterBottomSheetCV {
     func makeArrowButton(_ title: String) -> UIButton {
         let b = UIButton(type: .system)
         b.setTitle(title, for: .normal)
-        b.setTitleColor(.black, for: .normal)
+        b.setTitleColor(.white, for: .normal)
         b.contentHorizontalAlignment = .left
         b.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         b.semanticContentAttribute = .forceRightToLeft
@@ -124,19 +131,27 @@ private extension FilterBottomSheetCV {
         return f
     }
     
-    func makeButton(text: String, textColor: UIColor, color: UIColor, radius: CGFloat) -> UIButton {
+    func makeButton(text: String, textColor: UIColor, color: UIColor, radius: CGFloat, font: UIFont) -> UIButton {
         let b = UIButton()
         b.setTitle(text, for: .normal)
         b.layer.cornerRadius = radius
         b.backgroundColor = color
         b.setTitleColor(textColor, for: .normal)
+        b.titleLabel?.font = font
         return b
     }
 
     func makeToggleButton(_ title: String) -> UIButton {
-        let b = UIButton(type: .system)
+        let b = UIButton()
         b.setTitle(title, for: .normal)
+        b.titleLabel?.font = Typography.medium14.font
         b.contentHorizontalAlignment = .left
+        b.contentEdgeInsets = UIEdgeInsets(top: 14, left: 16, bottom: 14, right: 16)
+        b.layer.cornerRadius = 12
+        b.backgroundColor = UIColor(white: 0.95, alpha: 1)
+//        b.setTitleColor(.black, for: .normal)
+        b.layer.borderWidth = 1
+        b.layer.borderColor = UIColor(white: 0.8, alpha: 1).cgColor
         return b
     }
 }

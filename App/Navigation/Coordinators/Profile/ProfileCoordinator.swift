@@ -25,6 +25,7 @@ final class ProfileCoordinator: BaseCoordinator, ProfileCoordinatorResult {
     private func showMain() {
         let vc = ProfileBuilder(services: services).build()
         vc.viewModel.onAuthAction = showAuthVC
+        vc.viewModel.onNewsAction = showNews
         router.setRootModule(vc, hideBar: true)
     }
     
@@ -46,5 +47,11 @@ final class ProfileCoordinator: BaseCoordinator, ProfileCoordinatorResult {
     private func showProfileVC() {
         let vc = factory.makeProfileVC()
         router.push(vc)
+    }
+    
+    func showNews() {
+        let vc = factory.makeNewsVC()
+        vc.viewModel.onBackAction = router.popModule
+        router.push(vc, hideBottomBar: true)
     }
 }

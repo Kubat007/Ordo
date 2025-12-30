@@ -9,21 +9,12 @@ let systemVersion = UIDevice.current.systemVersion
 let deviceName = UIDevice.current.model
 let deviceBrand = "Apple"
 
-// Use simple model name instead of slow uname() syscall
 let deviceModel: String = {
     #if targetEnvironment(simulator)
     return "Simulator"
     #else
-    // For real devices, use screen size as approximation (much faster)
-    let height = UIScreen.main.nativeBounds.height
-    switch height {
-    case 2436: return "iPhoneX"
-    case 2688: return "iPhoneXSMax"
-    case 1792: return "iPhoneXR"
-    case 2532: return "iPhone12Pro"
-    case 2778: return "iPhone12ProMax"
-    default: return "iPhone"
-    }
+    // On real devices, get actual model (this is fast on device, slow on simulator)
+    return UIDevice().type.rawValue
     #endif
 }()
 
