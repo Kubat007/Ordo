@@ -18,6 +18,7 @@ final class ProfileCell: UITableViewCell {
         setSubviews()
         setConstraints()
         backgroundColor = .clear
+        selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {
@@ -74,8 +75,8 @@ extension ProfileCell {
         arrowImageView.anchor(
             .centerY(contentView.centerYAnchor),
             .trailing(contentView.trailingAnchor, constant: 16),
-            .width(20),
-            .height(20)
+            .width(12),
+            .height(16)
         )
     }
 }

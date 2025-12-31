@@ -18,4 +18,16 @@ final class ProfileRemoteRepository: ProfileRepository {
     func getNews() async throws -> BaseArrayModel<ProfileModel.Response.NewsModeL> {
         try await client.fetch(ProfileApi.GetNews())
     }
+    
+    func getNewsDetail(newsId: Int) async throws -> ProfileModel.Response.NewsDetailModel {
+        try await client.fetch(ProfileApi.GetNewsDetail(newsId: newsId))
+    }
+    
+    func getFAQ() async throws -> BaseArrayModel<ProfileModel.Response.FAQModel> {
+        try await client.fetch(ProfileApi.GetFAQ())
+    }
+    
+    func getFAQDetail(faqId: Int) async throws -> ProfileModel.Response.FAQModel {
+        try await client.fetch(ProfileApi.GetFAQDetail(faqId: faqId))
+    }
 }

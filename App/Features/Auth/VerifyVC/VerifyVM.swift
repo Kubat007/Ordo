@@ -25,7 +25,9 @@ final class VerifyVM: BaseVM {
             do {
                 let initialize = try await self.services?.repository.auth.verifyPhoneNumber(with: phoneNumber ?? "", code: code)
                 if let token = initialize?.message {
-                    AuthManager.shared.saveToken("Token \(token)")
+                    let fullToken = "Token \(token)"
+                    AuthManager.shared.saveToken(fullToken)
+                    services?.updateAuthToken(fullToken)
                     delegate?.successLogin(token: token)
                 }
             } catch {

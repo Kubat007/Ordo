@@ -1,16 +1,16 @@
 //
-//  NewsTVCell.swift
+//  FAQTVCell.swift
 //  ShopKg
 //
-//  Created by Kubat Muktarbek on 30/12/25.
+//  Created by Kubat Muktarbek on 31/12/25.
 //
 
 import UIKit
 
-final class NewsTVCell: UITableViewCell {
-    static let identifier = "NewsTVCell"
-    private let dateLabel = UILabel()
+final class FAQTVCell: UITableViewCell {
+    static let identifier = "FAQTVCell"
     private let titleLabel = UILabel()
+    private let arrowImageView = UIImageView()
     private let separator = UIView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -26,36 +26,33 @@ final class NewsTVCell: UITableViewCell {
 
     private func setupUI() {
         selectionStyle = .none
-
-        dateLabel.font = Typography.regular12.font
-        dateLabel.textColor = .lightGray
-
         titleLabel.font = Typography.semibold16.font
         titleLabel.textColor = .black
         titleLabel.numberOfLines = 0
-
+        arrowImageView.image = UIImage(systemName: "chevron.right")
+        arrowImageView.tintColor = .lightGray
         separator.backgroundColor = UIColor(white: 0.9, alpha: 1)
-
-        contentView.addSubview(dateLabel)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(arrowImageView)
         contentView.addSubview(separator)
     }
 
-    func configure(with model: ProfileModel.Response.NewsModeL) {
-        dateLabel.text = model.date
-        titleLabel.text = model.title
+    func configure(model: ProfileModel.Response.FAQModel) {
+        titleLabel.text = model.question
     }
 
     private func setupConstraints() {
-        dateLabel.anchor(
+        titleLabel.anchor(
             .top(contentView.topAnchor, constant: 16),
-            .leading(contentView.leadingAnchor, constant: 16)
+            .leading(contentView.leadingAnchor, constant: 16),
+            .trailing(arrowImageView.leadingAnchor, constant: 12)
         )
 
-        titleLabel.anchor(
-            .top(dateLabel.bottomAnchor, constant: 8),
-            .leading(contentView.leadingAnchor, constant: 16),
-            .trailing(contentView.trailingAnchor, constant: 16)
+        arrowImageView.anchor(
+            .centerY(titleLabel.centerYAnchor),
+            .trailing(contentView.trailingAnchor, constant: 16),
+            .width(12),
+            .height(16)
         )
 
         separator.anchor(

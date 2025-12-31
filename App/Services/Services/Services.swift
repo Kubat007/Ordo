@@ -20,4 +20,6 @@ protocol Services {
 //    var elcardManager: ElcardManager { get set }
 //    var initializeManager: Initializable { get set }
 //    var analyticsManager: AnalyticsManager { get set }
+    
+    func updateAuthToken(_ token: String)
 }

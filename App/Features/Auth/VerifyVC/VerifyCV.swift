@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 public final class VerifyCV: UIView {
     private lazy var titleLabel = makeLabel(text: "Введите смс код", textColor: Asset.Colors.black.color, font: Typography.semibold32.font)
     private lazy var subtitleLabel = makeLabel(text: "На ваш номер выслан код\nдля активации вашего аккаунта", textColor: .gray, font: Typography.regular14.font)

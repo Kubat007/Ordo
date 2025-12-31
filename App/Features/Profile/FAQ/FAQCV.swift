@@ -1,16 +1,16 @@
 //
-//  NewsCV.swift
+//  FAQCV.swift
 //  ShopKg
 //
-//  Created by Kubat Muktarbek on 30/12/25.
+//  Created by Kubat Muktarbek on 31/12/25.
 //
 
 import UIKit
 
-public final class NewsCV: UIView {
+public final class FAQCV: UIView {
     lazy var tableView = makeTableView()
     lazy var backButton = makeButton()
-    
+
     var viewsLeadingTrailing: CGFloat = 16.adaptToScreenSize
     var backButtonWidthHeight: CGFloat = 40.adaptToScreenSize
 
@@ -25,24 +25,25 @@ public final class NewsCV: UIView {
     }
 }
 
-extension NewsCV: BaseCV {
+extension FAQCV: BaseCV {
     public func setSubviews() {
         addSubview(backButton)
         addSubview(tableView)
     }
 }
 
-extension NewsCV {
+extension FAQCV {
+
     private func makeTableView() -> UITableView {
         let table = UITableView(frame: .zero, style: .plain)
         table.separatorStyle = .none
         table.showsVerticalScrollIndicator = false
-        table.register(NewsTVCell.self, forCellReuseIdentifier: NewsTVCell.identifier)
+        table.register(FAQTVCell.self, forCellReuseIdentifier: FAQTVCell.identifier)
         table.backgroundColor = Asset.Colors.white.color
         return table
     }
-    
-    func makeButton() -> UIButton {
+
+    private func makeButton() -> UIButton {
         let button = UIButton()
         return button
     }
@@ -54,9 +55,9 @@ extension NewsCV {
             .height(backButtonWidthHeight),
             .width(backButtonWidthHeight)
         )
-        
+
         tableView.anchor(
-            .top(backButton.safeAreaLayoutGuide.bottomAnchor),
+            .top(backButton.bottomAnchor, constant: 8),
             .leading(leadingAnchor),
             .trailing(trailingAnchor),
             .bottom(bottomAnchor)

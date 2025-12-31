@@ -53,14 +53,15 @@ extension ProfileVC: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
         case 0: ()
         case 1: ()
-        case 4: viewModel.onNewsAction?()
+        case 3: viewModel.onNewsAction?()
+        case 4: viewModel.onFAQAction?()
         default: ()
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
-        case 1...2: return 68
+        case 0...2: return 68
         default: return 52
         }
     }

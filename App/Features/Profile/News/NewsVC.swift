@@ -13,15 +13,22 @@ final class NewsVC: BaseVC<NewsCV, NewsVM> {
         super.viewDidLoad()
         viewModel.delegate = self
         setupTableView()
-
         title = "Новости"
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = Asset.Colors.f7F7Fe.color
         viewModel.getNews()
     }
 
     private func setupTableView() {
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
+        
+        contentView.backButton.addTarget(self, action: #selector(onBackAction), for: .touchUpInside)
+        contentView.backButton.setImage(Asset.Images.navBackButton.image.withRenderingMode(.alwaysTemplate), for: .normal)
+        contentView.backButton.tintColor = Asset.Colors.black.color
+    }
+    
+    @objc func onBackAction() {
+        viewModel.onBackAction?()
     }
 }
 
@@ -38,6 +45,7 @@ extension NewsVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.onNewsDetailAction?(viewModel.newsModel[indexPath.row].id ?? 0)
     }
 }
 

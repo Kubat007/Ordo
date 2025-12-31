@@ -49,6 +49,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 appSettingsManager: AppSettingsManager()
             )
             
+            if let savedToken = AuthManager.shared.getToken() {
+                apiServices.updateAuthToken(savedToken)
+            }
+            
             DispatchQueue.main.async { [weak self] in
                 self?.apiServices = apiServices
                 self?.startAppCoordinator()
@@ -124,23 +128,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let baseURL = URL(string: "http://167.99.133.138")!
             let client = HTTPClient(baseURL: baseURL)
             
-            // Optimize: Build headers once
             let deviceId = deviceID ?? ""
-            let token = AuthManager.shared.getToken() ?? ""
             
             client.headers = HTTPHeaders(arrayLiteral:
                 .init(name: "DeviceId", value: deviceId),
                 .init(name: "OS", value: OS),
                 .init(name: "Version", value: systemVersion),
                 .init(name: "Source", value: deviceName),
-                .init(name: "Model", value: deviceModel),  // Fast string lookup
+                .init(name: "Model", value: deviceModel),
                 .init(name: "Brand", value: deviceBrand)
             )
-            client.headers.set(.authorization, "Token \(token)")
         
-            // Add validators if needed
             let responseLogValidator = ResponseLogValidator()
-            client.validators.append(responseLogValidator)
+//            client.validators.append(responseLogValidator)
             
             return client
         }

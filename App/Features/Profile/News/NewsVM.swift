@@ -12,7 +12,7 @@ protocol NewsVMDelegate: AnyObject {
 
 final class NewsVM: BaseVM {
     var services: Services!
-    var onAuthAction: (() -> Void)?
+    var onNewsDetailAction: ((_ newsId: Int) -> Void)?
     var onBackAction: DefaultNavigationCallback?
     weak var delegate: NewsVMDelegate?
     var newsModel: [ProfileModel.Response.NewsModeL] = []

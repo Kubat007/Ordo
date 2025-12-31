@@ -19,6 +19,7 @@ final class ProfileVM: BaseVM {
     var favoriteList: [MainModels.Response.Banner] = []
     var appearanceSectionCell = [SettingsSectionCellData]()
     var onNewsAction: (() -> Void)?
+    var onFAQAction: (() -> Void)?
     
     func setupAppearanceCell() {
         self.appearanceSectionCell = [

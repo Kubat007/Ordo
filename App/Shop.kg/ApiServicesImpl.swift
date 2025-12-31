@@ -14,4 +14,8 @@ final class ApiServicesImpl: Services {
         self.client = client
         self.appSettingsManager = appSettingsManager
     }
+    
+    func updateAuthToken(_ token: String) {
+        client.headers.set(.authorization, token)
+    }
 }

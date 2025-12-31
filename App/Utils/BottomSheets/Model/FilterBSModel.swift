@@ -44,3 +44,9 @@ enum Currency: String, CaseIterable {
     case usd = "USD"
     case eur = "EUR"
 }
+
+struct BottomSheetFAQModel {
+    let title: String
+    let text: String
+}
+
