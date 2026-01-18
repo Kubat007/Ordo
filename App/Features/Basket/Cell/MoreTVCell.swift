@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MoreTVCellDelegate: AnyObject {
+    func deleteButtonTappet(model: CartModel.Response.Items)
+}
+
 final class MoreTVCell: UITableViewCell {
     static let identifier = "MoreCell"
     
@@ -20,6 +24,8 @@ final class MoreTVCell: UITableViewCell {
     private lazy var countLabel = makeCountLabel()
     
     private lazy var deleteButton = makeDeleteButton()
+    weak var delegate: MoreTVCellDelegate?
+    var model: CartModel.Response.Items?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -39,10 +45,12 @@ final class MoreTVCell: UITableViewCell {
         
         if let items = model.items, itemIndex < items.count {
             let item = items[itemIndex]
+            self.model = item
             titleLabel.text = item.product_title
             priceLabel.text = "\(item.product_price ?? 0)"
             productImageView.kf.setImage(with: URL(string: item.product_image ?? ""))
         }
+        countLabel.textColor = .black
     }
 }
 
@@ -56,6 +64,11 @@ extension MoreTVCell {
         containerView.addSubview(countLabel)
         containerView.addSubview(plusButton)
         containerView.addSubview(deleteButton)
+    }
+    
+    @objc func deleteButtonAction() {
+        guard let model = self.model else { return }
+        delegate?.deleteButtonTappet(model: model)
     }
 }
 
@@ -111,6 +124,7 @@ extension MoreTVCell {
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 12
         button.titleLabel?.font = Typography.semibold14.font
+        button.addTarget(self, action: #selector(deleteButtonAction), for: .touchUpInside)
         return button
     }
 }

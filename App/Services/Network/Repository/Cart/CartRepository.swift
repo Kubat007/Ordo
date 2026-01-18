@@ -7,4 +7,5 @@
 
 protocol CartRepository {
     func getCart() async throws -> CartModel.Response.GetCartModel
+    func deleteCart(id: Int) async throws -> CartModel.Response.GetCartModel
 }

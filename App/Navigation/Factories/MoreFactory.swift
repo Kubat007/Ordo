@@ -7,6 +7,7 @@
 
 protocol MoreFactory {
     func makeMainVC() -> MoreVC
+    func makeOrderVC() -> OrderVC
 }
 
 final class MoreFactoryImpl: MoreFactory {
@@ -14,6 +15,10 @@ final class MoreFactoryImpl: MoreFactory {
     
     func makeMainVC() -> MoreVC {
         return MoreBuilder(services: services).build()
+    }
+    
+    func makeOrderVC() -> OrderVC {
+        return OrderBuilder(services: services).build()
     }
     
     init(services: Services) {

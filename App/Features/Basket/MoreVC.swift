@@ -14,21 +14,27 @@ final class MoreVC: BaseVC<MoreCV, MoreVM> {
         viewModel.delegate = self
         title = "Корзина"
         setupTable()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
         viewModel.getCart()
+        contentView.checkoutView.isHidden = viewModel.cartModel?.items?.isEmpty ?? true
     }
     
     private func setupTable() {
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
+        contentView.checkoutButton.addTarget(self, action: #selector(checkoutButtonAction), for: .touchUpInside)
+    }
+    
+    @objc func checkoutButtonAction() {
+        viewModel.onOrderAction?()
     }
 }
 
 extension MoreVC: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.cartModel?.items?.count ?? 0
     }
@@ -38,6 +44,7 @@ extension MoreVC: UITableViewDataSource, UITableViewDelegate {
         if let model = viewModel.cartModel {
             cell.setup(model: model, itemIndex: indexPath.row)
         }
+        cell.delegate = self
         return cell
     }
     
@@ -47,7 +54,14 @@ extension MoreVC: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension MoreVC: MoreVMDelegate {
+    func successdeleteCart() {
+        toast(with: "Удален нахуй", messageType: .success)
+        contentView.checkoutView.isHidden = viewModel.cartModel?.items?.isEmpty ?? true
+        contentView.tableView.reloadData()
+    }
+    
     func successCart() {
+        contentView.checkoutView.isHidden = viewModel.cartModel?.items?.isEmpty ?? true
         contentView.tableView.reloadData()
     }
     
@@ -56,3 +70,24 @@ extension MoreVC: MoreVMDelegate {
     }
 }
 
+extension MoreVC: MoreTVCellDelegate {
+    func deleteButtonTappet(model: CartModel.Response.Items) {
+        let popup = DeletePopUp()
+        popup.modalPresentationStyle = .overFullScreen
+        popup.configure(
+            DeletePopUpModel(
+                title: "Удалить товар с корзины?",
+                productName: model.product_title ?? "",
+                price: "\(model.product_price ?? 0)",
+                image: model.product_image
+            )
+        )
+        popup.onDelete = {
+            self.viewModel.deleteCart(id: model.id ?? 0)
+            self.dismiss(animated: true)
+        }
+        popup.onCancel = { }
+        present(popup, animated: false)
+
+    }
+}

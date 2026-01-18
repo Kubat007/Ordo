@@ -30,3 +30,10 @@ enum ProfileModel {
         }
     }
 }
+
+struct OrderCellModel {
+    let title: String
+    let subtitle: String?
+    let image: UIImage?
+    let showArrow: Bool
+}

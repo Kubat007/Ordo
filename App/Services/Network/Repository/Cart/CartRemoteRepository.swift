@@ -18,4 +18,8 @@ final class CartRemoteRepository: CartRepository {
     func getCart() async throws -> CartModel.Response.GetCartModel {
         try await client.fetch(CartApi.GetCart())
     }
+    
+    func deleteCart(id: Int) async throws -> CartModel.Response.GetCartModel {
+        try await client.fetch(CartApi.DeleteCart(id: id))
+    }
 }

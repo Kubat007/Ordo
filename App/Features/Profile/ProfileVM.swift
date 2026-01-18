@@ -31,5 +31,4 @@ final class ProfileVM: BaseVM {
             SettingsSectionCellData(title: "Приложение".localized, desc: "", image: Asset.Images.Disclosure.disclosure_right.image)
         ]
     }
-    
 }

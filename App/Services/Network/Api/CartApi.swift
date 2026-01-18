@@ -19,4 +19,17 @@ enum CartApi {
             }
         }
     }
+    
+    struct DeleteCart: Codable, APIResourceConvertible {
+        typealias Result = CartModel.Response.GetCartModel
+        let id: Int?
+        
+        func request() -> HTTPRequest {
+            HTTPRequest {
+                $0.path = "/cart/item/\(id ?? 0)/"
+                $0.method = .delete
+                $0.maxRetries = 1
+            }
+        }
+    }
 }

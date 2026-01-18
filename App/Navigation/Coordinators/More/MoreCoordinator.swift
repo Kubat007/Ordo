@@ -24,6 +24,13 @@ final class MoreCoordinator: BaseCoordinator, MoreCoordinatorResult {
     
     private func showMain() {
         let vc = MoreBuilder(services: services).build()
+        vc.viewModel.onOrderAction = showOrder
         router.setRootModule(vc, hideBar: true)
+    }
+    
+    private func showOrder() {
+        let vc = OrderBuilder(services: services).build()
+        vc.viewModel.onBackAction = router.popModule
+        router.push(vc, hideBottomBar: true)
     }
 }

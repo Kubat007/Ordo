@@ -50,3 +50,10 @@ struct BottomSheetFAQModel {
     let text: String
 }
 
+struct DeletePopUpModel {
+    let title: String
+    let productName: String
+    let price: String
+    let image: String?
+}
+

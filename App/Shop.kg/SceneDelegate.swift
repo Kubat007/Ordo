@@ -12,23 +12,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     private var apiServices: Services!
     private var appCoordinator: AppCoordinator!
-
-        func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-            guard let windowScene = (scene as? UIWindowScene) else { return }
-            
-            let startWindow = CFAbsoluteTimeGetCurrent()
-            setupWindow(with: windowScene)
-            
-            let fontStart = CFAbsoluteTimeGetCurrent()
-            DispatchQueue.global(qos: .userInitiated).async {
-                FontFamily.registerAllCustomFonts()
-            }
-            
-            DispatchQueue.main.async { [weak self] in
-                self?.setupServicesAsync()
-            }
+    
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        setupWindow(with: windowScene)
+        DispatchQueue.global(qos: .userInitiated).async {
+            FontFamily.registerAllCustomFonts()
         }
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.setupServicesAsync()
+        }
+    }
+    
     private func setupServicesAsync() {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let client = self?.makeClient() else { return }
@@ -38,8 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let cartRepository = CartRemoteRepository(client: client)
             let profileRepository = ProfileRemoteRepository(client: client)
             
-            let apiServices = ApiServicesImpl(
-                repository: (
+            let apiServices = ApiServicesImpl(repository: (
                     auth: authRepository,
                     main: mainRepository,
                     cart: cartRepository,
@@ -140,7 +134,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             )
         
             let responseLogValidator = ResponseLogValidator()
-//            client.validators.append(responseLogValidator)
+            client.validators.append(responseLogValidator)
             
             return client
         }

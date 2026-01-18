@@ -8,10 +8,9 @@
 import UIKit
 
 public final class MoreCV: UIView {
-    
     lazy var tableView = makeTableView()
     lazy var checkoutView = makeCheckoutView()
-    private lazy var checkoutLabel = makeCheckoutLabel()
+    lazy var checkoutButton = makeButton()
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,12 +27,11 @@ extension MoreCV: BaseCV {
     public func setSubviews() {
         addSubview(tableView)
         addSubview(checkoutView)
-        checkoutView.addSubview(checkoutLabel)
+        checkoutView.addSubview(checkoutButton)
     }
 }
 
 extension MoreCV {
-    
     private func makeTableView() -> UITableView {
         let table = UITableView(frame: .zero, style: .plain)
         table.backgroundColor = .clear
@@ -47,23 +45,23 @@ extension MoreCV {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.45, green: 0.72, blue: 0.35, alpha: 1)
         view.layer.cornerRadius = 16
+        view.isHidden = true
         return view
     }
     
-    private func makeCheckoutLabel() -> UILabel {
-        let label = UILabel()
-        label.text = "К оформлению\n4 шт. | 1 520.0 KGS"
-        label.textColor = .white
-        label.font = Typography.semibold16.font
-        label.numberOfLines = 2
-        label.textAlignment = .center
-        return label
+    private func makeButton() -> UIButton {
+        let b = UIButton()
+        b.setTitle("К оформлению\n4 шт. | 1 520.0 KGS", for: .normal)
+        b.titleLabel?.font = Typography.semibold16.font
+        b.titleLabel?.numberOfLines = 2
+        b.titleLabel?.textAlignment = .center
+        b.setTitleColor(.white, for: .normal)
+        return b
     }
 }
 
 extension MoreCV {
     public func setConstraints() {
-        
         tableView.fillSuperview()
         
         checkoutView.anchor(
@@ -73,7 +71,7 @@ extension MoreCV {
             .height(64)
         )
         
-        checkoutLabel.centerInSuperview()
+        checkoutButton.centerInSuperview()
     }
 }
 
