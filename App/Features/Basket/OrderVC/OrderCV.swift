@@ -8,9 +8,12 @@
 import UIKit
 
 public final class OrderCV: UIView {
-
+    lazy var navigationBar = makeNavigationBar()
     lazy var tableView = makeTableView()
     lazy var orderButton = makeButton()
+    
+    var viewsLeadingTrailing: CGFloat = 16.adaptToScreenSize
+    var backButtonWidthHeight: CGFloat = 40.adaptToScreenSize
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +27,7 @@ public final class OrderCV: UIView {
 
 extension OrderCV: BaseCV {
     public func setSubviews() {
+        addSubview(navigationBar)
         addSubview(tableView)
         addSubview(orderButton)
     }
@@ -31,7 +35,6 @@ extension OrderCV: BaseCV {
 
 
 extension OrderCV {
-
     func updateTotal(_ total: Int) {
         orderButton.setTitle("Заказать     \(total) c", for: .normal)
     }
@@ -40,6 +43,7 @@ extension OrderCV {
         let t = UITableView(frame: .zero, style: .plain)
         t.separatorStyle = .none
         t.register(OrderTVCell.self, forCellReuseIdentifier: OrderTVCell.identifier)
+        t.register(CargoTVCell.self, forCellReuseIdentifier: CargoTVCell.identifier)
         t.register(TitleSectionHeaderView.self, forHeaderFooterViewReuseIdentifier:
                             TitleSectionHeaderView.reuseIdentifier)
         t.contentInset = .init(top: 16, left: 0, bottom: 100, right: 0)
@@ -56,12 +60,35 @@ extension OrderCV {
         b.setTitle("Заказать", for: .normal)
         return b
     }
+    
+    func makeBackButton() -> UIButton {
+        let button = UIButton()
+        return button
+    }
+    
+    func makeNavigationBar() -> CustomNavigationBar {
+        let navbar = CustomNavigationBar(style: .small)
+        navbar.backgroundColor = Asset.Colors.white.color
+        navbar.leftButton.setImage(Asset.Images.navBackButton.image, for: .normal)
+        return navbar
+    }
 }
 
 
 extension OrderCV {
     public func setConstraints() {
-        tableView.fillSuperview()
+        navigationBar.anchor(
+            .top(safeAreaLayoutGuide.topAnchor),
+            .leading(leadingAnchor),
+            .trailing(trailingAnchor)
+        )
+        
+        tableView.anchor(
+            .leading(leadingAnchor),
+            .trailing(trailingAnchor),
+            .top(navigationBar.bottomAnchor),
+            .bottom(safeAreaLayoutGuide.bottomAnchor)
+        )
 
         orderButton.anchor(
             .leading(leadingAnchor, constant: 16),

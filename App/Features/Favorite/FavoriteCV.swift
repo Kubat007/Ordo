@@ -1,6 +1,7 @@
 import UIKit
 
 public final class FavoriteCV: UIView {
+    lazy var navigationBar = makeNavigationBar()
     lazy var collectionView = makeCollectionView()
     
     override public init(frame: CGRect) {
@@ -17,12 +18,19 @@ public final class FavoriteCV: UIView {
 // MARK: - Setup UI
 extension FavoriteCV: BaseCV {
     public func setSubviews() {
+        addSubview(navigationBar)
         addSubview(collectionView)
     }
     
     public func setConstraints() {
+        navigationBar.anchor(
+            .top(safeAreaLayoutGuide.topAnchor),
+            .leading(leadingAnchor),
+            .trailing(trailingAnchor)
+        )
+        
         collectionView.anchor(
-            .top(topAnchor, constant: 16),
+            .top(navigationBar.bottomAnchor),
             .leading(leadingAnchor),
             .trailing(trailingAnchor),
             .bottom(bottomAnchor)
@@ -32,11 +40,18 @@ extension FavoriteCV: BaseCV {
 
 // MARK: - UI Components Factory
 private extension FavoriteCV {
+    func makeNavigationBar() -> CustomNavigationBar {
+        let navbar = CustomNavigationBar(style: .small)
+        navbar.backgroundColor = Asset.Colors.white.color
+        navbar.backgroundView.backgroundColor = Asset.Colors.white.color
+        return navbar
+    }
+    
     func makeCollectionView() -> UICollectionView {
         let layout = createLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(FavoriteCVCell.self, forCellWithReuseIdentifier: "FavoriteCVCell")
-        collectionView.backgroundColor = UIColor.clear
+        collectionView.backgroundColor = UIColor(white: 0.96, alpha: 1)
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }

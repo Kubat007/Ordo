@@ -4,7 +4,7 @@ final class FavoriteVC: BaseVC<FavoriteCV, FavoriteVM> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Избранное"
+        contentView.navigationBar.titleLabel.text = "Избранное"
         viewModel.delegate = self
         setupContent()
         setupCollectionView()

@@ -142,6 +142,7 @@ extension CustomNavigationBar {
         let label = UILabel()
         label.textAlignment = .center
         label.font = Typography.bold16.font
+        label.textColor = .black
         return label
     }
     

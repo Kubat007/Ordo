@@ -9,16 +9,15 @@ import Foundation
 import UIKit
 
 public final class TitleSectionHeaderView: UITableViewHeaderFooterView {
-    lazy var mainView = makeView()
+    private lazy var stackView = UIStackView()
     lazy var icon = makeNameImage()
     lazy var titleLabel = makeTitleLabel()
-    
-    private let viewsLeadingTrailing: CGFloat = 16 * Constants.ScreenSizeConstant
     
     override public init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         setSubviews()
         setConstraints()
+        backgroundColor = Asset.Colors.f7F7Fe.color
     }
     
     required init?(coder: NSCoder) {
@@ -26,66 +25,58 @@ public final class TitleSectionHeaderView: UITableViewHeaderFooterView {
     }
     
     func setupWith(icon: UIImage?, title: String) {
-        self.icon.image = icon
+        stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        if let icon = icon {
+            self.icon.image = icon
+            stackView.addArrangedSubview(self.icon)
+            self.icon.anchor(.width(20), .height(20))
+        }
+        stackView.addArrangedSubview(titleLabel)
         titleLabel.text = title
+        let spacer = UIView()
+        stackView.addArrangedSubview(spacer)
     }
     
     func setupFilterHeader(title: String) {
         titleLabel.text = title
-        mainView.backgroundColor = Asset.Colors.f7F7Fe.color
-    }
-}
-
-extension TitleSectionHeaderView: BaseCV {
-    public func setSubviews() {
-        addSubview(mainView)
-        mainView.addSubview(icon)
-        mainView.addSubview(titleLabel)
-    }
-    
-    func setProperties() {
         backgroundColor = Asset.Colors.f7F7Fe.color
     }
 }
 
-private extension TitleSectionHeaderView {
-    func makeView() -> UIView {
-        let view = UIView()
-        view.backgroundColor = Asset.Colors.white.color
-        return view
+extension TitleSectionHeaderView {
+    private func setSubviews() {
+        contentView.backgroundColor = Asset.Colors.f7F7Fe.color
+        
+        stackView.axis = .horizontal
+        stackView.spacing = 8
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        
+        contentView.addSubview(stackView)
     }
     
-    func makeTitleLabel() -> UILabel {
+    private func setConstraints() {
+        stackView.anchor(
+            .leading(contentView.leadingAnchor, constant: 16),
+            .trailing(contentView.trailingAnchor, constant: 16),
+            .top(contentView.topAnchor),
+            .bottom(contentView.bottomAnchor)
+        )
+    }
+    
+    private func makeTitleLabel() -> UILabel {
         let label = UILabel()
         label.font = Typography.medium14.font
         label.textColor = Asset.Colors.black.color
         label.numberOfLines = 0
         label.textAlignment = .left
+        label.setContentHuggingPriority(.defaultLow, for: .horizontal)
         return label
     }
     
-    func makeNameImage() -> UIImageView {
+    private func makeNameImage() -> UIImageView {
         let view = UIImageView()
+        view.setContentHuggingPriority(.required, for: .horizontal)
         return view
-    }
-}
-
-extension TitleSectionHeaderView {
-    public func setConstraints() {
-        mainView.fillSuperview()
-        
-        icon.anchor(
-            .leading(mainView.leadingAnchor, constant: viewsLeadingTrailing),
-            .centerY(mainView.centerYAnchor),
-            .width(20),
-            .height(20)
-        )
-        
-        titleLabel.anchor(
-            .leading(icon.trailingAnchor, constant: 8),
-            .trailing(mainView.trailingAnchor, constant: viewsLeadingTrailing),
-            .top(mainView.topAnchor),
-            .bottom(mainView.bottomAnchor)
-        )
     }
 }

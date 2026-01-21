@@ -12,6 +12,8 @@ protocol ProfileFactory {
     func makeNewsVC() -> NewsVC
     func makeNewsDetailVC() -> NewsDetailVC
     func makeFAQVC() -> FAQVC
+    func makeHistoryVC() -> HistoryVC
+    func makeHistoryDetailVC() -> HistoryDetailVC
 }
 
 final class ProfileFactoryImpl: ProfileFactory {
@@ -39,6 +41,14 @@ final class ProfileFactoryImpl: ProfileFactory {
     
     func makeFAQVC() -> FAQVC {
         return FAQBuilder(services: services).build()
+    }
+    
+    func makeHistoryVC() -> HistoryVC {
+        return HistoryBuilder(services: services).build()
+    }
+    
+    func makeHistoryDetailVC() -> HistoryDetailVC {
+        return HistoryDetailBuilder(services: services).build()
     }
     
     init(services: Services) {

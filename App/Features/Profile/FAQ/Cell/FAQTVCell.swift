@@ -29,7 +29,7 @@ final class FAQTVCell: UITableViewCell {
         titleLabel.font = Typography.semibold16.font
         titleLabel.textColor = .black
         titleLabel.numberOfLines = 0
-        arrowImageView.image = UIImage(systemName: "chevron.right")
+        arrowImageView.image = Asset.Images.Disclosure.disclosure_right.image
         arrowImageView.tintColor = .lightGray
         separator.backgroundColor = UIColor(white: 0.9, alpha: 1)
         contentView.addSubview(titleLabel)
@@ -51,8 +51,8 @@ final class FAQTVCell: UITableViewCell {
         arrowImageView.anchor(
             .centerY(titleLabel.centerYAnchor),
             .trailing(contentView.trailingAnchor, constant: 16),
-            .width(12),
-            .height(16)
+            .width(20),
+            .height(20)
         )
 
         separator.anchor(

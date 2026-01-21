@@ -11,8 +11,6 @@ final class BannersCell: UICollectionViewCell {
         super.init(frame: frame)
         setSubviews()
         setConstraints()
-        backgroundColor = .purple
-        container.backgroundColor = Asset.Colors._75D38F.color
     }
     
     required init?(coder: NSCoder) {
@@ -35,6 +33,12 @@ extension BannersCell: BaseCV {
         addSubview(container)
         container.addSubview(logoView)
         container.addSubview(titleLabel)
+        
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOpacity = 0.2
+        container.layer.shadowOffset = CGSize(width: 0, height: 4)
+        container.layer.shadowRadius = 8
+        container.layer.masksToBounds = false
     }
 }
 
@@ -55,8 +59,6 @@ private extension BannersCell {
     func makeLabel() -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
-//        label.textColor = Asset.Colors.black.color
-//        label.font = Typography.regular14.font
         return label
     }
 }

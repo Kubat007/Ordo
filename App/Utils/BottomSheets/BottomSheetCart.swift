@@ -78,13 +78,13 @@ extension BottomSheetCart {
         guard currentCount > 1 else { return }
         currentCount -= 1
         countLabel.text = "\(currentCount)"
-        onAddToCart?(currentCount)
+//        onAddToCart?(currentCount)
     }
     
     func plusButtonTapped() {
         currentCount += 1
         countLabel.text = "\(currentCount)"
-        onAddToCart?(currentCount)
+//        onAddToCart?(currentCount)
     }
     
     func addButtonTapped() {

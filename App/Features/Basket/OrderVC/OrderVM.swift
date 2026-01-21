@@ -4,24 +4,34 @@
 //
 //  Created by Kubat Muktarbek on 2/1/26.
 //
+import UIKit
 
-enum PaymentType {
-    case cash
-    case visa
+enum PaymentType: String {
+    case cash = "cash"
+    case visa = "card"
 }
 
-enum DeliveryType {
-    case courier
-    case pickup
+enum DeliveryType: String {
+    case courier = "courier"
+    case pickup = "pickup"
 }
 
 enum LoaderServiceType {
     case yes
     case no
+    
+    var boolValue: Bool {
+        switch self {
+        case .yes: return true
+        case .no: return false
+        }
+    }
 }
 
 protocol OrderVMDelegate: AnyObject {
     func reload()
+    func successOrder()
+    func failure(with error: String)
 }
 
 final class OrderVM: BaseVM {
@@ -38,6 +48,27 @@ final class OrderVM: BaseVM {
     var loaderPrice: Int = 1300
     
     var total: Int { productsSum + deliveryPrice + (selectedLoader == .yes ? loaderPrice : 0) }
+    var selectedDate: Date?
+    var enteredAddress: String = ""
+    
+    var toMain: (()-> Void)?
+    var orderModel: CartModel.Response.Order?
+    
+    @MainActor
+    func sendOrder(model: CartModel.Request.OrderRequest) {
+        loadingIndicatorState = .loading
+        Task {
+            do {
+                let initialize = try await self.services?.repository.cart.order(model: model)
+                self.loadingIndicatorState = .loaded
+                self.orderModel = initialize
+                delegate?.successOrder()
+            } catch {
+                self.loadingIndicatorState = .loaded
+                delegate?.failure(with: error.localizedDescription)
+            }
+        }
+    }
     
     struct Section {
         let items: [OrderCellModel]
@@ -68,7 +99,10 @@ final class OrderVM: BaseVM {
                     title: "Бишкек, Аламедин-1, №70, кв 39",
                     subtitle: nil,
                     image: nil,
-                    showArrow: true)]
+                    showArrow: false,
+                    showTextField: true,
+                    showTitleLabel: false,
+                    showDateButton: false)]
             ),
             
             Section(
@@ -77,7 +111,10 @@ final class OrderVM: BaseVM {
                         title: "В ближайшее время",
                         subtitle: nil,
                         image: nil,
-                        showArrow: true)]
+                        showArrow: true,
+                        showTextField: false,
+                        showTitleLabel: false,
+                        showDateButton: true)]
             ),
             
             Section(
@@ -86,12 +123,18 @@ final class OrderVM: BaseVM {
                         title: "Наличными",
                         subtitle: nil,
                         image: Asset.Images.Order.icCash.image,
-                        showArrow: false),
+                        showArrow: false,
+                        showTextField: false,
+                        showTitleLabel: true,
+                        showDateButton: false),
                     OrderCellModel(
                         title: "Картой Visa",
                         subtitle: nil,
                         image: Asset.Images.Order.icVisa.image,
-                        showArrow: false)]
+                        showArrow: false,
+                        showTextField: false,
+                        showTitleLabel: true,
+                        showDateButton: false)]
             ),
             
             Section(
@@ -100,36 +143,19 @@ final class OrderVM: BaseVM {
                         title: "Курьером",
                         subtitle: nil,
                         image: Asset.Images.Order.icDelivery.image,
-                        showArrow: false),
+                        showArrow: false,
+                        showTextField: false,
+                        showTitleLabel: true,
+                        showDateButton: false),
                     OrderCellModel(
                         title: "Самовывоз",
                         subtitle: nil,
                         image: Asset.Images.Order.icPickup.image,
-                        showArrow: false)]
-            ),
-            
-            Section(
-                items: [
-                    OrderCellModel(
-                        title: "Да",
-                        subtitle: nil,
-                        image: nil,
-                        showArrow: false),
-                    OrderCellModel(
-                        title: "Нет",
-                        subtitle: "sdkn evkndfv efkvnef verfvfdvsd dsfvdfv rfv dfvdfv dfvdfvv dsfvsdfvrtv sdfbfdv sdfvbsdrt fdvdf",
-                        image: nil,
-                        showArrow: false)]
+                        showArrow: false,
+                        showTextField: false,
+                        showTitleLabel: true,
+                        showDateButton: false)]
             )
         ]
     }
 }
-
-
-//icAddress
-//icCalendar
-//icCash
-//icDelivery
-//icLoader
-//icPickup
-//icVisa

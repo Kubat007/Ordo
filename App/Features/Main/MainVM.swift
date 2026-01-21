@@ -1,3 +1,4 @@
+import Foundation
 protocol MainVMDelegate: AnyObject {
     func successBanners()
     func successProductes()

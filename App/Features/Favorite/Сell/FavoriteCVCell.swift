@@ -47,6 +47,12 @@ extension FavoriteCVCell: BaseCV {
         container.addSubview(titleLabel)
         container.addSubview(basketButton)
         container.addSubview(favButton)
+        
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOpacity = 0.2
+        container.layer.shadowOffset = CGSize(width: 0, height: 4)
+        container.layer.shadowRadius = 8
+        container.layer.masksToBounds = false
     }
     
     @objc func basketButtonTapped() {

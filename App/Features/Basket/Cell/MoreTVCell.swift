@@ -9,6 +9,8 @@ import UIKit
 
 protocol MoreTVCellDelegate: AnyObject {
     func deleteButtonTappet(model: CartModel.Response.Items)
+    func plusButtonTappet(cell: MoreTVCell)
+    func minusButtonTappet(cell: MoreTVCell)
 }
 
 final class MoreTVCell: UITableViewCell {
@@ -27,10 +29,17 @@ final class MoreTVCell: UITableViewCell {
     weak var delegate: MoreTVCellDelegate?
     var model: CartModel.Response.Items?
     
+    private var currentCount: Int = 0 {
+        didSet {
+            countLabel.text = "\(currentCount)"
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setSubviews()
         setConstraints()
+        setupButtons()
         backgroundColor = .clear
         selectionStyle = .none
     }
@@ -40,15 +49,15 @@ final class MoreTVCell: UITableViewCell {
     }
     
     func setup(model: CartModel.Response.GetCartModel, itemIndex: Int) {
-//        let isActive = model.is_active ?? false
-//        let totalPrice = model.total_price ?? 0
-        
         if let items = model.items, itemIndex < items.count {
             let item = items[itemIndex]
             self.model = item
             titleLabel.text = item.product_title
             priceLabel.text = "\(item.product_price ?? 0)"
             productImageView.kf.setImage(with: URL(string: item.product_image ?? ""))
+            
+            countLabel.text = "\(item.quantity ?? 0)"
+            currentCount = item.quantity ?? 0
         }
         countLabel.textColor = .black
     }
@@ -66,9 +75,33 @@ extension MoreTVCell {
         containerView.addSubview(deleteButton)
     }
     
-    @objc func deleteButtonAction() {
+    func setupButtons() {
+        plusButton.addTarget(self, action: #selector(plusButtonAction), for: .touchUpInside)
+        minusButton.addTarget(self, action: #selector(minusButtonAction), for: .touchUpInside)
+        
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOpacity = 0.2
+        containerView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        containerView.layer.shadowRadius = 8
+        containerView.layer.masksToBounds = false
+    }
+}
+
+@objc extension MoreTVCell {
+    func deleteButtonAction() {
         guard let model = self.model else { return }
         delegate?.deleteButtonTappet(model: model)
+    }
+    
+    func plusButtonAction() {
+        currentCount += 1
+        delegate?.plusButtonTappet(cell: self)
+    }
+    
+    func minusButtonAction() {
+        guard currentCount > 1 else { return }
+        currentCount -= 1
+        delegate?.minusButtonTappet(cell: self)
     }
 }
 
@@ -111,7 +144,6 @@ extension MoreTVCell {
     
     private func makeCountLabel() -> UILabel {
         let label = UILabel()
-        label.text = "1"
         label.textAlignment = .center
         label.font = Typography.semibold14.font
         return label
@@ -131,7 +163,6 @@ extension MoreTVCell {
 
 extension MoreTVCell {
     private func setConstraints() {
-        
         containerView.anchor(
             .top(contentView.topAnchor, constant: 8),
             .leading(contentView.leadingAnchor, constant: 16),

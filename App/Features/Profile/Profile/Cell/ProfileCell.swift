@@ -50,7 +50,7 @@ extension ProfileCell {
     
     private func makeArrowImageView() -> UIImageView {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "chevron.right")
+        imageView.image = Asset.Images.Disclosure.disclosure_right.image
         imageView.tintColor = .lightGray
         return imageView
     }
@@ -75,8 +75,8 @@ extension ProfileCell {
         arrowImageView.anchor(
             .centerY(contentView.centerYAnchor),
             .trailing(contentView.trailingAnchor, constant: 16),
-            .width(12),
-            .height(16)
+            .width(20),
+            .height(20)
         )
     }
 }

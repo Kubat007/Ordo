@@ -36,4 +36,7 @@ struct OrderCellModel {
     let subtitle: String?
     let image: UIImage?
     let showArrow: Bool
+    let showTextField: Bool
+    let showTitleLabel: Bool
+    let showDateButton: Bool
 }

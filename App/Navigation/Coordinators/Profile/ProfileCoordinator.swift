@@ -27,6 +27,7 @@ final class ProfileCoordinator: BaseCoordinator, ProfileCoordinatorResult {
         vc.viewModel.onAuthAction = showAuthVC
         vc.viewModel.onNewsAction = showNews
         vc.viewModel.onFAQAction = showFAQ
+        vc.viewModel.onHistoryAction = showHistory
         router.setRootModule(vc, hideBar: true)
     }
     
@@ -66,6 +67,20 @@ final class ProfileCoordinator: BaseCoordinator, ProfileCoordinatorResult {
     
     func showFAQ() {
         let vc = factory.makeFAQVC()
+        vc.viewModel.onBackAction = router.popModule
+        router.push(vc, hideBottomBar: true)
+    }
+    
+    private func showHistory() {
+        let vc = factory.makeHistoryVC()
+        vc.viewModel.onBackAction = router.popModule
+        vc.viewModel.onHistoryDetailAction = showHistoryDetail
+        router.push(vc, hideBottomBar: true)
+    }
+    
+    private func showHistoryDetail(id: Int) {
+        let vc = factory.makeHistoryDetailVC()
+        vc.id = id
         vc.viewModel.onBackAction = router.popModule
         router.push(vc, hideBottomBar: true)
     }

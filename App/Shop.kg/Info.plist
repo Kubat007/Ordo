@@ -59,5 +59,10 @@
         <key>NSAllowsArbitraryLoads</key>
         <true/>
     </dict>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Для определения вашего местоположения и выбора адреса доставки</string>
+
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Для определения вашего местоположения и выбора адреса доставки</string>
 </dict>
 </plist>

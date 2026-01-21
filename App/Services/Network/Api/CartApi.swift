@@ -32,4 +32,43 @@ enum CartApi {
             }
         }
     }
+    
+    struct Order: Codable, APIResourceConvertible {
+        typealias Result = CartModel.Response.Order
+        let model: CartModel.Request.OrderRequest
+        
+        func request() -> HTTPRequest {
+            HTTPRequest {
+                $0.path = "/order/"
+                $0.method = .post
+                $0.maxRetries = 1
+                $0.body = .json(model)
+            }
+        }
+    }
+    
+    struct GetHistory: Codable, APIResourceConvertible {
+        typealias Result = BaseArrayModel<CartModel.Response.Order>
+        
+        func request() -> HTTPRequest {
+            HTTPRequest {
+                $0.path = "/order/"
+                $0.method = .get
+                $0.maxRetries = 1
+            }
+        }
+    }
+    
+    struct GetHistoryDetail: Codable, APIResourceConvertible {
+        typealias Result = CartModel.Response.Order
+        let id: Int?
+        
+        func request() -> HTTPRequest {
+            HTTPRequest {
+                $0.path = "/order/\(id ?? 0)/"
+                $0.method = .get
+                $0.maxRetries = 1
+            }
+        }
+    }
 }

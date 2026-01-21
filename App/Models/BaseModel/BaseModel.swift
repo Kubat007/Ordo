@@ -1,8 +1,13 @@
 import Foundation
 
 struct APIError: Decodable {
+    let detail: String?
     let message: String
     let code: Int?
+    
+    var errorMessage: String {
+        return detail ?? message
+    }
 }
 
 struct BaseModel<T: Decodable>: Decodable {
@@ -29,6 +34,11 @@ struct BaseIntModel: Decodable {
     let success: Bool?
     let data: Int?
     let message: String?
+    let detail: String?
+    
+    var errorMessage: String? {
+        return detail ?? message
+    }
 }
 
 struct BaseStringModel: Decodable {

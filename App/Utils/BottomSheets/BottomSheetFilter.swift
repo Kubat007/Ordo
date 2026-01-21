@@ -106,7 +106,7 @@ private extension FilterBottomSheetCV {
     func makeArrowButton(_ title: String) -> UIButton {
         let b = UIButton(type: .system)
         b.setTitle(title, for: .normal)
-        b.setTitleColor(.white, for: .normal)
+        b.setTitleColor(.black, for: .normal)
         b.contentHorizontalAlignment = .left
         b.setImage(UIImage(systemName: "chevron.right"), for: .normal)
         b.semanticContentAttribute = .forceRightToLeft

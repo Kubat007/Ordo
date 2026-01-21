@@ -97,6 +97,12 @@ extension ProductCell {
         favButton.addTarget(self, action: #selector(favButtonTapped), for: .touchUpInside)
         basketButton.addTarget(self, action: #selector(basketButtonTapped), for: .touchUpInside)
         basketButton.setImage(UIImage(named: "Images/basket_ic"), for: .normal)
+        
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOpacity = 0.4
+        container.layer.shadowOffset = CGSize(width: 0, height: 4)
+        container.layer.shadowRadius = 8
+        container.layer.masksToBounds = false
     }
 }
 
@@ -134,7 +140,12 @@ private extension ProductCell {
 
 extension ProductCell {
     public func setConstraints() {
-        container.fillSuperview()
+        container.anchor(
+            .top(safeAreaLayoutGuide.topAnchor),
+            .bottom(bottomAnchor),
+            .leading(leadingAnchor),
+            .trailing(trailingAnchor)
+        )
         
         logoView.anchor(
             .top(container.topAnchor),

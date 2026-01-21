@@ -12,7 +12,6 @@ final class OrderVC: BaseVC<OrderCV, OrderVM> {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        title = "Оформление заказа"
         setupTable()
         viewModel.setup()
     }
@@ -20,36 +19,67 @@ final class OrderVC: BaseVC<OrderCV, OrderVM> {
     private func setupTable() {
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
+        contentView.navigationBar.titleLabel.text = "Оформление заказа"
+        contentView.tableView.sectionHeaderTopPadding = 0
+        contentView.navigationBar.leftButton.addTarget(self, action: #selector(onBackAction), for: .touchUpInside)
         contentView.orderButton.addTarget(self, action: #selector(orderAction), for: .touchUpInside)
     }
     
     @objc private func orderAction() {
-            print("PAYMENT:", viewModel.selectedPayment)
-            print("DELIVERY:", viewModel.selectedDelivery)
-            print("LOADER:", viewModel.selectedLoader)
-        }
+        let model = CartModel.Request.OrderRequest(address: viewModel.enteredAddress,
+                                                    delivery_cost: 1500,
+                                                    delivery_date: viewModel.selectedDate?.toStringDateCalendar(),
+                                                   delivery_method: viewModel.selectedDelivery.rawValue,
+                                                   loader_cost: 400,
+                                                   loader_service: viewModel.selectedLoader.boolValue,
+                                                   payment_method: viewModel.selectedPayment.rawValue
+        )
+        viewModel.sendOrder(model: model)
+    }
+    
+    @objc func onBackAction() {
+        viewModel.onBackAction?()
+    }
 }
 
 extension OrderVC: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        viewModel.sections.count
-    }
+            viewModel.sections.count + 1
+        }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.sections[section].items.count
-    }
+            if section < viewModel.sections.count {
+                return viewModel.sections[section].items.count
+            } else {
+                return 2
+            }
+        }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: OrderTVCell.identifier, for: indexPath) as! OrderTVCell
-        let model = viewModel.sections[indexPath.section].items[indexPath.row]
-        cell.setup(model: model, section: indexPath.section, row: indexPath.row, vm: viewModel)
-        return cell
-    }
+            if indexPath.section < viewModel.sections.count {
+                let cell = tableView.dequeueReusableCell(withIdentifier: OrderTVCell.identifier, for: indexPath) as! OrderTVCell
+                let model = viewModel.sections[indexPath.section].items[indexPath.row]
+                cell.setup(model: model, section: indexPath.section, row: indexPath.row, vm: viewModel)
+                cell.delegate = self
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: CargoTVCell.identifier, for: indexPath) as! CargoTVCell
+                let title = indexPath.row == 0 ? "Да" : "Нет"
+                let model = OrderCellModel(title: title, subtitle: nil, image: nil, showArrow: false, showTextField: false, showTitleLabel: true, showDateButton: false)
+                cell.setup(model: model, row: indexPath.row, vm: viewModel)
+                return cell
+            }
+        }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as? OrderTVCell
-        cell?.onSelect?()
-    }
+            if indexPath.section < viewModel.sections.count {
+                let cell = tableView.cellForRow(at: indexPath) as? OrderTVCell
+                cell?.onSelect?()
+            } else {
+                let cell = tableView.cellForRow(at: indexPath) as? CargoTVCell
+                cell?.onSelect?()
+            }
+        }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
@@ -65,25 +95,51 @@ extension OrderVC: UITableViewDataSource, UITableViewDelegate {
         case 4: headerView.setupWith(icon: Asset.Images.Order.icLoader.image, title: "Услуги грузчика")
         default: ()
         }
-        headerView.mainView.backgroundColor = Asset.Colors.f7F7Fe.color
         return headerView
-        
-//        let label = UILabel()
-//        label.text = viewModel.sections[section].title
-//        label.font = Typography.semibold14.font
-//        label.textColor = .systemGray
-//        label.backgroundColor = .clear
-//        return label
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        44
+        36
     }
 }
 
+extension OrderVC {
+    
+}
+
 extension OrderVC: OrderVMDelegate {
+    func successOrder() {
+        viewModel.toMain?()
+        toast(with: "Заказ успешно оформлен", messageType: .success)
+        print("success to main")
+        
+    }
+    
+    func failure(with error: String) {
+        toast(with: error.localized, messageType: .error)
+    }
+    
     func reload() {
         contentView.updateTotal(viewModel.total)
         contentView.tableView.reloadData()
     }
 }
+
+extension OrderVC: OrderTVCellDelegate {
+    func didEnterAddress(_ address: String) {
+        viewModel.enteredAddress = address
+    }
+    
+    func didTapDateButton(cell: OrderTVCell) {
+        // Открываем календарь
+        let datePickerSheet = DatePickerSheet()
+        datePickerSheet.onDateSelected = { [weak self] date in
+            // Сохраняем выбранную дату в ViewModel
+            self?.viewModel.selectedDate = date
+            self?.contentView.tableView.reloadData()
+        }
+        datePickerSheet.modalPresentationStyle = .overFullScreen
+        present(datePickerSheet, animated: false)
+    }
+}
+
