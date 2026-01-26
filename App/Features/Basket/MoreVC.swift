@@ -135,7 +135,9 @@ extension MoreVC: MoreTVCellDelegate {
             self.viewModel.deleteCart(id: model.id ?? 0)
             self.dismiss(animated: true)
         }
-        popup.onCancel = { }
-        present(popup, animated: false)
+        popup.onCancel = { [weak self] in
+            guard let self else { return }
+            present(popup, animated: false)
+        }
     }
 }

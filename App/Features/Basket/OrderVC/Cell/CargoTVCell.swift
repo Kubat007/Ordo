@@ -44,7 +44,8 @@ final class CargoTVCell: UITableViewCell {
         } else {
             radio.isHighlighted = (vm.selectedLoader == .no)
         }
-        onSelect = {
+        onSelect = { [weak self] in
+            guard let self else { return }
             vm.selectLoader(row == 0 ? .yes : .no)
         }
         if row == 0 {

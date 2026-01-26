@@ -10,7 +10,11 @@ protocol MainVMDelegate: AnyObject {
 final class MainVM: BaseVM {
     var onProductTapped: ((MainModels.Response.Banner) -> Void)?
     var onSearchTapped: (() -> Void)?
+    var OnCategoryAction: ((_ model: [MainModels.Response.SubCategories], _ text: String) -> Void)?
+    var OnBannerAction: ((_ model: MainModels.Response.Banner) -> Void)?
+    
     var services: Services!
+    
     var bannerList: [MainModels.Response.Banner] = []
     var productList: [MainModels.Response.Products] = []
     var categoryList: [MainModels.Response.Category] = []

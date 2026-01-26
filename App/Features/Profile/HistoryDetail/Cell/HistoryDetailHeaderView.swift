@@ -22,9 +22,9 @@ final class HistoryDetailHeaderView: UIView {
     private lazy var productsSumTitleLabel = makeTitle("Сумма товара")
     private lazy var totalTitleLabel = makeBoldTitle("Итого")
 
-    private lazy var orderLabel = makeTitle("Kuba")
-    private lazy var addressLabel = makeTitle("Suka")
-    private lazy var dateLabel = makeBoldValue()
+    private lazy var orderLabel = makeValue()
+    private lazy var addressLabel = makeValue()
+    private lazy var dateLabel = makeValue()
     private lazy var statusLabel = makeValue()
     private lazy var paymentLabel = makeValue()
     private lazy var deliveryLabel = makeValue()
@@ -45,31 +45,18 @@ final class HistoryDetailHeaderView: UIView {
         fatalError()
     }
 
-    func setup(model: CartModel.Response.Order) {
-//        orderLabel.text = "#\(model.id ?? 0)"
-        orderLabel.text = "Kuba"
-//        addressLabel.text = model.address
-//        dateLabel.text = model.delivery_date
-//        statusLabel.text = model.status
-//        paymentLabel.text = model.payment_method
-//        deliveryLabel.text = model.delivery_method
-//        loaderLabel.text = model.loader_service == true ? "Да" : "Нет"
-//        deliverySumLabel.text = "\(model.delivery_cost ?? 0) KGS"
-//        loaderSumLabel.text = "\(model.loader_cost ?? 0) KGS"
-//        productsSumLabel.text = "\(model.total_amount ?? 0) KGS"
-//        totalLabel.text = "\(model.total_amount ?? 0) KGS"
-        
-        addressLabel.text = "defvdd"
-        dateLabel.text = "dcsdfvrgvb"
-        statusLabel.text = "c klkfdcec"
-        paymentLabel.text = "dcsdcdscsdc"
-        deliveryLabel.text = "sdcwpwed"
-        loaderLabel.text = "Нет"
-        deliverySumLabel.text = "KGS"
-        loaderSumLabel.text = "234345435 345 KGS"
-        productsSumLabel.text = "wcdweferwcKGS"
-        totalLabel.text = "wdecdfsvefdcKGS"
-
+    func configure(model: CartModel.Response.Order) {
+        orderLabel.text = "#\(model.id ?? 0)"
+        addressLabel.text = model.address
+        dateLabel.text = model.delivery_date
+        statusLabel.text = model.status
+        paymentLabel.text = model.payment_method
+        deliveryLabel.text = model.delivery_method
+        loaderLabel.text = model.loader_service == true ? "Да" : "Нет"
+        deliverySumLabel.text = "\(model.delivery_cost ?? 0) KGS"
+        loaderSumLabel.text = "\(model.loader_cost ?? 0) KGS"
+        productsSumLabel.text = "\(model.total_amount ?? 0) KGS"
+        totalLabel.text = "\(model.total_amount ?? 0) KGS"
         statusLabel.textColor = model.status == "placed"
         ? UIColor.systemOrange
         : UIColor.systemGreen

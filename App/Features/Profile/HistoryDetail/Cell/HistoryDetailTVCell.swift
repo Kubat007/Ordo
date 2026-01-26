@@ -73,7 +73,7 @@ private extension HistoryDetailTVCell {
     func setConstraints() {
 
         containerView.anchor(
-            .top(contentView.topAnchor, constant: 8),
+            .top(contentView.topAnchor),
             .leading(contentView.leadingAnchor, constant: 16),
             .trailing(contentView.trailingAnchor, constant: 16),
             .bottom(contentView.bottomAnchor, constant: 8)

@@ -24,7 +24,7 @@ final class BannersCell: UICollectionViewCell {
     
     func configure(with bannerList: MainModels.Response.Banner) {
 //        titleLabel.text = bannerList.title
-        logoView.kf.setImage(with: URL(string: bannerList.image))
+        logoView.kf.setImage(with: URL(string: bannerList.image ?? ""))
     }
 }
 

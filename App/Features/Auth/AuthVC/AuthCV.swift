@@ -139,7 +139,7 @@ extension AuthCV {
             .top(safeAreaLayoutGuide.topAnchor, constant: 80),
             .centerX(centerXAnchor),
             .width(120),
-            .height(120)
+            .height(120.adaptToScreenSize)
         )
         
         titleLabel.anchor(
@@ -157,7 +157,7 @@ extension AuthCV {
             .top(phoneLabel.bottomAnchor, constant: 8),
             .leading(leadingAnchor, constant: 32),
             .trailing(trailingAnchor, constant: 32),
-            .height(56)
+            .height(56.adaptToScreenSize)
         )
         
         phoneCodeLabel.anchor(
@@ -181,7 +181,7 @@ extension AuthCV {
             .leading(leadingAnchor, constant: 32),
             .top(phoneContainer.bottomAnchor, constant: 24),
             .width(24),
-            .height(24)
+            .height(24.adaptToScreenSize)
         )
         
         termsLabel.anchor(
@@ -194,7 +194,7 @@ extension AuthCV {
             .top(termsCheckbox.bottomAnchor, constant: 32),
             .leading(leadingAnchor, constant: 32),
             .trailing(trailingAnchor, constant: 32),
-            .height(56)
+            .height(56.adaptToScreenSize)
         )
     }
 }

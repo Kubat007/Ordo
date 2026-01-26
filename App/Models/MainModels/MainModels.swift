@@ -3,7 +3,7 @@ enum MainModels {
     enum Response {
         struct Banner: Codable {
             let id: Int
-            let image: String
+            let image: String?
             let slider_image: String
             let title: String
             let banner_type: String
@@ -33,8 +33,17 @@ enum MainModels {
             let id: Int?
             let name: String?
             let icon: String?
+            let subcategories: [SubCategories]?
             let count_of_category_product: Int?
             
+        }
+        
+        struct SubCategories: Codable {
+            let id: Int?
+            let name: String?
+            let icon: String?
+            let order: Int?
+            let product_count: Int?
         }
         
         struct SendFavorite: Codable {

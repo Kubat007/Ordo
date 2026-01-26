@@ -24,6 +24,23 @@ final class MainCoordinator: BaseCoordinator, MainCoordinatorResult {
     
     private func showMain() {
         let mainVC = MainBuilder(services: services).build()
+        mainVC.viewModel.OnCategoryAction = showSubCategory
+        mainVC.viewModel.OnBannerAction = showBanner
         router.setRootModule(mainVC, hideBar: true)
+    }
+    
+    func showSubCategory(model: [MainModels.Response.SubCategories], text: String) {
+        let vc = SubCategoryBuilder(services: services).build()
+        vc.viewModel.onBackAction = router.popModule
+        vc.text = text
+        vc.viewModel.model = model
+        router.push(vc, hideBottomBar: true)
+    }
+    
+    func showBanner(model: MainModels.Response.Banner) {
+        let vc = BannerBuilder(services: services).build()
+        vc.viewModel.onBackAction = router.popModule
+        vc.viewModel.model = model
+        router.push(vc, hideBottomBar: true)
     }
 }

@@ -62,6 +62,15 @@ extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0: viewModel.OnCategoryAction?(viewModel.categoryList[indexPath.row].subcategories ?? [], viewModel.categoryList[indexPath.row].name ?? "")
+        case 1: viewModel.OnBannerAction?(viewModel.bannerList[indexPath.row])
+        case 2: print()
+        default: print()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
             if kind == UICollectionView.elementKindSectionHeader && indexPath.section == 0 {
                 let header = contentView.mainCollection.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionHeaderView1.defaultReuseIdentifier, for: indexPath) as? CollectionHeaderView1
