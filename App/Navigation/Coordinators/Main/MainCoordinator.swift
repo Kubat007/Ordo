@@ -26,6 +26,7 @@ final class MainCoordinator: BaseCoordinator, MainCoordinatorResult {
         let mainVC = MainBuilder(services: services).build()
         mainVC.viewModel.OnCategoryAction = showSubCategory
         mainVC.viewModel.OnBannerAction = showBanner
+        mainVC.viewModel.OnProductAction = showMainDetail
         router.setRootModule(mainVC, hideBar: true)
     }
     
@@ -41,6 +42,13 @@ final class MainCoordinator: BaseCoordinator, MainCoordinatorResult {
         let vc = BannerBuilder(services: services).build()
         vc.viewModel.onBackAction = router.popModule
         vc.viewModel.model = model
+        router.push(vc, hideBottomBar: true)
+    }
+    
+    func showMainDetail(model: MainModels.Response.Products) {
+        let vc = MainDetailBuilder(services: services).build()
+        vc.viewModel.onBackAction = router.popModule
+        vc.viewModel.product = model
         router.push(vc, hideBottomBar: true)
     }
 }

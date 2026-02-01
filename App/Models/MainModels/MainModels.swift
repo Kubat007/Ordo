@@ -17,11 +17,28 @@ enum MainModels {
             let type: Int
             let title: String
             let text: String
-            let price: Double
+            let price: Double?
             let currency: Int
             let currency_name: String
             let currency_value: String
             let images_gallery : [Images_gallery]
+            let region: Int?
+            let region_name: String?
+            let city: Int?
+            let city_name: String?
+            let address: String?
+            let latitude: Int?
+            let longitude: Int?
+            let sold: Bool?
+            let is_favorite: Bool?
+            let favorite_id: Int?
+            let work_experience: String?
+            let work_time_from: String?
+            let work_time_to: String?
+            let is_work_now: Bool?
+            let telegram_account: String?
+            let stock: Int?
+            let subcategory: Int?
         }
         
         struct Images_gallery: Codable {

@@ -37,5 +37,9 @@ final class MainRemoteRepository: MainRepository {
     func addCart(model: MainModels.Request.AddCArt) async throws -> BaseIntModel {
         try await client.fetch(MainApi.AdddCart(model: model))
     }
+    
+    func getSimilarProduct(id: Int) async throws -> BaseArrayModel<MainModels.Response.Products> {
+        try await client.fetch(MainApi.GetSimilarProduct(id: id))
+    }
 }
 

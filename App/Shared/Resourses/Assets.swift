@@ -82,6 +82,7 @@ public enum Asset {
         public enum Disclosure {
             public static let disclosure_left = ImageAsset(name: "Images/Disclosure/disclosure_left")
             public static let disclosure_right = ImageAsset(name: "Images/Disclosure/disclosure_right")
+            public static let disclosure_down = ImageAsset(name: "Images/Disclosure/disclosure_down")
         }
         public enum Order {
             public static let icAddress = ImageAsset(name: "Images/Order/ic_address")

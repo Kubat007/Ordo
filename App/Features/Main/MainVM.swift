@@ -12,6 +12,7 @@ final class MainVM: BaseVM {
     var onSearchTapped: (() -> Void)?
     var OnCategoryAction: ((_ model: [MainModels.Response.SubCategories], _ text: String) -> Void)?
     var OnBannerAction: ((_ model: MainModels.Response.Banner) -> Void)?
+    var OnProductAction: ((_ model: MainModels.Response.Products) -> Void)?
     
     var services: Services!
     

@@ -111,6 +111,19 @@ enum MainApi {
             }
         }
     }
+    
+    struct GetSimilarProduct: Codable, APIResourceConvertible {
+        typealias Result = BaseArrayModel<MainModels.Response.Products>
+        let id: Int
+        
+        func request() -> HTTPRequest {
+            HTTPRequest {
+                $0.path = "/similar_products/\(id)/"
+                $0.method = .get
+                $0.maxRetries = 1
+            }
+        }
+    }
 }
 
 struct EmptyResponse: Codable {}

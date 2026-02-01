@@ -66,7 +66,7 @@ extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
         switch indexPath.section {
         case 0: viewModel.OnCategoryAction?(viewModel.categoryList[indexPath.row].subcategories ?? [], viewModel.categoryList[indexPath.row].name ?? "")
         case 1: viewModel.OnBannerAction?(viewModel.bannerList[indexPath.row])
-        case 2: print()
+        case 2: viewModel.OnProductAction?(viewModel.productList[indexPath.row])
         default: print()
         }
     }
