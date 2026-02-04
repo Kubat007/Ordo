@@ -137,7 +137,8 @@ extension MoreVC: MoreTVCellDelegate {
         }
         popup.onCancel = { [weak self] in
             guard let self else { return }
-            present(popup, animated: false)
+            self.dismiss(animated: true)
         }
+        self.present(popup, animated: false)
     }
 }

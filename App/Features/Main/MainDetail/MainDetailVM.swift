@@ -7,6 +7,7 @@
 
 protocol MainDetailVMDelegate: AnyObject {
     func successSimilarProduct()
+    func successBasket()
     func failure(with error: String)
 }
 
@@ -15,6 +16,8 @@ final class MainDetailVM: BaseVM {
     var onBackAction: DefaultNavigationCallback?
     var productList: [MainModels.Response.Products] = []
     var product: MainModels.Response.Products?
+    
+    var onTestCollectionView: (() -> Void)?
     
     weak var delegate: MainDetailVMDelegate?
     
@@ -29,6 +32,29 @@ final class MainDetailVM: BaseVM {
                 delegate?.successSimilarProduct()
             } catch {
                 loadingIndicatorState = .loaded
+                delegate?.failure(with: error.localizedDescription)
+            }
+        }
+    }
+    
+    @MainActor
+    func sendFavoriteProduct(productId: Int) {
+        Task {
+            do {
+                _ = try await self.services?.repository.main.sendfavoriteProduct(productId: productId)
+            } catch {
+                delegate?.failure(with: error.localizedDescription)
+            }
+        }
+    }
+    
+    @MainActor
+    func addCart(model: MainModels.Request.AddCArt) {
+        Task {
+            do {
+                _ = try await self.services?.repository.main.addCart(model: model)
+                delegate?.successBasket()
+            } catch {
                 delegate?.failure(with: error.localizedDescription)
             }
         }

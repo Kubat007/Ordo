@@ -22,6 +22,7 @@ final class MainDetailVC: BaseVC<MainDetailCV, MainDetailVM> {
         contentView.navigationBar.leftButton.addTarget(self, action: #selector(onBackAction), for: .touchUpInside)
         contentView.collectionView.dataSource = self
         contentView.collectionView.delegate = self
+        contentView.backgroundColor = Asset.Colors.f7F7Fe.color
     }
     
     @objc func onBackAction() {
@@ -49,15 +50,19 @@ extension MainDetailVC: UICollectionViewDataSource, UICollectionViewDelegate {
         } else {
             let cell: MainDetailCVCell = collectionView.dequeueReusableCell(for: indexPath)
             cell.configure(viewModel.productList[indexPath.row])
+            cell.delegate = self
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            guard indexPath.section == 0 else { return }
-            isDescriptionExpanded.toggle()
-            collectionView.performBatchUpdates {
-                collectionView.collectionViewLayout.invalidateLayout()
+            if indexPath.section == 0  {
+                isDescriptionExpanded.toggle()
+                collectionView.performBatchUpdates {
+                    collectionView.collectionViewLayout.invalidateLayout()
+                }
+            } else {
+                viewModel.onTestCollectionView?()
             }
         }
 }
@@ -80,7 +85,6 @@ extension MainDetailVC: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: 250)
         }
     }
-
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if section == 0 {
@@ -128,5 +132,39 @@ extension MainDetailVC: MainDetailVMDelegate {
     
     func failure(with error: String) {
         toast(with: error.localized, messageType: .error)
+    }
+    
+    func successBasket() {
+        toast(with: "Добавлено в корзину", messageType: .success)
+    }
+}
+
+extension MainDetailVC: MainDetailCVCellDelegate {
+    func favTapped(cell: MainDetailCVCell, productId: Int) {
+        let isFavorite = cell.favButton.tintColor == .red
+        let message = isFavorite ? "Добавлено в избранное" : "Удалено из избранного"
+        toast(with: message, messageType: isFavorite ? .success : .warning)
+        isFavorite ? viewModel.sendFavoriteProduct(productId: productId) : print("Запрос на удаление")
+    }
+    
+    func basketTapped(cell: MainDetailCVCell, model: MainModels.Response.Products?) {
+        let sheet = BottomSheetCart()
+        let bottomModel = BottomSheetCartModel(
+            title: model?.title ?? "",
+            price: "\(model?.price ?? 0)", currencyName: model?.currency_name ?? "",
+            image: model?.images_gallery.first?.image ?? "",
+            count: 1
+        )
+        sheet.configure(bottomModel)
+        sheet.onAddToCart = { [weak self] quantity in
+            guard let self = self else { return }
+            let cartModel = MainModels.Request.AddCArt(
+                product_id: model?.id,
+                quantity: quantity
+            )
+            self.viewModel.addCart(model: cartModel)
+        }
+        sheet.modalPresentationStyle = .overFullScreen
+        present(sheet, animated: false)
     }
 }
