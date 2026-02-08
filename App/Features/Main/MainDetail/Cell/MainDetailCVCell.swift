@@ -16,9 +16,9 @@ final class MainDetailCVCell: UICollectionViewCell {
     private let container = UIView()
     lazy var logoView = makeImageView()
     lazy var favButton = makeButton(color: .clear, radius: 0)
-    private lazy var priceLabel = makeLabel(font: Typography.bold16.font, background: .clear, color: .black)
+    private lazy var priceLabel = makeLabel(font: Typography.bold18.font, background: .clear, color: .black)
     private lazy var titleLabel = makeLabel(font: Typography.regular12.font, background: .clear, color: .black)
-    lazy var basketButton = makeButton(color: UIColor(red: 0.10, green: 0.35, blue: 0.85, alpha: 1.00), radius: 12.5)
+    lazy var basketButton = makeButton(color: UIColor(red: 0.10, green: 0.35, blue: 0.85, alpha: 1.00), radius: 16)
     
     var productId: Int = 0
     weak var delegate: MainDetailCVCellDelegate?
@@ -94,6 +94,7 @@ extension MainDetailCVCell {
         l.backgroundColor = background
         l.adjustsFontSizeToFitWidth = true
         l.textColor = color
+        l.font = font
         l.numberOfLines = 3
         return l
     }
@@ -154,8 +155,8 @@ extension MainDetailCVCell {
         basketButton.anchor(
             .top(logoView.bottomAnchor, constant: -16),
             .trailing(container.trailingAnchor, constant: 16),
-            .height(25),
-            .width(25)
+            .height(32),
+            .width(32)
         )
     }
 }

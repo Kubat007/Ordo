@@ -13,7 +13,7 @@ final class ProductCell: UICollectionViewCell {
     lazy var priceLabel = makeLabel(font: Typography.bold16.font)
     lazy var titleLabel = makeLabel(font: Typography.regular14.font)
     lazy var favButton = makeButton(color: .clear, radius: 0)
-    lazy var basketButton = makeButton(color: UIColor(red: 0.10, green: 0.35, blue: 0.85, alpha: 1.00), radius: 12.5)
+    lazy var basketButton = makeButton(color: UIColor(red: 0.10, green: 0.35, blue: 0.85, alpha: 1.00), radius: 14)
     
     var productId: Int = 0
     var model: MainModels.Response.Products?
@@ -176,8 +176,8 @@ extension ProductCell {
         basketButton.anchor(
             .top(logoView.bottomAnchor, constant: -16),
             .trailing(container.trailingAnchor, constant: 16),
-            .height(25),
-            .width(25)
+            .height(28),
+            .width(28)
         )
     }
 }
