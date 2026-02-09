@@ -47,7 +47,6 @@
 		731DA88D2EF8822A00290006 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DA88C2EF8822700290006 /* MoreVC.swift */; };
 		731DA8902EF886ED00290006 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DA88F2EF886E800290006 /* Presentable.swift */; };
 		731DA8922EF8875100290006 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DA8912EF8872100290006 /* Router.swift */; };
-		731DA8952EF8879700290006 /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DA8942EF8878800290006 /* DeepLinkOption.swift */; };
 		731DA8972EF94B1F00290006 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731DA8962EF94B1900290006 /* CustomNavigationBar.swift */; };
 		732265C42ECF3B1E00C5319F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732265C32ECF379400C5319F /* AppCoordinator.swift */; };
 		732265C52ECF3B2200C5319F /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732265C02ECF365500C5319F /* AppRouter.swift */; };
@@ -167,7 +166,6 @@
 		737C17DE2ED9FE1A00F020D7 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17DD2ED9FE0D00F020D7 /* Services.swift */; };
 		737C17E12ED9FFC700F020D7 /* AuthRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17E02ED9FFC000F020D7 /* AuthRemoteRepository.swift */; };
 		737C17E32ED9FFD000F020D7 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17E22ED9FFCA00F020D7 /* AuthRepository.swift */; };
-		737C17FF2EDA15C900F020D7 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C17FE2EDA15C700F020D7 /* AppModel.swift */; };
 		737C18022EDA178E00F020D7 /* AppSettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C18012EDA178900F020D7 /* AppSettingManager.swift */; };
 		737C18062EDA1A2400F020D7 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C18052EDA1A1E00F020D7 /* NetworkError.swift */; };
 		737C180E2EDA244C00F020D7 /* Environmrnt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737C180D2EDA244800F020D7 /* Environmrnt.swift */; };
@@ -309,7 +307,6 @@
 		731DA88C2EF8822700290006 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 		731DA88F2EF886E800290006 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		731DA8912EF8872100290006 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		731DA8942EF8878800290006 /* DeepLinkOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
 		731DA8962EF94B1900290006 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		732265C02ECF365500C5319F /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		732265C32ECF379400C5319F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -427,7 +424,6 @@
 		737C17DD2ED9FE0D00F020D7 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		737C17E02ED9FFC000F020D7 /* AuthRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRemoteRepository.swift; sourceTree = "<group>"; };
 		737C17E22ED9FFCA00F020D7 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
-		737C17FE2EDA15C700F020D7 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		737C18012EDA178900F020D7 /* AppSettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingManager.swift; sourceTree = "<group>"; };
 		737C18052EDA1A1E00F020D7 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		737C180D2EDA244800F020D7 /* Environmrnt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environmrnt.swift; sourceTree = "<group>"; };
@@ -726,7 +722,6 @@
 				736D56152EFF18EF00C6F077 /* CartModel.swift */,
 				736D558F2EFAF21C00C6F077 /* AuthModel.swift */,
 				7342EAC02ED06B800051095A /* MainModels.swift */,
-				731DA8942EF8878800290006 /* DeepLinkOption.swift */,
 			);
 			path = MainModels;
 			sourceTree = "<group>";
@@ -751,7 +746,6 @@
 			isa = PBXGroup;
 			children = (
 				731DA8932EF8877C00290006 /* MainModels */,
-				737C17FD2EDA15C200F020D7 /* AppModel */,
 				737C17AE2ED8839800F020D7 /* BaseModel */,
 			);
 			path = Models;
@@ -812,13 +806,6 @@
 				732265E22ECF78AA00C5319F /* TabbarVC.swift */,
 			);
 			path = Tabbar;
-			sourceTree = "<group>";
-		};
-		733E4EF12EFAABEB00E6AB94 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		734072D12F045DF70013B384 /* NewsDetail */ = {
@@ -1185,14 +1172,6 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
-		737C17FD2EDA15C200F020D7 /* AppModel */ = {
-			isa = PBXGroup;
-			children = (
-				737C17FE2EDA15C700F020D7 /* AppModel.swift */,
-			);
-			path = AppModel;
-			sourceTree = "<group>";
-		};
 		737C180C2EDA243B00F020D7 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -1300,7 +1279,6 @@
 				732265BF2ECF364F00C5319F /* App */,
 				73B00DB52ECF1441002288DB /* Shop.kgTests */,
 				73B00DBF2ECF1441002288DB /* Shop.kgUITests */,
-				733E4EF12EFAABEB00E6AB94 /* Frameworks */,
 				73B00D9D2ECF1440002288DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1673,7 +1651,6 @@
 				731DA8872EF8821700290006 /* MoreBuilder.swift in Sources */,
 				734073192F0485900013B384 /* BottomSheetFAQ.swift in Sources */,
 				736D55A82EFB31F800C6F077 /* ProfileHeaderView.swift in Sources */,
-				737C17FF2EDA15C900F020D7 /* AppModel.swift in Sources */,
 				731DA8462EF879DA00290006 /* PanModalPresenter.swift in Sources */,
 				73D09DB82EF7252E008AED77 /* UISearchBar + Extension.swift in Sources */,
 				734073432F1EC8460013B384 /* HistoryVM.swift in Sources */,
@@ -1733,7 +1710,6 @@
 				736D56402F02FF6C00C6F077 /* NewsCV.swift in Sources */,
 				731DA8712EF87E0300290006 /* TabbarView.swift in Sources */,
 				736D55962EFAFAE700C6F077 /* VerifyBuilder.swift in Sources */,
-				731DA8952EF8879700290006 /* DeepLinkOption.swift in Sources */,
 				73491E212EFA98BE00E3E469 /* FullnameValidator.swift in Sources */,
 				731DA85F2EF87C8800290006 /* ProfileCoordinator.swift in Sources */,
 				7340734E2F1F98DF0013B384 /* HistoryDetailBuilder.swift in Sources */,

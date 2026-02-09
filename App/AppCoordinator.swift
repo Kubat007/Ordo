@@ -12,7 +12,7 @@ final class AppCoordinator: BaseCoordinator {
         super.init()
     }
     
-    override func start(with option: DeepLinkOption? = nil) {
+    override func start() {
         showSplashScreen()
     }
     

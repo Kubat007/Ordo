@@ -9,6 +9,4 @@ import UIKit
 
 protocol Coordinator: AnyObject {
   func start()
-  func start(with option: DeepLinkOption?)
-//  func startWith(with service: MainModels.Response.PaymentModel?)
 }

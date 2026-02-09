@@ -19,7 +19,6 @@ class BaseVM {
             baseDelegate?.viewModel(self, didUpdateLoadingState: loadingIndicatorState)
         }
     }
-    var strings: Observable<AppModels.Response.Initialize> = Observable(AppModels.Response.Initialize())
 }
 
 extension BaseVM {

@@ -20,7 +20,6 @@ class BaseVC<ContentView: BaseCV, ViewModel: BaseVM>: UIViewController, ViewCont
         setSubviews()
         setConstraints()
         setTargets()
-        setLocalization(with: viewModel.strings.value)
     }
     
     required init?(coder: NSCoder) {
@@ -28,8 +27,6 @@ class BaseVC<ContentView: BaseCV, ViewModel: BaseVM>: UIViewController, ViewCont
     }
     
     func setTargets() {}
-    
-    func setLocalization(with strings: AppModels.Response.Initialize) {}
     
     func setSubviews() {
         view.addSubview(contentView)
@@ -95,15 +92,15 @@ extension BaseVC {
         case .success:
             backgroundColor = Asset.Colors.success.color
             iconImage = Asset.Images.toastSuccess.image
-            titleLabelText = "Success" //L10n.Toast.Success.title.localized(by: viewModel.config.value)
+            titleLabelText = "Success"
         case .error:
             backgroundColor = Asset.Colors.error.color
             iconImage = Asset.Images.toastError.image
-            titleLabelText = "Error" //L10n.Toast.Error.title.localized(by: viewModel.config.value)
+            titleLabelText = "Error"
         case .warning:
             backgroundColor = Asset.Colors.warning.color
             iconImage = Asset.Images.toastError.image
-            titleLabelText = "Warning" //L10n.Toast.Warning.title.localized(by: viewModel.config.value)
+            titleLabelText = "Warning"
         }
         toast.showToast(
             on: contentView,

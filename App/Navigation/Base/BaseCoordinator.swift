@@ -4,12 +4,8 @@ class BaseCoordinator: Coordinator {
     
     var childCoordinators: [Coordinator] = []
     
-    func start() {
-        start(with: nil)
-    }
-    
-    func start(with option: DeepLinkOption?) { }
-    
+    func start() {}
+        
     // add only unique object
     func addDependency(_ coordinator: Coordinator) {
         guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
