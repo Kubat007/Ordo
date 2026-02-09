@@ -79,6 +79,30 @@ final class MainDetailDescriptionCVCell: UICollectionViewCell {
             self.downImage.transform = isExpanded ? CGAffineTransform(rotationAngle: .pi) : .identity
         }
     }
+    
+    func setupSubCategory(_ model: MainModels.Response.Products, isExpanded: Bool) {
+        productLabel.text = "  Товар  "
+        productLabel.textColor = .white
+        priceLabel.text = "\(model.price ?? 0) \(model.currency_name)"
+        titleLabel.text = model.title
+        descriptionLabel.text = model.text
+        downImage.image = Asset.Images.Disclosure.disclosureDownColor.image
+        
+        if descriptionLabel.text == nil {
+            descriptionLabel.text = ""
+        }
+        if isExpanded {
+            descriptionLabel.numberOfLines = 0
+            showLabel.text = "Скрыть"
+        } else {
+            descriptionLabel.numberOfLines = 3
+            showLabel.text = "Показать все"
+        }
+        
+        UIView.animate(withDuration: 0.25) {
+            self.downImage.transform = isExpanded ? CGAffineTransform(rotationAngle: .pi) : .identity
+        }
+    }
 }
 
 extension MainDetailDescriptionCVCell {
@@ -99,7 +123,7 @@ extension MainDetailDescriptionCVCell {
         
         NSLayoutConstraint.activate([
             showLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            showLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            showLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             
             downImage.leadingAnchor.constraint(equalTo: showLabel.trailingAnchor, constant: 8),
             downImage.centerYAnchor.constraint(equalTo: showLabel.centerYAnchor),
@@ -108,19 +132,19 @@ extension MainDetailDescriptionCVCell {
             downImage.trailingAnchor.constraint(lessThanOrEqualTo: contentView.trailingAnchor, constant: -16),
             
             productLabel.topAnchor.constraint(equalTo: showLabel.bottomAnchor, constant: 12),
-            productLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            productLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             productLabel.heightAnchor.constraint(equalToConstant: 26),
             
             priceLabel.topAnchor.constraint(equalTo: productLabel.bottomAnchor, constant: 12),
-            priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
             titleLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 8),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])

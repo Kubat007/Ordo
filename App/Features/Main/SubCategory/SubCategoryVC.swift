@@ -38,4 +38,8 @@ extension SubCategoryVC: UICollectionViewDataSource, UICollectionViewDelegate {
         cell.configure(with: viewModel.model[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.onMainProductVC?(viewModel.model[indexPath.row].id ?? 0)
+    }
 }

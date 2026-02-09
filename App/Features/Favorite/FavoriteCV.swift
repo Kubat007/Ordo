@@ -42,8 +42,8 @@ extension FavoriteCV: BaseCV {
 private extension FavoriteCV {
     func makeNavigationBar() -> CustomNavigationBar {
         let navbar = CustomNavigationBar(style: .small)
-        navbar.backgroundColor = Asset.Colors.white.color
-        navbar.backgroundView.backgroundColor = Asset.Colors.white.color
+        navbar.backgroundColor = Asset.Colors.f7F7Fe.color
+        navbar.backgroundView.backgroundColor = Asset.Colors.f7F7Fe.color
         return navbar
     }
     

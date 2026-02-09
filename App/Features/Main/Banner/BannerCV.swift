@@ -60,7 +60,8 @@ extension BannerCV {
     func makeNavigationBar() -> CustomNavigationBar {
         let navbar = CustomNavigationBar(style: .small)
         navbar.leftButton.setImage(Asset.Images.navBackButton.image, for: .normal)
-        navbar.backgroundView.backgroundColor = Asset.Colors.f7F7Fe.color
+        navbar.backgroundView.backgroundColor = .clear
+        navbar.backgroundColor = .clear
         return navbar
     }
     

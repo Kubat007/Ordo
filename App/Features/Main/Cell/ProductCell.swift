@@ -41,7 +41,7 @@ final class ProductCell: UICollectionViewCell {
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-       
+        
     }
     
     func configure(with productList: MainModels.Response.Products) {
@@ -54,7 +54,7 @@ final class ProductCell: UICollectionViewCell {
             logoView.image = nil
         }
         titleLabel.text = productList.title
-        priceLabel.text = "\(productList.price) \(productList.currency_name)"
+        priceLabel.text = "\(productList.price ?? 0) \(productList.currency_name)"
     }
     
     func updateFavoriteButton() {
@@ -79,15 +79,15 @@ extension ProductCell: BaseCV {
     }
     
     @objc func favButtonTapped() {
-            if favButton.tintColor == .red {
-                favButton.setImage(UIImage(systemName: "heart"), for: .normal)
-                favButton.tintColor = .gray
-            } else {
-                favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                favButton.tintColor = .red
-            }
-        delegate?.favTapped(cell: self, productId: productId)
+        if favButton.tintColor == .red {
+            favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            favButton.tintColor = .gray
+        } else {
+            favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favButton.tintColor = .red
         }
+        delegate?.favTapped(cell: self, productId: productId)
+    }
 }
 
 extension ProductCell {

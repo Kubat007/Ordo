@@ -11,7 +11,7 @@ final class MainDetailHeaderView: UICollectionReusableView, ReusableView {
     
     private let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
         return iv
     }()
@@ -26,7 +26,6 @@ final class MainDetailHeaderView: UICollectionReusableView, ReusableView {
     
     private var initialHeight: CGFloat = 340
     
-    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -36,7 +35,6 @@ final class MainDetailHeaderView: UICollectionReusableView, ReusableView {
         fatalError()
     }
     
-    // MARK: - Setup
     private func setup() {
         backgroundColor = .clear
         clipsToBounds = true
@@ -50,7 +48,7 @@ final class MainDetailHeaderView: UICollectionReusableView, ReusableView {
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 280), // Фиксированная высота картинки
+            imageView.heightAnchor.constraint(equalToConstant: 280),
             
             dateLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 12),
             dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
@@ -62,36 +60,28 @@ final class MainDetailHeaderView: UICollectionReusableView, ReusableView {
         dateLabel.isHidden = false
     }
     
-    // MARK: - Configuration
     func configure(_ images: [MainModels.Response.Images_gallery], model: MainModels.Response.Products) {
         guard let first = images.first,
               let url = URL(string: first.image) else {
-            imageView.backgroundColor = .lightGray
+            imageView.backgroundColor = .purple
             return
         }
         imageView.kf.setImage(with: url)
         dateLabel.text = model.city_name
     }
     
-    // MARK: - ✅ ДОБАВЛЯЕМ ЭТОТ МЕТОД!
     func updateForScroll(offset: CGFloat) {
         let maxHeight: CGFloat = 340
         let minHeight: CGFloat = 80
-        
-        // Вычисляем новую высоту
         let newHeight = max(maxHeight - offset, minHeight)
-        
-        // Изменяем масштаб imageView
         let scale = newHeight / maxHeight
         imageView.transform = CGAffineTransform(scaleX: 1.0, y: scale)
         
-        // Закругляем углы при уменьшении
         let progress = 1 - (newHeight - minHeight) / (maxHeight - minHeight)
         layer.cornerRadius = 12 * progress
         layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     }
     
-    // MARK: - Сброс
     func reset() {
         UIView.animate(withDuration: 0.3) {
             self.imageView.transform = .identity

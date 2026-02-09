@@ -6,7 +6,6 @@ final class FavoriteVC: BaseVC<FavoriteCV, FavoriteVM> {
         super.viewDidLoad()
         contentView.navigationBar.titleLabel.text = "Избранное"
         viewModel.delegate = self
-        setupContent()
         setupCollectionView()
     }
     
@@ -18,21 +17,7 @@ final class FavoriteVC: BaseVC<FavoriteCV, FavoriteVM> {
     private func setupCollectionView() {
         contentView.collectionView.dataSource = self
         contentView.collectionView.delegate = self
-    }
-    
-    private func setupContent() {
-        let label = UILabel()
-        label.text = "Избранное"
-        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
-        label.textColor = .label
-        label.textAlignment = .center
-        view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-        contentView.backgroundColor = .white
+        contentView.backgroundColor = Asset.Colors.f7F7Fe.color
     }
 }
 

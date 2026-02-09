@@ -31,7 +31,7 @@ extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0: return viewModel.categoryList.count
@@ -40,7 +40,7 @@ extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
         default: return 0
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
@@ -72,13 +72,13 @@ extension MainVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-            if kind == UICollectionView.elementKindSectionHeader && indexPath.section == 0 {
-                let header = contentView.mainCollection.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionHeaderView1.defaultReuseIdentifier, for: indexPath) as? CollectionHeaderView1
-                header?.configure(title: "Категории")
-                return header ?? UIView() as! UICollectionReusableView
-            }
-            return UICollectionReusableView()
+        if kind == UICollectionView.elementKindSectionHeader && indexPath.section == 0 {
+            let header = contentView.mainCollection.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionHeaderView1.defaultReuseIdentifier, for: indexPath) as? CollectionHeaderView1
+            header?.configure(title: "Категории")
+            return header ?? UIView() as! UICollectionReusableView
         }
+        return UICollectionReusableView()
+    }
 }
 
 extension MainVC: UITextFieldDelegate {

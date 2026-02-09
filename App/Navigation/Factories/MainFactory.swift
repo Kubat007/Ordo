@@ -3,6 +3,7 @@ protocol MainFactory {
     func makeSubCategoryVC() -> SubCategoryVC
     func makeBannerVC() -> BannerVC
     func makeMainDetailVC() -> MainDetailVC
+    func makeMainProductsVC() -> MainProductsVC
 }
 
 final class MainFactoryImpl: MainFactory {
@@ -27,5 +28,9 @@ final class MainFactoryImpl: MainFactory {
     
     func makeMainDetailVC() -> MainDetailVC {
         return MainDetailBuilder(services: services).build()
+    }
+    
+    func makeMainProductsVC() -> MainProductsVC {
+        return MainProductsBuilder(services: services).build()
     }
 }

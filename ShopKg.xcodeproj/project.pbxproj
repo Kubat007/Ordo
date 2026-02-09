@@ -234,6 +234,11 @@
 		73D09DE72EF725A2008AED77 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D09DDB2EF725A2008AED77 /* MainCoordinator.swift */; };
 		73D09DE82EF725A2008AED77 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D09DE22EF725A2008AED77 /* BaseCoordinator.swift */; };
 		73E59B452EE0A55D0040E65A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 73E59B442EE0A55D0040E65A /* Kingfisher */; };
+		73EAA3002F39277100CD384C /* MainProductsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA2FF2F39276C00CD384C /* MainProductsBuilder.swift */; };
+		73EAA3022F39277C00CD384C /* MainProductsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3012F39277800CD384C /* MainProductsVM.swift */; };
+		73EAA3042F39278200CD384C /* MainProductsCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3032F39277F00CD384C /* MainProductsCV.swift */; };
+		73EAA3062F39278700CD384C /* MainProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3052F39278500CD384C /* MainProductsVC.swift */; };
+		73EAA3092F39CB4D00CD384C /* MainProductsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3082F39CB4B00CD384C /* MainProductsCVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -481,6 +486,11 @@
 		73D09DDE2EF725A2008AED77 /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
 		73D09DE02EF725A2008AED77 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		73D09DE22EF725A2008AED77 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		73EAA2FF2F39276C00CD384C /* MainProductsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProductsBuilder.swift; sourceTree = "<group>"; };
+		73EAA3012F39277800CD384C /* MainProductsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProductsVM.swift; sourceTree = "<group>"; };
+		73EAA3032F39277F00CD384C /* MainProductsCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProductsCV.swift; sourceTree = "<group>"; };
+		73EAA3052F39278500CD384C /* MainProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProductsVC.swift; sourceTree = "<group>"; };
+		73EAA3082F39CB4B00CD384C /* MainProductsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProductsCVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -786,6 +796,7 @@
 				73A3EAC72F2E3D4F00D1685F /* MainDetail */,
 				7340735A2F263F700013B384 /* SubCategory */,
 				73A3EA8C2F2757C600D1685F /* Banner */,
+				73EAA2FE2F39275900CD384C /* MainProducts */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1458,6 +1469,26 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		73EAA2FE2F39275900CD384C /* MainProducts */ = {
+			isa = PBXGroup;
+			children = (
+				73EAA3072F39CB3F00CD384C /* Cell */,
+				73EAA3052F39278500CD384C /* MainProductsVC.swift */,
+				73EAA3032F39277F00CD384C /* MainProductsCV.swift */,
+				73EAA3012F39277800CD384C /* MainProductsVM.swift */,
+				73EAA2FF2F39276C00CD384C /* MainProductsBuilder.swift */,
+			);
+			path = MainProducts;
+			sourceTree = "<group>";
+		};
+		73EAA3072F39CB3F00CD384C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				73EAA3082F39CB4B00CD384C /* MainProductsCVCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1615,6 +1646,7 @@
 				7342EAC42ED06BFF0051095A /* ProductCell.swift in Sources */,
 				73491E2F2EFA992800E3E469 /* ZipCodeValidator.swift in Sources */,
 				73A3EAD22F2E3EC200D1685F /* MainDetailHeaderView.swift in Sources */,
+				73EAA3092F39CB4D00CD384C /* MainProductsCVCell.swift in Sources */,
 				736D56392F01A6D800C6F077 /* FilterBSModel.swift in Sources */,
 				731DA8922EF8875100290006 /* Router.swift in Sources */,
 				739BCEC82EE73B0C004D492C /* FavoriteBuilder.swift in Sources */,
@@ -1643,8 +1675,10 @@
 				73A3EA922F2757E700D1685F /* BannerCV.swift in Sources */,
 				73D09DBA2EF7252E008AED77 /* Disposable.swift in Sources */,
 				73D09DBB2EF7252E008AED77 /* BaseCV.swift in Sources */,
+				73EAA3042F39278200CD384C /* MainProductsCV.swift in Sources */,
 				731DA8822EF8820200290006 /* ProfileCV.swift in Sources */,
 				736D563E2F02FF6400C6F077 /* NewsVM.swift in Sources */,
+				73EAA3022F39277C00CD384C /* MainProductsVM.swift in Sources */,
 				7340731F2F08335F0013B384 /* OrderBuilder.swift in Sources */,
 				73D09DBC2EF7252E008AED77 /* ActivityIndicatorView.swift in Sources */,
 				7340734A2F1ECCE00013B384 /* HistoryTVCell.swift in Sources */,
@@ -1771,6 +1805,7 @@
 				737C17BC2ED887E200F020D7 /* MainRemoteRepository.swift in Sources */,
 				732265E02ECF454400C5319F /* MainVC.swift in Sources */,
 				734073472F1EC8580013B384 /* HistoryVC.swift in Sources */,
+				73EAA3002F39277100CD384C /* MainProductsBuilder.swift in Sources */,
 				732265D72ECF43E600C5319F /* SplashBuilder.swift in Sources */,
 				734073452F1EC84F0013B384 /* HistoryCV.swift in Sources */,
 				732265D52ECF43B800C5319F /* SplashVM.swift in Sources */,
@@ -1828,6 +1863,7 @@
 				736D56422F02FF7200C6F077 /* NewsVC.swift in Sources */,
 				732265DC2ECF453700C5319F /* MainVM.swift in Sources */,
 				734073282F0835DA0013B384 /* OrderTVCell.swift in Sources */,
+				73EAA3062F39278700CD384C /* MainProductsVC.swift in Sources */,
 				737C17DE2ED9FE1A00F020D7 /* Services.swift in Sources */,
 				731DA8772EF87E7800290006 /* ProfileFactory.swift in Sources */,
 				7342EAC12ED06B860051095A /* MainModels.swift in Sources */,
@@ -1877,8 +1913,12 @@
 				DEVELOPMENT_TEAM = M6HV22567M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Shop.kg/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Для определения вашего местоположения и выбора адреса доставки";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для определения вашего местоположения и выбора адреса доставки";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_PREPROCESS = NO;
@@ -1887,7 +1927,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spirit.Shop-kg";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emsoft.ordostroi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1905,8 +1945,12 @@
 				DEVELOPMENT_TEAM = M6HV22567M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Shop.kg/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Для определения вашего местоположения и выбора адреса доставки";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для определения вашего местоположения и выбора адреса доставки";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_PREPROCESS = NO;
@@ -1915,7 +1959,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spirit.Shop-kg";
+				PRODUCT_BUNDLE_IDENTIFIER = com.emsoft.ordostroi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

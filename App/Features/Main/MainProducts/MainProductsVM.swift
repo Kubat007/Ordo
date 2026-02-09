@@ -1,38 +1,33 @@
 //
-//  MainDetailVM.swift
+//  MainProductsVM.swift
 //  ShopKg
 //
-//  Created by Kubat Muktarbek on 31/1/26.
+//  Created by Kubat Muktarbek on 9/2/26.
 //
 
-protocol MainDetailVMDelegate: AnyObject {
-    func successSimilarProduct()
+protocol MainProductsVMDelegate: AnyObject {
+    func successSubCategoryProductes()
     func successBasket()
     func failure(with error: String)
 }
 
-final class MainDetailVM: BaseVM {
+final class MainProductsVM: BaseVM {
     var services: Services!
     var onBackAction: DefaultNavigationCallback?
-    var productList: [MainModels.Response.Products] = []
-    var product: MainModels.Response.Products?
+    var products: [MainModels.Response.Products] = []
     var OnProductAction: ((_ model: MainModels.Response.Products) -> Void)?
+    var id: Int?
     
-    var onTestCollectionView: (() -> Void)?
-    
-    weak var delegate: MainDetailVMDelegate?
+    weak var delegate: MainProductsVMDelegate?
     
     @MainActor
-    func getSimilarProduct(id: Int) {
-        loadingIndicatorState = .loading
+    func getSubCategoryProduct(id: Int) {
         Task {
             do {
-                let response = try await services.repository.main.getSimilarProduct(id: id)
-                loadingIndicatorState = .loaded
-                self.productList = response.results ?? []
-                delegate?.successSimilarProduct()
+                let initialize = try await self.services?.repository.main.getSubCategoryProducts(id: id)
+                self.products = initialize?.results ?? []
+                delegate?.successSubCategoryProductes()
             } catch {
-                loadingIndicatorState = .loaded
                 delegate?.failure(with: error.localizedDescription)
             }
         }

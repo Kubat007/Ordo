@@ -24,6 +24,7 @@ final class MainDetailVC: BaseVC<MainDetailCV, MainDetailVM> {
         contentView.collectionView.dataSource = self
         contentView.collectionView.delegate = self
         contentView.backgroundColor = Asset.Colors.f7F7Fe.color
+        contentView.bottomButton.addTarget(self, action: #selector(basketAction), for: .touchUpInside)
         
         contentView.collectionView.showsVerticalScrollIndicator = false
         DispatchQueue.main.async {
@@ -33,6 +34,27 @@ final class MainDetailVC: BaseVC<MainDetailCV, MainDetailVM> {
     
     @objc func onBackAction() {
         viewModel.onBackAction?()
+    }
+    
+    @objc func basketAction() {
+        let sheet = BottomSheetCart()
+        let bottomModel = BottomSheetCartModel(
+            title: viewModel.product?.title ?? "",
+            price: "\(viewModel.product?.price ?? 0)", currencyName: viewModel.product?.currency_name ?? "",
+            image: viewModel.product?.images_gallery.first?.image ?? "",
+            count: 1
+        )
+        sheet.configure(bottomModel)
+        sheet.onAddToCart = { [weak self] quantity in
+            guard let self = self else { return }
+            let cartModel = MainModels.Request.AddCArt(
+                product_id: viewModel.product?.id,
+                quantity: quantity
+            )
+            self.viewModel.addCart(model: cartModel)
+        }
+        sheet.modalPresentationStyle = .overFullScreen
+        present(sheet, animated: false)
     }
 }
 
@@ -71,6 +93,8 @@ extension MainDetailVC: UICollectionViewDataSource, UICollectionViewDelegate {
                     collectionView.reloadItems(at: [indexPath])
                 }, completion: nil)
             }
+        } else {
+            viewModel.OnProductAction?(viewModel.productList[indexPath.row])
         }
     }
 }

@@ -35,6 +35,7 @@ final class MainCoordinator: BaseCoordinator, MainCoordinatorResult {
         vc.viewModel.onBackAction = router.popModule
         vc.text = text
         vc.viewModel.model = model
+        vc.viewModel.onMainProductVC = showMainProducts
         router.push(vc, hideBottomBar: true)
     }
     
@@ -49,6 +50,15 @@ final class MainCoordinator: BaseCoordinator, MainCoordinatorResult {
         let vc = MainDetailBuilder(services: services).build()
         vc.viewModel.onBackAction = router.popModule
         vc.viewModel.product = model
+        vc.viewModel.OnProductAction = showMainDetail
+        router.push(vc, hideBottomBar: true)
+    }
+    
+    func showMainProducts(id: Int) {
+        let vc = MainProductsBuilder(services: services).build()
+        vc.viewModel.onBackAction = router.popModule
+        vc.viewModel.OnProductAction = showMainDetail
+        vc.viewModel.id = id
         router.push(vc, hideBottomBar: true)
     }
 }

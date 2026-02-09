@@ -124,6 +124,20 @@ enum MainApi {
             }
         }
     }
+    
+    struct GetSubCategoryProducts: Codable, APIResourceConvertible {
+        typealias Result = BaseArrayModel<MainModels.Response.Products>
+        let id: Int
+        
+        func request() -> HTTPRequest {
+            HTTPRequest {
+                $0.path = "/product/"
+                $0.method = .get
+                $0.maxRetries = 1
+                $0.add(parameters: ["subcategory": id])
+            }
+        }
+    }
 }
 
 struct EmptyResponse: Codable {}
