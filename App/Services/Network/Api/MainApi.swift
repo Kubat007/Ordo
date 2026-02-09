@@ -138,6 +138,21 @@ enum MainApi {
             }
         }
     }
+    
+    struct ChangeQuantityCart: Codable, APIResourceConvertible {
+        typealias Result = BaseIntModel
+        let model: MainModels.Request.ChangeQuantityCArt
+        let id: Int
+        
+        func request() -> HTTPRequest {
+            HTTPRequest {
+                $0.path = "/cart/item/\(id)/"
+                $0.method = .patch
+                $0.maxRetries = 1
+                $0.body = .json(model)
+            }
+        }
+    }
 }
 
 struct EmptyResponse: Codable {}

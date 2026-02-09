@@ -36,12 +36,13 @@ final class MoreVM: BaseVM {
     
     @MainActor
     func updateCartQuantity(productId: Int, quantity: Int) {
-        guard let items = cartModel?.items else { return }
-        if let index = items.firstIndex(where: { $0.product_id == productId }) {
+        loadingIndicatorState = .loading
+        if let items = cartModel?.items,
+           let index = items.firstIndex(where: { $0.product_id == productId }) {
             cartModel?.items?[index].quantity = quantity
             recalculateTotals()
-            updateCartOnServer(productId: productId, quantity: quantity)
         }
+        updateCartOnServer(productId: productId, quantity: quantity)
     }
     
     @MainActor
@@ -70,26 +71,21 @@ final class MoreVM: BaseVM {
             totalItems += quantity
             totalPrice += Double(quantity * price)
         }
-        
         cartModel?.total_items = totalItems
         cartModel?.total_price = Int(totalPrice)
     }
     
     @MainActor
     private func updateCartOnServer(productId: Int, quantity: Int) {
-        loadingIndicatorState = .loading
         Task {
             do {
-                let model = MainModels.Request.AddCArt(
-                    product_id: productId,
-                    quantity: quantity
-                )
-                _ = try await self.services?.repository.main.addCart(model: model)
-                self.loadingIndicatorState = .loaded
-                self.delegate?.successCart()
+                let model = MainModels.Request.ChangeQuantityCArt(quantity: quantity)
+                _ = try await self.services?.repository.main.changeCartquantity(id: productId, model: model)
+                await getCart()
             } catch {
                 self.loadingIndicatorState = .loaded
                 self.delegate?.failure(with: error.localizedDescription)
+                await getCart()
             }
         }
     }

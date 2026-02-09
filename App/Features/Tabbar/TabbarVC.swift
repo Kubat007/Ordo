@@ -130,8 +130,6 @@ final class TabBarVC: UITabBarController, TabbarView {
         )
     }
     
-    
-    
     @objc private func middleButtonTapped() {
         guard let selectedNav = selectedViewController as? BaseNC else { return }
         if let topVC = selectedNav.topViewController, topVC is ProductListVC {

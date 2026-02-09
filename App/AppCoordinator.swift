@@ -13,22 +13,33 @@ final class AppCoordinator: BaseCoordinator {
     }
     
     override func start(with option: DeepLinkOption? = nil) {
-        showMainApp()
+        showSplashScreen()
     }
     
-//    private func showMainApp() {
-//        let tabBarVC = TabBarBuilder.build(services: services)
-//        router.setRootModule(tabBarVC, hideBar: true)
-//    }
+    private func showSplashScreen() {
+        let splashVM = SplashVM()
+        let splashVC = SplashVC(viewModel: splashVM)
+        splashVM.delegate = self
+        router.setRootModule(splashVC, hideBar: true)
+    }
     
     private func showMainApp() {
-            let (tabbarCoordinator, tabbarController) = coordinatorFactory.makeTabbarCoordinator(services: services)
-            self.addDependency(tabbarCoordinator)
-            tabbarCoordinator.start()
-            router.setRootModule(tabbarController, hideBar: true)
+        let (tabbarCoordinator, tabbarController) = coordinatorFactory.makeTabbarCoordinator(services: services)
+        self.addDependency(tabbarCoordinator)
+        tabbarCoordinator.start()
+        if let splashVC = router.toPresent() as? SplashVC {
+            splashVC.fadeOut { [weak self] in
+                self?.router.setRootModule(tabbarController, hideBar: true)
+            }
+        } else {
+            self.router.setRootModule(tabbarController, hideBar: true)
         }
-    
-    private func showProductDetail(_ product: MainModels.Response.Banner) {
-        
+    }
+}
+
+// MARK: - SplashVMDelegate
+extension AppCoordinator: SplashVMDelegate {
+    func splashAnimationCompleted() {
+        showMainApp()
     }
 }

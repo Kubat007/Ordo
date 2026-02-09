@@ -106,5 +106,9 @@ enum MainModels {
             var product_id: Int?
             var quantity: Int?
         }
+        
+        struct ChangeQuantityCArt: Codable {
+            var quantity: Int?
+        }
     }
 }

@@ -97,11 +97,7 @@ extension MoreVC: MoreTVCellDelegate {
         let item = items[indexPath.row]
         let currentQuantity = item.quantity ?? 0
         let newQuantity = currentQuantity + 1
-        viewModel.updateCartQuantity(
-            productId: item.product_id ?? 0,
-            quantity: newQuantity
-        )
-        updateUI()
+        viewModel.updateCartQuantity(productId: item.id ?? 0, quantity: newQuantity)
     }
     
     func minusButtonTappet(cell: MoreTVCell) {
@@ -110,13 +106,13 @@ extension MoreVC: MoreTVCellDelegate {
               indexPath.row < items.count else { return }
         let item = items[indexPath.row]
         let currentQuantity = item.quantity ?? 0
-        guard currentQuantity > 1 else { return }
+        
+        guard currentQuantity > 1 else {
+            deleteButtonTappet(model: item)
+            return
+        }
         let newQuantity = currentQuantity - 1
-        viewModel.updateCartQuantity(
-            productId: item.product_id ?? 0,
-            quantity: newQuantity
-        )
-        updateUI()
+        viewModel.updateCartQuantity(productId: item.id ?? 0, quantity: newQuantity)
     }
     
     func deleteButtonTappet(model: CartModel.Response.Items) {

@@ -45,5 +45,9 @@ final class MainRemoteRepository: MainRepository {
     func getSubCategoryProducts(id: Int) async throws -> BaseArrayModel<MainModels.Response.Products> {
         try await client.fetch(MainApi.GetSubCategoryProducts(id: id))
     }
+    
+    func changeCartquantity(id: Int, model: MainModels.Request.ChangeQuantityCArt) async throws -> BaseIntModel {
+        try await client.fetch(MainApi.ChangeQuantityCart(model: model, id: id))
+    }
 }
 

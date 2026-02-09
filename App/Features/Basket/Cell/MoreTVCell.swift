@@ -94,13 +94,11 @@ extension MoreTVCell {
     }
     
     func plusButtonAction() {
-        currentCount += 1
         delegate?.plusButtonTappet(cell: self)
     }
     
     func minusButtonAction() {
         guard currentCount > 1 else { return }
-        currentCount -= 1
         delegate?.minusButtonTappet(cell: self)
     }
 }

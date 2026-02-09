@@ -1,11 +1,16 @@
 import Foundation
 
+protocol SplashVMDelegate: AnyObject {
+    func splashAnimationCompleted()
+}
+
 final class SplashVM {
-    var onLoadingFinished: (() -> Void)?
+    weak var delegate: SplashVMDelegate?
     
     func startLoading() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.onLoadingFinished?()
-        }
+    }
+    
+    func animationCompleted() {
+        delegate?.splashAnimationCompleted()
     }
 }

@@ -10,5 +10,6 @@ protocol MainRepository {
     func addCart(model: MainModels.Request.AddCArt) async throws -> BaseIntModel
     func getSimilarProduct(id: Int) async throws -> BaseArrayModel<MainModels.Response.Products>
     func getSubCategoryProducts(id: Int) async throws -> BaseArrayModel<MainModels.Response.Products>
+    func changeCartquantity(id: Int, model: MainModels.Request.ChangeQuantityCArt) async throws -> BaseIntModel
 }
 
