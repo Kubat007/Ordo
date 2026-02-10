@@ -5,7 +5,7 @@ protocol Services {
                        auth: AuthRepository,
                        main: MainRepository,
                        profile: ProfileRepository,
-//                       campaign: CampaignRepository,
+                       list: ListRepository,
                        cart: CartRepository
 //                       gov: GovRemoteRepository,
 //                       usefull: UsefullRepository

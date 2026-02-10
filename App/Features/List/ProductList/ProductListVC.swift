@@ -7,22 +7,17 @@ final class ProductListVC: BaseVC<ProductListCV, ProductListVM> {
         viewModel.delegate = self
         setupTableView()
         setupAddButton()
-        
-        title = "Список продуктов"
-        view.backgroundColor = .systemBackground
-        viewModel.loadProducts()
+        contentView.navigationBar.titleLabel.text = "Избранное"
+        viewModel.getProductList()
     }
     
     private func setupTableView() {
         contentView.tableView.dataSource = self
         contentView.tableView.delegate = self
+        contentView.backgroundColor = Asset.Colors.f7F7Fe.color
     }
     
     private func setupAddButton() {
-        contentView.onAddTapped = { [weak self] in
-            self?.viewModel.addNewProduct()
-        }
-        
         contentView.onAddListTapped = { [weak self] in
             self?.showCreateListAlert()
         }
@@ -39,7 +34,7 @@ final class ProductListVC: BaseVC<ProductListCV, ProductListVM> {
                   !listName.isEmpty else {
                 return
             }
-            self?.viewModel.createNewList(name: listName)
+//            self?.viewModel.createNewList(name: listName)
         }
         let cancelAction = UIAlertAction(title: "ОТМЕНА", style: .cancel)
         alert.addAction(createAction)
@@ -48,17 +43,16 @@ final class ProductListVC: BaseVC<ProductListCV, ProductListVM> {
     }
 }
 
-// MARK: - UITableViewDataSource
 extension ProductListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.products.count
+        return viewModel.model?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductListTVCell", for: indexPath) as? ProductListTVCell else {
             return UITableViewCell()
         }
-        cell.configure(with: viewModel.products[indexPath.row])
+        cell.configure(with: viewModel.model?.results?[indexPath.row])
         cell.delegate = self
         cell.selectionStyle = .none
         return cell
@@ -70,7 +64,7 @@ extension ProductListVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { [weak self] _, _, completion in
-            self?.viewModel.deleteProduct(at: indexPath.row)
+//            self?.viewModel.deleteProduct(at: indexPath.row)
             completion(true)
         }
         deleteAction.image = UIImage(systemName: "trash")
@@ -85,7 +79,7 @@ extension ProductListVC: ProductListTVCellDelegate {
             "Вы уверены, что хотите удалить товар?",
             title: "Подтверждение удаления",
             handler: { [weak self] _ in
-                self?.viewModel.deleteProduct(at: indexPath.row)
+//                self?.viewModel.deleteProduct(at: indexPath.row)
                 self?.toast(with: "Продукт удален", messageType: .success)
             }
         )
@@ -93,27 +87,13 @@ extension ProductListVC: ProductListTVCellDelegate {
 }
 
 extension ProductListVC: ProductListVMDelegate {
-    func didUpdateProducts() {
-        let isEmpty = viewModel.products.isEmpty
-        contentView.setEmptyState(isEmpty: isEmpty)
-        contentView.tableView.reloadData()
-    }
-    
-    func didAddProduct(at index: Int) {
-        contentView.setEmptyState(isEmpty: false)
-        let indexPath = IndexPath(row: index, section: 0)
-        contentView.tableView.insertRows(at: [indexPath], with: .automatic)
-        toast(with: "Продукт добавлен", messageType: .success)
-    }
-    
-    func didDeleteProduct(at index: Int) {
-        let indexPath = IndexPath(row: index, section: 0)
-        contentView.tableView.deleteRows(at: [indexPath], with: .fade)
-        
-        // Показываем empty state если список пуст
-        if viewModel.products.isEmpty {
+    func successProductList() {
+        if viewModel.model?.results?.isEmpty ?? false {
             contentView.setEmptyState(isEmpty: true)
+        } else {
+            contentView.setEmptyState(isEmpty: false)
         }
+        contentView.tableView.reloadData()
     }
     
     func failure(with error: String) {

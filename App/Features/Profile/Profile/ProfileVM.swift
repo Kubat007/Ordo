@@ -21,6 +21,7 @@ final class ProfileVM: BaseVM {
     var onNewsAction: (() -> Void)?
     var onFAQAction: (() -> Void)?
     var onHistoryAction: (() -> Void)?
+    var onAboutAppAction: (() -> Void)?
     
     func setupAppearanceCell() {
         self.appearanceSectionCell = [

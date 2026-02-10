@@ -22,9 +22,15 @@ final class TabBarVC: UITabBarController, TabbarView {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAppearance()
-        setupMiddleButton()
         delegate = self
         
+        if let items = tabBar.items, items.count > 2 {
+            items[2].isEnabled = false
+            items[2].title = nil
+            items[2].image = nil
+            items[2].selectedImage = nil
+        }
+        setupMiddleButton()
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(handleTabBarButtonNotification(_:)),
@@ -131,6 +137,7 @@ final class TabBarVC: UITabBarController, TabbarView {
     }
     
     @objc private func middleButtonTapped() {
+        selectedIndex = 2
         guard let selectedNav = selectedViewController as? BaseNC else { return }
         if let topVC = selectedNav.topViewController, topVC is ProductListVC {
             return
@@ -147,13 +154,27 @@ final class TabBarVC: UITabBarController, TabbarView {
 }
 
 extension TabBarVC: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if let currentNav = tabBarController.selectedViewController as? BaseNC,
+           currentNav.topViewController is ProductListVC,
+           viewController != currentNav { // Проверяем что переключаемся НА другой таб
+            
+            if let rootVC = currentNav.viewControllers.first {
+                currentNav.popToViewController(rootVC, animated: false)
+            }
+        }
+        return true
+    }
+    
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         guard let navController = viewController as? BaseNC else { return }
+        
         switch tabBarController.selectedIndex {
         case 0:
             onMainFlowSelect?(navController)
         case 1:
             onFavoriteFlowSelect?(navController)
+        case 2: break
         case 3:
             onMoreFlowSelect?(navController)
         case 4:

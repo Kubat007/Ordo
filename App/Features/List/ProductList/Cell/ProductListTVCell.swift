@@ -16,15 +16,16 @@ final class ProductListTVCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setSubviews()
         setConstraints()
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with product: ProductListModels.Product) {
-        titleLabel.text = product.name
-        dateLabel.text = product.date
+    func configure(with product: ListModel.Response.GetListResults?) {
+        titleLabel.text = product?.name
+        dateLabel.text = product?.created_at
     }
 }
 
@@ -41,7 +42,7 @@ extension ProductListTVCell: BaseCV {
 private extension ProductListTVCell {
     func makeIconView() -> UIView {
         let view = UIView()
-        view.backgroundColor = UIColor.systemGray5
+        view.backgroundColor = .white
         view.layer.cornerRadius = 8
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "doc.text.fill")

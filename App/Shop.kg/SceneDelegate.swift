@@ -32,12 +32,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let authRepository = AuthRemoteRepository(client: client)
             let cartRepository = CartRemoteRepository(client: client)
             let profileRepository = ProfileRemoteRepository(client: client)
+            let listRepository = ListRemoteRepository(client: client)
             
             let apiServices = ApiServicesImpl(repository: (
                 auth: authRepository,
                 main: mainRepository,
                 cart: cartRepository,
-                profile: profileRepository
+                profile: profileRepository,
+                list: listRepository
             ),
                                               client: client,
                                               appSettingsManager: AppSettingsManager()

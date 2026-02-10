@@ -24,26 +24,27 @@ final class SplashVC: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
-        
-        // Настройка анимации
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .playOnce
         animationView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(animationView)
         
-        NSLayoutConstraint.activate([
-            animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            animationView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            animationView.widthAnchor.constraint(equalToConstant: 200),
-            animationView.heightAnchor.constraint(equalToConstant: 200)
-        ])
+        animationView.anchor(
+            .centerY(view.centerYAnchor),
+            .leading(view.leadingAnchor, constant: 16),
+            .trailing(view.trailingAnchor, constant: 16),
+            .height(300)
+        )
     }
     
     private func playAnimation() {
         animationView.play { [weak self] finished in
-            // Когда анимация завершится
             self?.viewModel.animationCompleted()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.animationView.animationSpeed = 2.0
         }
     }
     

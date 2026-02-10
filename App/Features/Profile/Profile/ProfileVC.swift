@@ -55,8 +55,7 @@ extension ProfileVC: UITableViewDataSource, UITableViewDelegate {
         case 1: ()
         case 3: viewModel.onNewsAction?()
         case 4: viewModel.onFAQAction?()
-        case 5: let token = AuthManager.shared.getToken()
-            print(token ?? "")
+        case 5: viewModel.onAboutAppAction?()
         default: ()
         }
     }

@@ -234,6 +234,14 @@
 		73EAA3062F39278700CD384C /* MainProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3052F39278500CD384C /* MainProductsVC.swift */; };
 		73EAA3092F39CB4D00CD384C /* MainProductsCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3082F39CB4B00CD384C /* MainProductsCVCell.swift */; };
 		73EAA30C2F3A72EA00CD384C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 73EAA30B2F3A72EA00CD384C /* Lottie */; };
+		73EAA3132F3B205100CD384C /* AboutAppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3122F3B204D00CD384C /* AboutAppBuilder.swift */; };
+		73EAA3152F3B205900CD384C /* AboutAppVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3142F3B205500CD384C /* AboutAppVM.swift */; };
+		73EAA3172F3B211700CD384C /* AboutAppCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3162F3B211200CD384C /* AboutAppCV.swift */; };
+		73EAA3192F3B211D00CD384C /* AboutAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3182F3B211B00CD384C /* AboutAppVC.swift */; };
+		73EAA31B2F3B534000CD384C /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA31A2F3B533A00CD384C /* ListModel.swift */; };
+		73EAA31E2F3B574000CD384C /* ListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA31D2F3B573500CD384C /* ListRepository.swift */; };
+		73EAA3202F3B574D00CD384C /* ListRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA31F2F3B574300CD384C /* ListRemoteRepository.swift */; };
+		73EAA3222F3B57EC00CD384C /* ListApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3212F3B57E800CD384C /* ListApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -493,6 +501,14 @@
 		73EAA3032F39277F00CD384C /* MainProductsCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProductsCV.swift; sourceTree = "<group>"; };
 		73EAA3052F39278500CD384C /* MainProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProductsVC.swift; sourceTree = "<group>"; };
 		73EAA3082F39CB4B00CD384C /* MainProductsCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProductsCVCell.swift; sourceTree = "<group>"; };
+		73EAA3122F3B204D00CD384C /* AboutAppBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppBuilder.swift; sourceTree = "<group>"; };
+		73EAA3142F3B205500CD384C /* AboutAppVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppVM.swift; sourceTree = "<group>"; };
+		73EAA3162F3B211200CD384C /* AboutAppCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppCV.swift; sourceTree = "<group>"; };
+		73EAA3182F3B211B00CD384C /* AboutAppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppVC.swift; sourceTree = "<group>"; };
+		73EAA31A2F3B533A00CD384C /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		73EAA31D2F3B573500CD384C /* ListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepository.swift; sourceTree = "<group>"; };
+		73EAA31F2F3B574300CD384C /* ListRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRemoteRepository.swift; sourceTree = "<group>"; };
+		73EAA3212F3B57E800CD384C /* ListApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -687,6 +703,7 @@
 				7340730C2F047EEE0013B384 /* FAQ */,
 				7340733F2F1EC8200013B384 /* History */,
 				7340734C2F1F98BE0013B384 /* HistoryDetail */,
+				73EAA3112F3B203000CD384C /* AboutApp */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -717,6 +734,7 @@
 		731DA8932EF8877C00290006 /* MainModels */ = {
 			isa = PBXGroup;
 			children = (
+				73EAA31A2F3B533A00CD384C /* ListModel.swift */,
 				734073372F1E4B2C0013B384 /* MapModel.swift */,
 				736D56462F03065500C6F077 /* ProfileModel.swift */,
 				736D56152EFF18EF00C6F077 /* CartModel.swift */,
@@ -1117,6 +1135,7 @@
 		737C17B22ED8848300F020D7 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				73EAA3212F3B57E800CD384C /* ListApi.swift */,
 				736D564D2F03075500C6F077 /* ProfileApi.swift */,
 				736D56172EFF1A2500C6F077 /* CartApi.swift */,
 				736D55912EFAF2DF00C6F077 /* AuthApi.swift */,
@@ -1129,6 +1148,7 @@
 		737C17B72ED887AC00F020D7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				73EAA31C2F3B572B00CD384C /* List */,
 				736D56482F0306ED00C6F077 /* Profile */,
 				736D56102EFF187000C6F077 /* Cart */,
 				737C17DF2ED9FFB700F020D7 /* Auth */,
@@ -1470,6 +1490,26 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		73EAA3112F3B203000CD384C /* AboutApp */ = {
+			isa = PBXGroup;
+			children = (
+				73EAA3182F3B211B00CD384C /* AboutAppVC.swift */,
+				73EAA3162F3B211200CD384C /* AboutAppCV.swift */,
+				73EAA3142F3B205500CD384C /* AboutAppVM.swift */,
+				73EAA3122F3B204D00CD384C /* AboutAppBuilder.swift */,
+			);
+			path = AboutApp;
+			sourceTree = "<group>";
+		};
+		73EAA31C2F3B572B00CD384C /* List */ = {
+			isa = PBXGroup;
+			children = (
+				73EAA31F2F3B574300CD384C /* ListRemoteRepository.swift */,
+				73EAA31D2F3B573500CD384C /* ListRepository.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1640,6 +1680,7 @@
 				739BCEDF2EE8AB9B004D492C /* ProductListTVCell.swift in Sources */,
 				736D56322F01508F00C6F077 /* UISearchBar+Extension.swift in Sources */,
 				732265C42ECF3B1E00C5319F /* AppCoordinator.swift in Sources */,
+				73EAA3202F3B574D00CD384C /* ListRemoteRepository.swift in Sources */,
 				731DA8402EF8799C00290006 /* PanModalPresentationAnimator.swift in Sources */,
 				736D56182EFF1A2900C6F077 /* CartApi.swift in Sources */,
 				731DA8382EF8794E00290006 /* PanContainerView.swift in Sources */,
@@ -1729,6 +1770,7 @@
 				731DA84B2EF87A0500290006 /* PanModalHeight.swift in Sources */,
 				732265DE2ECF453F00C5319F /* MainCV.swift in Sources */,
 				73491E312EFA993700E3E469 /* InputFormatter.swift in Sources */,
+				73EAA31E2F3B574000CD384C /* ListRepository.swift in Sources */,
 				73491E252EFA98DB00E3E469 /* NumberValidator.swift in Sources */,
 				734072D52F045E130013B384 /* NewsDetailVM.swift in Sources */,
 				732265C52ECF3B2200C5319F /* AppRouter.swift in Sources */,
@@ -1736,10 +1778,12 @@
 				736D558E2EFAD60700C6F077 /* UIViewController+Extension.swift in Sources */,
 				73491E332EFA994600E3E469 /* InputView.swift in Sources */,
 				734073622F26410F0013B384 /* SubCategoryVC.swift in Sources */,
+				73EAA3192F3B211D00CD384C /* AboutAppVC.swift in Sources */,
 				73491E392EFA997600E3E469 /* TextFieldState.swift in Sources */,
 				737C17B02ED883A500F020D7 /* BaseModel.swift in Sources */,
 				731DA8652EF87CB100290006 /* MoreCoordinatorResult.swift in Sources */,
 				737C17C32ED8B44700F020D7 /* ResponseLogValidator.swift in Sources */,
+				73EAA3152F3B205900CD384C /* AboutAppVM.swift in Sources */,
 				73491E1D2EFA989100E3E469 /* CustomValidator.swift in Sources */,
 				736D56342F01661600C6F077 /* BottomSheetFilter.swift in Sources */,
 				739BCECC2EE73B22004D492C /* FavoriteCV.swift in Sources */,
@@ -1780,6 +1824,7 @@
 				737C18062EDA1A2400F020D7 /* NetworkError.swift in Sources */,
 				739BCED12EE767B6004D492C /* FavoriteCVCell.swift in Sources */,
 				734072D92F045E210013B384 /* NewsDetailVC.swift in Sources */,
+				73EAA3172F3B211700CD384C /* AboutAppCV.swift in Sources */,
 				731DA84F2EF87A2A00290006 /* PanModalPresentable+Defaults.swift in Sources */,
 				737C18022EDA178E00F020D7 /* AppSettingManager.swift in Sources */,
 				737C17BC2ED887E200F020D7 /* MainRemoteRepository.swift in Sources */,
@@ -1805,6 +1850,8 @@
 				73491E3B2EFA998400E3E469 /* TextFieldValidationError.swift in Sources */,
 				73D09DE72EF725A2008AED77 /* MainCoordinator.swift in Sources */,
 				734072D32F045E0D0013B384 /* NewsDetailBuilder.swift in Sources */,
+				73EAA3222F3B57EC00CD384C /* ListApi.swift in Sources */,
+				73EAA3132F3B205100CD384C /* AboutAppBuilder.swift in Sources */,
 				73D09DE82EF725A2008AED77 /* BaseCoordinator.swift in Sources */,
 				731DA86D2EF87D0700290006 /* TabbarCoordinatorResult.swift in Sources */,
 				73D09DD62EF7256B008AED77 /* Typography.swift in Sources */,
@@ -1825,6 +1872,7 @@
 				73A3EAD62F2E898100D1685F /* MainDetailDescriptionCVCell.swift in Sources */,
 				736D559F2EFB252900C6F077 /* AuthManager.swift in Sources */,
 				7340733C2F1E71F00013B384 /* BottomSheetCalendar.swift in Sources */,
+				73EAA31B2F3B534000CD384C /* ListModel.swift in Sources */,
 				731DA8482EF879E900290006 /* UIViewController+PanModalPresenter.swift in Sources */,
 				736D56202F0129D300C6F077 /* CollectionHeaderView1.swift in Sources */,
 				734073602F2641090013B384 /* SubCategoryCV.swift in Sources */,

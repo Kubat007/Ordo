@@ -1,13 +1,13 @@
 import UIKit
 
 public final class ProductListCV: UIView {
+    lazy var navigationBar = makeNavigationBar()
     private lazy var emtyImage = makeImageView()
     private lazy var emtylabel = makeLabel()
     
     lazy var tableView = makeTableView()
     lazy var addButton = makeAddButton()
     
-    var onAddTapped: (() -> Void)?
     var onAddListTapped: (() -> Void)?
     
     override public init(frame: CGRect) {
@@ -31,6 +31,7 @@ public final class ProductListCV: UIView {
 // MARK: - Setup UI
 extension ProductListCV: BaseCV {
     public func setSubviews() {
+        addSubview(navigationBar)
         addSubview(emtyImage)
         addSubview(emtylabel)
         addSubview(tableView)
@@ -40,6 +41,13 @@ extension ProductListCV: BaseCV {
 
 // MARK: - UI Factory
 extension ProductListCV {
+    func makeNavigationBar() -> CustomNavigationBar {
+        let navbar = CustomNavigationBar(style: .small)
+        navbar.backgroundColor = Asset.Colors.f7F7Fe.color
+        navbar.backgroundView.backgroundColor = Asset.Colors.f7F7Fe.color
+        return navbar
+    }
+    
     private func makeImageView() -> UIImageView {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
@@ -59,7 +67,7 @@ extension ProductListCV {
     func makeTableView() -> UITableView {
         let table = UITableView()
         table.register(ProductListTVCell.self, forCellReuseIdentifier: "ProductListTVCell")
-        table.backgroundColor = .systemBackground
+        table.backgroundColor = Asset.Colors.f7F7Fe.color
         table.separatorStyle = .singleLine
         table.rowHeight = 80
         table.showsVerticalScrollIndicator = false
@@ -77,13 +85,9 @@ extension ProductListCV {
         button.layer.shadowOpacity = 0.3
         button.layer.shadowOffset = CGSize(width: 0, height: 4)
         button.layer.shadowRadius = 8
-        button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
-        button.isHidden = true // Скрыт по умолчанию
+        button.addTarget(self, action: #selector(addListButtonTapped), for: .touchUpInside)
+        button.isHidden = true
         return button
-    }
-    
-    @objc private func addButtonTapped() {
-        onAddTapped?()
     }
     
     @objc private func addListButtonTapped() {
@@ -94,12 +98,17 @@ extension ProductListCV {
 // MARK: - Constraints
 extension ProductListCV {
     public func setConstraints() {
+        navigationBar.anchor(
+            .top(safeAreaLayoutGuide.topAnchor),
+            .leading(leadingAnchor),
+            .trailing(trailingAnchor)
+        )
+        
         emtyImage.anchor(
-            .top(safeAreaLayoutGuide.topAnchor, constant: 116),
+            .top(navigationBar.bottomAnchor),
             .leading(leadingAnchor),
             .trailing(trailingAnchor),
             .height(90)
-//            .width(60)
         )
         
         emtylabel.anchor(
@@ -109,7 +118,7 @@ extension ProductListCV {
         )
         
         tableView.anchor(
-            .top(safeAreaLayoutGuide.topAnchor),
+            .top(navigationBar.bottomAnchor),
             .leading(leadingAnchor),
             .trailing(trailingAnchor),
             .bottom(safeAreaLayoutGuide.bottomAnchor)
