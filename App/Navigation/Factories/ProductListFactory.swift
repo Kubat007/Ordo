@@ -7,7 +7,9 @@
 
 protocol ProductListFactory {
     func makeMainVC() -> ProductListVC
-    func makeMyList() -> MyListVC
+    func makeMyList() -> ProductListItemsVC
+    func makeProductListItems() -> ProductListItemsVC
+    func makeCollectProductVC() -> CollectProductListVC
 }
 
 final class ProductListFactoryImpl: ProductListFactory {
@@ -17,8 +19,16 @@ final class ProductListFactoryImpl: ProductListFactory {
         return ProductListBuilder(services: services).build()
     }
     
-    func makeMyList() -> MyListVC {
-        return MyListBuilder(services: services).build()
+    func makeMyList() -> ProductListItemsVC {
+        return ProductListItemsBuilder(services: services).build()
+    }
+    
+    func makeProductListItems() -> ProductListItemsVC {
+        return ProductListItemsBuilder(services: services).build()
+    }
+    
+    func makeCollectProductVC() -> CollectProductListVC {
+        return CollectProductListBuilder(services: services).build()
     }
     
     init(services: Services) {

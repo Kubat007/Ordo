@@ -6,38 +6,31 @@ final class ResponseLogValidator: HTTPValidator {
         guard let dataRequest = response.urlRequests.current else {
             return .nextValidator
         }
-        
-        // LOG REQUEST
         log("\n------------------------------")
         log("STATUSCODE: \(response.statusCode.rawValue)")
         log("HTTP METHOD: .\(dataRequest.method?.rawValue ?? "")")
         log("URL: \(dataRequest.url ?? "")")
-        
-        // LOG HEADERS
-        self.logHeaders(headers: dataRequest.allHTTPHeaderFields)
-        
-        // MARK: LOG REQUEST BODY
+
+        logHeaders(headers: dataRequest.allHTTPHeaderFields)
+
         if let body = dataRequest.body {
             log("REQUEST BODY:")
             logBody(data: body)
         }
-        
-        // RESPONSE ERROR
-        guard response.statusCode.responseType == .success else {
-            return logError(response: response)
+        if let data = response.data {
+            log("RESPONSE BODY:")
+            logBody(data: data)
         }
-        
-        // RESPONSE BODY
-        guard let data = response.data else {
+
+        guard response.statusCode.responseType == .success else {
+            logError(response: response)
             return .nextValidator
         }
-        
-        log("RESPONSE BODY:")
-        logBody(data: data)
-       
+
         return .nextValidator
     }
 }
+
 
 // MARK: LOG METHODS
 extension ResponseLogValidator {
@@ -71,18 +64,16 @@ extension ResponseLogValidator {
         log("]")
     }
     
-    func logError(response: HTTPResponse) -> HTTPResponseValidatorResult {
-        guard let error = response.error else {
-            return .nextValidator
-        }
+    func logError(response: HTTPResponse) {
+        guard let error = response.error else { return }
         log("❌")
         log("❗️ StatusCodeError: \(error.statusCode)")
-        log("❗️ DebugDescription: \(error.category)")
-        log("❗️ DecodingError: \(error.localizedDescription)")
+        log("❗️ Category: \(error.category)")
+        log("❗️ Description: \(error.localizedDescription)")
+
         if let message = error.message {
             log("❗️ ErrorMessage: \(message)")
         }
         log("❌")
-        return .nextValidator
     }
 }

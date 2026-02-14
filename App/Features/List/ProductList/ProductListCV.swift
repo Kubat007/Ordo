@@ -24,7 +24,6 @@ public final class ProductListCV: UIView {
         emtyImage.isHidden = !isEmpty
         emtylabel.isHidden = !isEmpty
         tableView.isHidden = isEmpty
-        addButton.isHidden = isEmpty
     }
 }
 
@@ -86,7 +85,6 @@ extension ProductListCV {
         button.layer.shadowOffset = CGSize(width: 0, height: 4)
         button.layer.shadowRadius = 8
         button.addTarget(self, action: #selector(addListButtonTapped), for: .touchUpInside)
-        button.isHidden = true
         return button
     }
     
@@ -105,7 +103,7 @@ extension ProductListCV {
         )
         
         emtyImage.anchor(
-            .top(navigationBar.bottomAnchor),
+            .top(navigationBar.bottomAnchor, constant: 100),
             .leading(leadingAnchor),
             .trailing(trailingAnchor),
             .height(90)

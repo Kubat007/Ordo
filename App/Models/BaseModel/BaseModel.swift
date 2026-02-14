@@ -1,14 +1,14 @@
 import Foundation
 
-struct APIError: Decodable {
-    let detail: String?
+struct APIError: LocalizedError {
     let message: String
-    let code: Int?
-    
-    var errorMessage: String {
-        return detail ?? message
+    let statusCode: Int
+
+    var errorDescription: String? {
+        message
     }
 }
+
 
 struct BaseModel<T: Decodable>: Decodable {
     let success: Bool?

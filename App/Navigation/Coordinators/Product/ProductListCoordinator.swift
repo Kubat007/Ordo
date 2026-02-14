@@ -26,12 +26,32 @@ final class ProductListCoordinator: BaseCoordinator, ProductListCoordinatorResul
         let vc = ProductListBuilder(services: services).build()
         vc.hidesBottomBarWhenPushed = true
         vc.viewModel.onMyListAction = showMyListVC
+        vc.viewModel.onProductListItemsAction = showProductListItemsVC
         router.push(vc)
     }
     
-    func showMyListVC() {
+    func showMyListVC(id: Int, fromCreate: Bool) {
         let vc = factory.makeMyList()
         vc.viewModel.onBackAction = router.popModule
+        vc.viewModel.id = id
+        vc.fromCreate = fromCreate
+        vc.viewModel.onCollectProductAction = showCollectProductListVC
+        router.push(vc, hideBottomBar: true)
+    }
+    
+    func showProductListItemsVC(model: ListModel.Response.GetAddProductList, fromCreate: Bool) {
+        let vc = factory.makeProductListItems()
+        vc.viewModel.addProductListModel = model
+        vc.fromCreate = fromCreate
+        vc.viewModel.onBackAction = router.popModule
+        vc.viewModel.onCollectProductAction = showCollectProductListVC
+        router.push(vc, hideBottomBar: true)
+    }
+    
+    func showCollectProductListVC(id: String) {
+        let vc = factory.makeCollectProductVC()
+        vc.viewModel.onBackAction = router.popModule
+        vc.viewModel.listId = id
         router.push(vc, hideBottomBar: true)
     }
 }

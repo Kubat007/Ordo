@@ -1,15 +1,16 @@
 import UIKit
 
 protocol ProductListTVCellDelegate: AnyObject {
-    func deleteTapped(cell: ProductListTVCell)
+    func deleteTapped(cell: ProductListTVCell, id: Int)
 }
 
 final class ProductListTVCell: UITableViewCell {
     lazy var iconView = makeIconView()
-    lazy var titleLabel = makeLabel(font: Typography.semibold16.font, color: .label)
-    lazy var dateLabel = makeLabel(font: Typography.regular14.font, color: .secondaryLabel)
+    lazy var titleLabel = makeLabel(font: Typography.semibold16.font, color: .black)
+    lazy var dateLabel = makeLabel(font: Typography.regular14.font, color: .black)
     lazy var deleteButton = makeDeleteButton()
     
+    var id = 0
     weak var delegate: ProductListTVCellDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -24,6 +25,7 @@ final class ProductListTVCell: UITableViewCell {
     }
     
     func configure(with product: ListModel.Response.GetListResults?) {
+        self.id = product?.id ?? 0
         titleLabel.text = product?.name
         dateLabel.text = product?.created_at
     }
@@ -75,7 +77,7 @@ private extension ProductListTVCell {
     }
     
     @objc private func deleteButtonTapped() {
-        delegate?.deleteTapped(cell: self)
+        delegate?.deleteTapped(cell: self, id: self.id)
     }
 }
 
