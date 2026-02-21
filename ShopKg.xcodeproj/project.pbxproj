@@ -254,6 +254,8 @@
 		73EAA33A2F3E17D000CD384C /* CollectProductListCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3392F3E17CB00CD384C /* CollectProductListCVCell.swift */; };
 		73EAA33C2F3E473200CD384C /* CollectProductListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA33B2F3E473200CD384C /* CollectProductListHeaderView.swift */; };
 		73EAA33E2F3E474F00CD384C /* CollectProductListEmptyCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA33D2F3E474E00CD384C /* CollectProductListEmptyCVCell.swift */; };
+		73EAA3402F40A27D00CD384C /* HTTPClient+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA33F2F40A27000CD384C /* HTTPClient+Extension.swift */; };
+		73EAA3432F43224D00CD384C /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EAA3422F43224300CD384C /* NotificationCenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -533,6 +535,8 @@
 		73EAA3392F3E17CB00CD384C /* CollectProductListCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectProductListCVCell.swift; sourceTree = "<group>"; };
 		73EAA33B2F3E473200CD384C /* CollectProductListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectProductListHeaderView.swift; sourceTree = "<group>"; };
 		73EAA33D2F3E474E00CD384C /* CollectProductListEmptyCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectProductListEmptyCVCell.swift; sourceTree = "<group>"; };
+		73EAA33F2F40A27000CD384C /* HTTPClient+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPClient+Extension.swift"; sourceTree = "<group>"; };
+		73EAA3422F43224300CD384C /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -1167,6 +1171,7 @@
 				736D55912EFAF2DF00C6F077 /* AuthApi.swift */,
 				737C17BD2ED88B1700F020D7 /* RealHTTP+Extension.swift */,
 				737C17B32ED8848900F020D7 /* MainApi.swift */,
+				73EAA33F2F40A27000CD384C /* HTTPClient+Extension.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -1420,6 +1425,7 @@
 		73D09DB72EF7252E008AED77 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				73EAA3412F43223400CD384C /* NotificationCenter */,
 				736D561E2F0129B100C6F077 /* HeaderView */,
 				736D561B2EFF303800C6F077 /* BottomSheets */,
 			);
@@ -1576,6 +1582,14 @@
 				73EAA3392F3E17CB00CD384C /* CollectProductListCVCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		73EAA3412F43223400CD384C /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				73EAA3422F43224300CD384C /* NotificationCenter.swift */,
+			);
+			path = NotificationCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1760,6 +1774,7 @@
 				732265D12ECF43A300C5319F /* SplashVC.swift in Sources */,
 				734073122F047F150013B384 /* FAQCV.swift in Sources */,
 				731DA8872EF8821700290006 /* MoreBuilder.swift in Sources */,
+				73EAA3432F43224D00CD384C /* NotificationCenter.swift in Sources */,
 				73EAA33C2F3E473200CD384C /* CollectProductListHeaderView.swift in Sources */,
 				734073192F0485900013B384 /* BottomSheetFAQ.swift in Sources */,
 				736D55A82EFB31F800C6F077 /* ProfileHeaderView.swift in Sources */,
@@ -1891,6 +1906,7 @@
 				734073232F0833740013B384 /* OrderCV.swift in Sources */,
 				731DA86B2EF87CFD00290006 /* TabbarCoordinator.swift in Sources */,
 				736D55922EFAF2E300C6F077 /* AuthApi.swift in Sources */,
+				73EAA3402F40A27D00CD384C /* HTTPClient+Extension.swift in Sources */,
 				739BCEE92EE8C156004D492C /* MyListCV.swift in Sources */,
 				739BCEDA2EE882A9004D492C /* ProductListCV.swift in Sources */,
 				731DA8902EF886ED00290006 /* Presentable.swift in Sources */,

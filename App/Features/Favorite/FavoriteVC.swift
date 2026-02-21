@@ -54,9 +54,9 @@ extension FavoriteVC: FavoriteCVCellDelegate {
         print()
     }
     
-    func favTapped(cell: FavoriteCVCell, productId: Int) {
+    func favTapped(cell: FavoriteCVCell, id: Int, productId: Int) {
         UIAlertController.showSelectionDeleteAlert("Удалить с избранного".localized, title: "Удаление избранного".localized, handler: { (action) in
-            self.viewModel.deleteFavorite(productId: productId)
+            self.viewModel.deleteFavorite(id: id, productId: productId)
          }) { (action) in
          }
     }

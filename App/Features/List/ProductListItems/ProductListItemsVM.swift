@@ -5,13 +5,14 @@
 //  Created by Kubat Muktarbek on 11/2/26.
 //
 
+import Foundation
+
 protocol ProductListItemsVMDelegate: AnyObject {
     func successDetailItems()
     func successChangeItems()
+    func successChangeItemsCollect()
     func failure(with error: String)
 }
-
-import Foundation
 
 final class ProductListItemsVM: BaseVM {
     var onBackAction: DefaultNavigationCallback?
@@ -109,4 +110,21 @@ final class ProductListItemsVM: BaseVM {
             }
         }
     }
+    
+    @MainActor
+    func changeItemsCollect(model: ListModel.Request.SendChangeProductList, id: Int) {
+        loadingIndicatorState = .loading
+        Task {
+            do {
+                let initialize = try await self.services.repository.list.changeProductList(model: model, id: id)
+                self.changeItemsModel = initialize
+                self.loadingIndicatorState = .loaded
+                self.delegate?.successChangeItemsCollect()
+            } catch {
+                self.loadingIndicatorState = .loaded
+                self.delegate?.failure(with: error.localizedDescription)
+            }
+        }
+    }
 }
+

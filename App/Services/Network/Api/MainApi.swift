@@ -87,11 +87,11 @@ enum MainApi {
     
     struct DeleteFavorite: Codable, APIResourceConvertible {
         typealias Result = EmptyResponse
-        let productId: Int
+        let id: Int
         
         func request() -> HTTPRequest {
             HTTPRequest {
-                $0.path = "/user_favorites/\(productId)/"
+                $0.path = "/user_favorites/\(id)/"
                 $0.method = .delete
                 $0.maxRetries = 1
             }

@@ -51,8 +51,8 @@ extension ProfileVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 0: viewModel.onHistoryAction?()
-        case 1: ()
+        case 0: ()
+        case 1: viewModel.onHistoryAction?()
         case 3: viewModel.onNewsAction?()
         case 4: viewModel.onFAQAction?()
         case 5: viewModel.onAboutAppAction?()

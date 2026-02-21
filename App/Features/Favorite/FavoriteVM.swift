@@ -1,3 +1,4 @@
+import Foundation
 
 protocol FavoriteVMDelegate: AnyObject {
     func successFavorite()
@@ -21,24 +22,23 @@ final class FavoriteVM: BaseVM {
                 self.delegate?.successFavorite()
             } catch {
                 self.loadingIndicatorState = .loaded
-                print(error)
                 self.delegate?.failure(with: error.localizedDescription)
             }
         }
     }
     
     @MainActor
-    func deleteFavorite(productId: Int) {
+    func deleteFavorite(id: Int, productId: Int) {
         loadingIndicatorState = .loading
         Task {
             do {
-                _ = try await self.services.repository.main.deleteFavorite(productId: productId)
+                _ = try await self.services.repository.main.deleteFavorite(id: id)
                 self.loadingIndicatorState = .loaded
-                self.favoriteList.removeAll { $0.id == productId }
+                self.favoriteList.removeAll { $0.id == id }
+                NotificationCenter.default.post(name: .favoriteChanged, object: nil,  userInfo: ["id": id, "productId": productId, "isFavorite": false])
                 self.delegate?.successDeleteFavorite()
             } catch {
                 self.loadingIndicatorState = .loaded
-                print(error)
                 self.delegate?.failure(with: error.localizedDescription)
             }
         }

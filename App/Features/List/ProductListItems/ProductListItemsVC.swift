@@ -67,8 +67,7 @@ final class ProductListItemsVC: BaseVC<ProductListItemsCV, ProductListItemsVM> {
                 name: listName,
                 items: itemsModel
             )
-            viewModel.changeItems(model: changeModel, id: listId)
-            viewModel.onCollectProductAction?("\(listId)")
+            viewModel.changeItemsCollect(model: changeModel, id: listId)
         } else {
             guard let listId = viewModel.detailProductListModel?.id else { return }
             viewModel.onCollectProductAction?("\(listId)")
@@ -141,6 +140,11 @@ extension ProductListItemsVC: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension ProductListItemsVC: ProductListItemsVMDelegate {
+    func successChangeItemsCollect() {
+        guard let listId = viewModel.addProductListModel?.id else { return }
+        viewModel.onCollectProductAction?("\(listId)")
+    }
+    
     func successDetailItems() {
         if let detailModel = viewModel.detailProductListModel {
             viewModel.setDetailModel(detailModel)

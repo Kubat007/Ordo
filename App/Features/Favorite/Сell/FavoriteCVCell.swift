@@ -3,7 +3,7 @@ import Foundation
 
 protocol FavoriteCVCellDelegate: AnyObject {
     func basketTapped(cell: FavoriteCVCell)
-    func favTapped(cell: FavoriteCVCell, productId: Int)
+    func favTapped(cell: FavoriteCVCell, id: Int, productId: Int)
 }
 
 final class FavoriteCVCell: UICollectionViewCell {
@@ -14,6 +14,7 @@ final class FavoriteCVCell: UICollectionViewCell {
     lazy var favButton = makeButton(image: "heart.fill", action: #selector(favButtonTapped), color: .clear, radius: 0)
     weak var delegate: FavoriteCVCellDelegate?
     var productId: Int = 0
+    var id: Int = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +36,8 @@ final class FavoriteCVCell: UICollectionViewCell {
     func setup(with productList: MainModels.Response.GetFavorites) {
         logoView.kf.setImage(with: URL(string: productList.product_images ?? ""))
         titleLabel.text = productList.product_title
-        productId = productList.id ?? 0
+        productId = productList.product_id ?? 0
+        id = productList.id ?? 0
     }
     
 }
@@ -60,20 +62,15 @@ extension FavoriteCVCell: BaseCV {
     }
     
     @objc func favButtonTapped() {
-            if favButton.tintColor == .red {
-                favButton.setImage(UIImage(systemName: "heart"), for: .normal)
-                favButton.tintColor = .gray
-            } else {
-                favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                favButton.tintColor = .red
-            }
-            delegate?.favTapped(cell: self, productId: productId)
-        }
+        delegate?.favTapped(cell: self, id: id, productId: productId)
+    }
 }
 
 private extension FavoriteCVCell {
     private func makeContentView() -> UIView {
         let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 12
         return view
     }
     
@@ -81,7 +78,7 @@ private extension FavoriteCVCell {
         let image = UIImageView()
         image.layer.cornerRadius = 14
         image.clipsToBounds = true
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         return image
     }
     
@@ -113,13 +110,15 @@ extension FavoriteCVCell {
             .top(container.topAnchor),
             .trailing(container.trailingAnchor),
             .leading(container.leadingAnchor),
-            .bottom(container.bottomAnchor, constant: 32)
+            .height(150)
+//            .bottom(container.bottomAnchor, constant: 40)
         )
         
         titleLabel.anchor(
             .top(logoView.bottomAnchor, constant: 4),
             .trailing(container.trailingAnchor, constant: 16),
-            .leading(container.leadingAnchor, constant: 16)
+            .leading(container.leadingAnchor, constant: 16),
+            .bottom(container.bottomAnchor)
         )
         
         basketButton.anchor(

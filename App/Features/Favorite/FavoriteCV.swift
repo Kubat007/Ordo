@@ -60,11 +60,11 @@ private extension FavoriteCV {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
             let itemSize = NSCollectionLayoutSize( widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(200))
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(240))
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
             group.interItemSpacing = .fixed(16)
             let section = NSCollectionLayoutSection(group: group)
-            section.interGroupSpacing = 16
+            section.interGroupSpacing = 20
             section.contentInsets = NSDirectionalEdgeInsets(top: 16, leading: 16,bottom: 16, trailing: 16)
             return section
         }

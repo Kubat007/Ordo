@@ -30,8 +30,8 @@ enum MainModels {
             let latitude: Int?
             let longitude: Int?
             let sold: Bool?
-            let is_favorite: Bool?
-            let favorite_id: Int?
+            var is_favorite: Bool?
+            var favorite_id: Int?
             let work_experience: String?
             let work_time_from: String?
             let work_time_to: String?

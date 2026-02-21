@@ -4,6 +4,8 @@ protocol MainVMDelegate: AnyObject {
     func successProductes()
     func successCategory()
     func successBasket()
+    func successDeleteFavorite()
+    func successAddedFavorite()
     func failure(with error: String)
 }
 
@@ -65,7 +67,12 @@ final class MainVM: BaseVM {
     func sendFavoriteProduct(productId: Int) {
         Task {
             do {
-                _ = try await self.services?.repository.main.sendfavoriteProduct(productId: productId)
+                let response = try await self.services?.repository.main.sendfavoriteProduct(productId: productId)
+                if let index = self.productList.firstIndex(where: { $0.id == productId }) {
+                    self.productList[index].is_favorite = true
+                    self.productList[index].favorite_id = response?.favorite_id
+                }
+                delegate?.successAddedFavorite()
             } catch {
                 delegate?.failure(with: error.localizedDescription)
             }
@@ -80,6 +87,25 @@ final class MainVM: BaseVM {
                 delegate?.successBasket()
             } catch {
                 delegate?.failure(with: error.localizedDescription)
+            }
+        }
+    }
+    
+    @MainActor
+    func deleteFavorite(productId: Int) {
+        loadingIndicatorState = .loading
+        Task {
+            do {
+                _ = try await self.services.repository.main.deleteFavorite(id: productId)
+                self.loadingIndicatorState = .loaded
+                if let index = self.productList.firstIndex(where: { $0.favorite_id == productId }) {
+                    self.productList[index].is_favorite = false
+                    self.productList[index].favorite_id = nil
+                }
+                self.delegate?.successDeleteFavorite()
+            } catch {
+                self.loadingIndicatorState = .loaded
+                self.delegate?.failure(with: error.localizedDescription)
             }
         }
     }

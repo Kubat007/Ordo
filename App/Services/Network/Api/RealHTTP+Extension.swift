@@ -30,18 +30,4 @@ public extension HTTPClient {
         }
         return try result.decode(T.Result.self)
     }
-    
-    func parseErrorMessage(from data: Data) -> String {
-        if let array = try? JSONDecoder().decode([String].self, from: data),
-           let first = array.first {
-            return first
-        }
-
-        if let string = String(data: data, encoding: .utf8) {
-            return string
-        }
-
-        return "Неизвестная ошибка"
-    }
-
 }

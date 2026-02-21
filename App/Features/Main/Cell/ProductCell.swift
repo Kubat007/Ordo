@@ -4,7 +4,7 @@ import Kingfisher
 
 protocol ProductCellDelegate: AnyObject {
     func basketTapped(cell: ProductCell, model: MainModels.Response.Products?)
-    func favTapped(cell: ProductCell, productId: Int)
+    func favTapped(cell: ProductCell, productId: Int, shouldAdd: Bool, favId: Int)
 }
 
 final class ProductCell: UICollectionViewCell {
@@ -16,6 +16,7 @@ final class ProductCell: UICollectionViewCell {
     lazy var basketButton = makeButton(color: UIColor(red: 0.10, green: 0.35, blue: 0.85, alpha: 1.00), radius: 14)
     
     var productId: Int = 0
+    var favId: Int = 0
     var model: MainModels.Response.Products?
     weak var delegate: ProductCellDelegate?
     
@@ -28,39 +29,36 @@ final class ProductCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        favButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        favButton.tintColor = .gray
-        
         logoView.image = nil
         titleLabel.text = nil
+        priceLabel.text = nil
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override public func layoutSubviews() {
-        super.layoutSubviews()
-        
-    }
-    
     func configure(with productList: MainModels.Response.Products) {
         productId = productList.id
+        favId = productList.favorite_id ?? 0
         model = productList
         if let firstImage = productList.images_gallery.first,
            let imageUrl = URL(string: firstImage.image) {
             logoView.kf.setImage(with: imageUrl)
-        } else {
-            logoView.image = nil
         }
         titleLabel.text = productList.title
         priceLabel.text = "\(productList.price ?? 0) \(productList.currency_name)"
+        updateFavoriteButton(isFavorite: productList.is_favorite ?? false)
     }
     
-    func updateFavoriteButton() {
-//        let imageName = favSelected ? Asset.Images.patentDoneIc.image : Asset.Images.icTransferKg.image
-//        favButton.setImage(imageName, for: .normal)
-//        favButton.tintColor = favSelected ? .red : .gray
+    func updateFavoriteButton(isFavorite: Bool) {
+        if isFavorite {
+            favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favButton.tintColor = .red
+        } else {
+            favButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            favButton.tintColor = .gray
+        }
     }
 }
 
@@ -79,31 +77,23 @@ extension ProductCell: BaseCV {
     }
     
     @objc func favButtonTapped() {
-        if favButton.tintColor == .red {
-            favButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            favButton.tintColor = .gray
-        } else {
-            favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            favButton.tintColor = .red
-        }
-        delegate?.favTapped(cell: self, productId: productId)
+        guard let isFavorite = model?.is_favorite else { return }
+        updateFavoriteButton(isFavorite: !isFavorite)
+        delegate?.favTapped(cell: self, productId: productId, shouldAdd: !isFavorite, favId: favId)
     }
 }
 
 extension ProductCell {
     private func setupUI() {
-        favButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        favButton.tintColor = .gray
-        favButton.addTarget(self, action: #selector(favButtonTapped), for: .touchUpInside)
-        basketButton.addTarget(self, action: #selector(basketButtonTapped), for: .touchUpInside)
-        basketButton.setImage(UIImage(named: "Images/basket_ic"), for: .normal)
-        
-        container.layer.shadowColor = UIColor.black.cgColor
-        container.layer.shadowOpacity = 0.4
-        container.layer.shadowOffset = CGSize(width: 0, height: 4)
-        container.layer.shadowRadius = 8
-        container.layer.masksToBounds = false
-    }
+            favButton.addTarget(self, action: #selector(favButtonTapped), for: .touchUpInside)
+            basketButton.addTarget(self, action: #selector(basketButtonTapped), for: .touchUpInside)
+            basketButton.setImage(UIImage(named: "Images/basket_ic"), for: .normal)
+            container.layer.shadowColor = UIColor.black.cgColor
+            container.layer.shadowOpacity = 0.4
+            container.layer.shadowOffset = CGSize(width: 0, height: 4)
+            container.layer.shadowRadius = 8
+            container.layer.masksToBounds = false
+        }
 }
 
 private extension ProductCell {

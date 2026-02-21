@@ -12,6 +12,8 @@ final class MainVC: BaseVC<MainCV, MainVM> {
         viewModel.getBanner()
         viewModel.getProduct()
         viewModel.getCategory()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFavoriteChanged(_:)), name: .favoriteChanged, object: nil)
     }
     
     private func setupCollectionView() {
@@ -24,6 +26,21 @@ final class MainVC: BaseVC<MainCV, MainVM> {
         let vc = FilterBottomSheetVC()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: false)
+    }
+    
+    @objc private func handleFavoriteChanged(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let id =  userInfo["id"] as? Int,
+              let productId = userInfo["productId"] as? Int,
+              let isFavorite = userInfo["isFavorite"] as? Bool else { return }
+        
+        if let index = viewModel.productList.firstIndex(where: { $0.id == productId }) {
+            viewModel.productList[index].is_favorite = isFavorite
+            viewModel.productList[index].favorite_id = isFavorite ? productId : nil
+            
+            let indexPath = IndexPath(row: index, section: 2)
+            contentView.mainCollection.reloadItems(at: [indexPath])
+        }
     }
 }
 
@@ -88,6 +105,15 @@ extension MainVC: UITextFieldDelegate {
 }
 
 extension MainVC: MainVMDelegate {
+    func successAddedFavorite() {
+        contentView.mainCollection.reloadData()
+    }
+    
+    func successDeleteFavorite() {
+        toast(with: "Удалено из избранного", messageType: .success)
+        contentView.mainCollection.reloadData()
+    }
+    
     func successCategory() {
         contentView.mainCollection.reloadData()
     }
@@ -110,12 +136,14 @@ extension MainVC: MainVMDelegate {
 }
 
 extension MainVC: ProductCellDelegate {
-    func favTapped(cell: ProductCell, productId: Int) {
-        let isFavorite = cell.favButton.tintColor == .red
-        let message = isFavorite ? "Добавлено в избранное" : "Удалено из избранного"
-        toast(with: message, messageType: isFavorite ? .success : .warning)
-        isFavorite ? viewModel.sendFavoriteProduct(productId: productId) : print("Запрос на удаление")
-    }
+    func favTapped(cell: ProductCell, productId: Int, shouldAdd: Bool, favId: Int) {
+            if shouldAdd {
+                viewModel.sendFavoriteProduct(productId: productId)
+                toast(with: "Добавлено в избранное", messageType: .success)
+            } else {
+                viewModel.deleteFavorite(productId: favId)
+            }
+        }
     
     func basketTapped(cell: ProductCell, model: MainModels.Response.Products?) {
         let sheet = BottomSheetCart()

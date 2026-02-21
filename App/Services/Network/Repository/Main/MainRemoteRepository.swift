@@ -30,8 +30,8 @@ final class MainRemoteRepository: MainRepository {
         try await client.fetch(MainApi.GetFavorites())
     }
     
-    func deleteFavorite(productId: Int) async throws -> EmptyResponse {
-        try await client.fetch(MainApi.DeleteFavorite(productId: productId))
+    func deleteFavorite(id: Int) async throws -> EmptyResponse {
+        try await client.fetch(MainApi.DeleteFavorite(id: id))
     }
     
     func addCart(model: MainModels.Request.AddCArt) async throws -> BaseIntModel {
