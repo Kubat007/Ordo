@@ -8,6 +8,7 @@
 protocol MoreFactory {
     func makeMainVC() -> MoreVC
     func makeOrderVC() -> OrderVC
+    func makeMapVC() -> YandexMapVC
 }
 
 final class MoreFactoryImpl: MoreFactory {
@@ -19,6 +20,10 @@ final class MoreFactoryImpl: MoreFactory {
     
     func makeOrderVC() -> OrderVC {
         return OrderBuilder(services: services).build()
+    }
+    
+    func makeMapVC() -> YandexMapVC {
+        return YandexMapBuilder(services: services).build()
     }
     
     init(services: Services) {

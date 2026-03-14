@@ -19,9 +19,12 @@ final class CollectProductListVM: BaseVM {
     var listId: String?
     var collectItemsModel: ListModel.Response.GetCollectProductList?
     weak var delegate: CollectProductListVMDelegate?
+    
+    // MARK: - Computed Properties
     var sections: [ListModel.Response.CollectSection] {
         return collectItemsModel?.results ?? []
     }
+    
     var numberOfSections: Int {
         return sections.count
     }
@@ -29,7 +32,7 @@ final class CollectProductListVM: BaseVM {
     func numberOfItems(in section: Int) -> Int {
         guard section < sections.count else { return 0 }
         let products = sections[section].products ?? []
-        return max(products.count, 1) // 1 - для empty state
+        return max(products.count, 1)
     }
     
     func titleForSection(_ section: Int) -> String {
@@ -51,6 +54,7 @@ final class CollectProductListVM: BaseVM {
         return sections[section].products?.isEmpty ?? true
     }
     
+    // MARK: - API Calls
     @MainActor
     func fetchCollectItems() {
         guard let listId = listId else {
@@ -84,13 +88,42 @@ final class CollectProductListVM: BaseVM {
         }
     }
     
+    // MARK: - Favorite Methods
     @MainActor
     func sendFavoriteProduct(productId: Int) {
         Task {
             do {
-                _ = try await self.services?.repository.main.sendfavoriteProduct(productId: productId)
+                let response = try await self.services?.repository.main.sendfavoriteProduct(productId: productId)
+                // Обновляем модель - ищем продукт по ID и меняем is_favorite
+                updateProductFavoriteStatus(id: productId, isFavorite: true, favoriteId: response?.favorite_id)
+                delegate?.successCollectItems()
             } catch {
                 delegate?.failure(with: error.localizedDescription)
+            }
+        }
+    }
+    
+    @MainActor
+    func deleteFavorite(id: Int, favId: Int) {
+        Task {
+            do {
+                _ = try await self.services?.repository.main.deleteFavorite(id: favId)
+                updateProductFavoriteStatus(id: favId, isFavorite: false, favoriteId: nil)
+                NotificationCenter.default.post(name: .favoriteChanged, object: nil,  userInfo: ["id": id, "productId": favId, "isFavorite": false])
+                delegate?.successCollectItems()
+            } catch {
+                delegate?.failure(with: error.localizedDescription)
+            }
+        }
+    }
+    
+    // MARK: - Helper Methods
+    private func updateProductFavoriteStatus(id: Int, isFavorite: Bool, favoriteId: Int?) {
+        for sectionIndex in 0..<sections.count {
+            if let productIndex = collectItemsModel?.results?[sectionIndex].products?.firstIndex(where: { $0.id == id }) {
+                collectItemsModel?.results?[sectionIndex].products?[productIndex].is_favorite = isFavorite
+                collectItemsModel?.results?[sectionIndex].products?[productIndex].favorite_id = favoriteId
+                break
             }
         }
     }

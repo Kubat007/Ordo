@@ -31,5 +31,9 @@
 		<key>UIImageName</key>
 		<string></string>
 	</dict>
+    <key>YANDEX_MAPS_API_KEY</key>
+    <string>1ef5020f-67c1-46ef-8ad7-6cfb97f9fd4a</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Нужен доступ к геолокации чтобы показать ваше местоположение на карте</string>
 </dict>
 </plist>

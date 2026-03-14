@@ -52,12 +52,12 @@ enum ListModel {
         }
         
         struct GetCollectProductList: Codable {
-            let results: [CollectSection]?
+            var results: [CollectSection]?
         }
 
         struct CollectSection: Codable {
             let title: String?
-            let products: [GetCollectProductItems]?
+            var products: [GetCollectProductItems]?
         }
         
         struct GetCollectProductItems: Codable {
@@ -73,8 +73,8 @@ enum ListModel {
             let currency_value: String?
             let title: String?
             let text: String?
-            let is_favorite: Bool?
-            let favorite_id: Int?
+            var is_favorite: Bool?
+            var favorite_id: Int?
             let user: Int?
             let user_image: String?
             let user_name: String?

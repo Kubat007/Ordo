@@ -131,7 +131,6 @@ extension OrderVC: OrderTVCellDelegate {
     }
     
     func didTapDateButton(cell: OrderTVCell) {
-        // Открываем календарь
         let datePickerSheet = DatePickerSheet()
         datePickerSheet.onDateSelected = { [weak self] date in
             // Сохраняем выбранную дату в ViewModel

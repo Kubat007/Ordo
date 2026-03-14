@@ -199,7 +199,7 @@ private extension HistoryTVCell {
         
         imagesStack.anchor(
             .top(priceTitleLabel.bottomAnchor, constant: 12),
-            .leading(addressTitleLabel.leadingAnchor)
+            .centerX(containerView.centerXAnchor)
         )
         
         repeatButton.anchor(

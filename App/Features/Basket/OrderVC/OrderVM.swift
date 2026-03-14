@@ -51,7 +51,8 @@ final class OrderVM: BaseVM {
     var selectedDate: Date?
     var enteredAddress: String = ""
     
-    var toMain: (()-> Void)?
+    var toMain: (() -> Void)?
+    var onMap: (() -> Void)?
     var orderModel: CartModel.Response.Order?
     
     @MainActor

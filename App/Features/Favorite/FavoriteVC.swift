@@ -19,6 +19,13 @@ final class FavoriteVC: BaseVC<FavoriteCV, FavoriteVM> {
         contentView.collectionView.delegate = self
         contentView.backgroundColor = Asset.Colors.f7F7Fe.color
     }
+    
+    private func updateUI() {
+        let favModel = viewModel.favoriteList
+        let isEmpty = favModel.isEmpty
+        contentView.collectionView.isHidden = isEmpty
+        contentView.container.isHidden = !isEmpty
+    }
 }
 
 extension FavoriteVC: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -37,10 +44,12 @@ extension FavoriteVC: UICollectionViewDataSource, UICollectionViewDelegate {
 extension FavoriteVC: FavoriteVMDelegate {
     func successDeleteFavorite() {
         toast(with: "Продукт удален с избранного", messageType: .success)
+        updateUI()
         contentView.collectionView.reloadData()
     }
     
     func successFavorite() {
+        updateUI()
         contentView.collectionView.reloadData()
     }
     

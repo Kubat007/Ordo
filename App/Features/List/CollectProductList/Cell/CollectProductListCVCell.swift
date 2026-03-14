@@ -9,7 +9,7 @@ import UIKit
 
 protocol CollectProductListCVCellDelegate: AnyObject {
     func basketAction(cell: CollectProductListCVCell, model: ListModel.Response.GetCollectProductItems?)
-    func favAction(cell: CollectProductListCVCell, productId: Int)
+    func favAction(cell: CollectProductListCVCell, productId: Int, shouldAdd: Bool, favId: Int)
 }
 
 final class CollectProductListCVCell: UICollectionViewCell {
@@ -17,6 +17,7 @@ final class CollectProductListCVCell: UICollectionViewCell {
     weak var delegate: CollectProductListCVCellDelegate?
     var model: ListModel.Response.GetCollectProductItems?
     var productId: Int = 0
+    var favId: Int = 0
     
     private let containerView: UIView = {
         let view = UIView()
@@ -95,6 +96,7 @@ final class CollectProductListCVCell: UICollectionViewCell {
     func configure(with product: ListModel.Response.GetCollectProductItems) {
         self.model = product
         productId = product.id ?? 0
+        favId = product.favorite_id ?? 0
         titleLabel.text = product.title
         if let price = product.price {
             let currency = product.currency_name ?? "KGS"
@@ -103,7 +105,17 @@ final class CollectProductListCVCell: UICollectionViewCell {
         if let imageUrl = product.images_gallery.first?.image {
             imageView.kf.setImage(with: URL(string: imageUrl))
         }
-        favoriteButton.isSelected = product.is_favorite ?? false
+        updateFavoriteButton(isFavorite: product.is_favorite ?? false)
+    }
+    
+    func updateFavoriteButton(isFavorite: Bool) {
+        if isFavorite {
+            favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            favoriteButton.tintColor = .red
+        } else {
+            favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            favoriteButton.tintColor = .gray
+        }
     }
     
     @objc func basketTappet() {
@@ -111,7 +123,8 @@ final class CollectProductListCVCell: UICollectionViewCell {
     }
     
     @objc func favTappet() {
-        delegate?.favAction(cell: self, productId: self.productId)
+        guard let isFavorite = model?.is_favorite else { return }
+        delegate?.favAction(cell: self, productId: self.productId, shouldAdd: !isFavorite, favId: favId)
     }
     
     private func setupConstraints() {

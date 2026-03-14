@@ -75,7 +75,10 @@ final class OrderTVCell: UITableViewCell {
             adressTextFiekd.attributedPlaceholder = NSAttributedString(
                 string: "Ведите адрес",
                 attributes: placeholderAttributes)
-            adressTextFiekd.isUserInteractionEnabled = true
+            adressTextFiekd.isUserInteractionEnabled = false
+            onSelect = {
+                vm.onMap?()
+            }
         case 1:
             radio.isHidden = true
             dateButton.setTitle("Выберите дату и время", for: .normal)

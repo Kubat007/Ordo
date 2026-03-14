@@ -124,6 +124,11 @@
 		73491E412EFA9A7900E3E469 /* Character+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E402EFA9A5A00E3E469 /* Character+Extension.swift */; };
 		73491E432EFA9AAF00E3E469 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E422EFA9AA500E3E469 /* String+Extension.swift */; };
 		73491E452EFA9FFC00E3E469 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73491E442EFA9FE200E3E469 /* UITextField+Extension.swift */; };
+		7368CCFB2F5F444F00DF7B71 /* YandexMapBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368CCFA2F5F444300DF7B71 /* YandexMapBuilder.swift */; };
+		7368CCFD2F5F445400DF7B71 /* YandexMapVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368CCFC2F5F445100DF7B71 /* YandexMapVM.swift */; };
+		7368CCFF2F5F445900DF7B71 /* YandexMapCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368CCFE2F5F445700DF7B71 /* YandexMapCV.swift */; };
+		7368CD012F5F445F00DF7B71 /* YandexMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7368CD002F5F445C00DF7B71 /* YandexMapVC.swift */; };
+		7368CD072F5F53B200DF7B71 /* YandexMapsMobileFull in Frameworks */ = {isa = PBXBuildFile; productRef = 7368CD062F5F53B200DF7B71 /* YandexMapsMobileFull */; };
 		736D558A2EFAAF3500C6F077 /* AnyFormatKit in Frameworks */ = {isa = PBXBuildFile; productRef = 736D55892EFAAF3500C6F077 /* AnyFormatKit */; };
 		736D558E2EFAD60700C6F077 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D558D2EFAD5F300C6F077 /* UIViewController+Extension.swift */; };
 		736D55902EFAF22100C6F077 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D558F2EFAF21C00C6F077 /* AuthModel.swift */; };
@@ -406,6 +411,10 @@
 		73491E402EFA9A5A00E3E469 /* Character+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Extension.swift"; sourceTree = "<group>"; };
 		73491E422EFA9AA500E3E469 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		73491E442EFA9FE200E3E469 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		7368CCFA2F5F444300DF7B71 /* YandexMapBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapBuilder.swift; sourceTree = "<group>"; };
+		7368CCFC2F5F445100DF7B71 /* YandexMapVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapVM.swift; sourceTree = "<group>"; };
+		7368CCFE2F5F445700DF7B71 /* YandexMapCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapCV.swift; sourceTree = "<group>"; };
+		7368CD002F5F445C00DF7B71 /* YandexMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexMapVC.swift; sourceTree = "<group>"; };
 		736D558D2EFAD5F300C6F077 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		736D558F2EFAF21C00C6F077 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		736D55912EFAF2DF00C6F077 /* AuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApi.swift; sourceTree = "<group>"; };
@@ -575,6 +584,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7368CD072F5F53B200DF7B71 /* YandexMapsMobileFull in Frameworks */,
 				73E59B452EE0A55D0040E65A /* Kingfisher in Frameworks */,
 				736D558A2EFAAF3500C6F077 /* AnyFormatKit in Frameworks */,
 				737C17B62ED886CA00F020D7 /* RealHTTP in Frameworks */,
@@ -746,6 +756,7 @@
 				731DA8882EF8821A00290006 /* MoreVM.swift */,
 				731DA8862EF8821200290006 /* MoreBuilder.swift */,
 				7340731D2F08334F0013B384 /* OrderVC */,
+				7368CCF92F5F443700DF7B71 /* Map */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -1032,6 +1043,24 @@
 				73491E1A2EFA987B00E3E469 /* AmountValidator.swift */,
 			);
 			path = TextInputView;
+			sourceTree = "<group>";
+		};
+		7368CCF92F5F443700DF7B71 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				7368CD002F5F445C00DF7B71 /* YandexMapVC.swift */,
+				7368CCFE2F5F445700DF7B71 /* YandexMapCV.swift */,
+				7368CCFC2F5F445100DF7B71 /* YandexMapVM.swift */,
+				7368CCFA2F5F444300DF7B71 /* YandexMapBuilder.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		7368CD022F5F49FB00DF7B71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		736D55932EFAFAA300C6F077 /* AuthVC */ = {
@@ -1330,6 +1359,7 @@
 				732265BF2ECF364F00C5319F /* App */,
 				73B00DB52ECF1441002288DB /* Shop.kgTests */,
 				73B00DBF2ECF1441002288DB /* Shop.kgUITests */,
+				7368CD022F5F49FB00DF7B71 /* Frameworks */,
 				73B00D9D2ECF1440002288DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1617,6 +1647,7 @@
 				73E59B442EE0A55D0040E65A /* Kingfisher */,
 				736D55892EFAAF3500C6F077 /* AnyFormatKit */,
 				73EAA30B2F3A72EA00CD384C /* Lottie */,
+				7368CD062F5F53B200DF7B71 /* YandexMapsMobileFull */,
 			);
 			productName = Shop.kg;
 			productReference = 73B00D9C2ECF1440002288DB /* Shop.kg.app */;
@@ -1705,6 +1736,7 @@
 				737C18152EDC2E3E00F020D7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				736D55882EFAAEA900C6F077 /* XCRemoteSwiftPackageReference "AnyFormatKit" */,
 				73EAA30A2F3A6ED700CD384C /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				7368CD052F5F535500DF7B71 /* XCRemoteSwiftPackageReference "mapkit-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 73B00D9D2ECF1440002288DB /* Products */;
@@ -1795,6 +1827,7 @@
 				7340734A2F1ECCE00013B384 /* HistoryTVCell.swift in Sources */,
 				73D09DBD2EF7252E008AED77 /* EmtyPlaceHolderView.swift in Sources */,
 				736D55902EFAF22100C6F077 /* AuthModel.swift in Sources */,
+				7368CCFD2F5F445400DF7B71 /* YandexMapVM.swift in Sources */,
 				731DA84D2EF87A1300290006 /* PanModalPresentable.swift in Sources */,
 				731DA8752EF87E6E00290006 /* MoreFactory.swift in Sources */,
 				736D559C2EFAFAFD00C6F077 /* VerifyVC.swift in Sources */,
@@ -1807,6 +1840,7 @@
 				73D09DC02EF7252E008AED77 /* UIView+Layout.swift in Sources */,
 				73491E2B2EFA990A00E3E469 /* QuantityValidator.swift in Sources */,
 				734073382F1E4B2F0013B384 /* MapModel.swift in Sources */,
+				7368CCFF2F5F445900DF7B71 /* YandexMapCV.swift in Sources */,
 				736D560F2EFF0D7300C6F077 /* MoreTVCell.swift in Sources */,
 				73D09DC12EF7252E008AED77 /* Int+Extension.swift in Sources */,
 				736D564C2F03070B00C6F077 /* ProfileRemoteRepository.swift in Sources */,
@@ -1857,6 +1891,7 @@
 				73491E142EF9BE6800E3E469 /* AuthVM.swift in Sources */,
 				737C17E32ED9FFD000F020D7 /* AuthRepository.swift in Sources */,
 				736D56122EFF188100C6F077 /* CartRepository.swift in Sources */,
+				7368CD012F5F445F00DF7B71 /* YandexMapVC.swift in Sources */,
 				731DA84B2EF87A0500290006 /* PanModalHeight.swift in Sources */,
 				732265DE2ECF453F00C5319F /* MainCV.swift in Sources */,
 				73491E312EFA993700E3E469 /* InputFormatter.swift in Sources */,
@@ -1887,6 +1922,7 @@
 				73491E122EF9BE6000E3E469 /* AuthBuilder.swift in Sources */,
 				73491E412EFA9A7900E3E469 /* Character+Extension.swift in Sources */,
 				732265E32ECF78AE00C5319F /* TabbarVC.swift in Sources */,
+				7368CCFB2F5F444F00DF7B71 /* YandexMapBuilder.swift in Sources */,
 				739BCECE2EE73B29004D492C /* FavoriteVC.swift in Sources */,
 				739BCEDC2EE882B1004D492C /* ProductListVC.swift in Sources */,
 				739BCEE52EE8C141004D492C /* MyListBuilder.swift in Sources */,
@@ -2049,6 +2085,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.emsoft.ordostroi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2081,6 +2122,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.emsoft.ordostroi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2328,6 +2374,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7368CD052F5F535500DF7B71 /* XCRemoteSwiftPackageReference "mapkit-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yandex/mapkit-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.32.0;
+			};
+		};
 		736D55882EFAAEA900C6F077 /* XCRemoteSwiftPackageReference "AnyFormatKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/luximetr/AnyFormatKit";
@@ -2363,6 +2417,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7368CD062F5F53B200DF7B71 /* YandexMapsMobileFull */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7368CD052F5F535500DF7B71 /* XCRemoteSwiftPackageReference "mapkit-ios" */;
+			productName = YandexMapsMobileFull;
+		};
 		736D55892EFAAF3500C6F077 /* AnyFormatKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 736D55882EFAAEA900C6F077 /* XCRemoteSwiftPackageReference "AnyFormatKit" */;

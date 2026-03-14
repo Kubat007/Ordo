@@ -32,6 +32,13 @@ final class MoreCoordinator: BaseCoordinator, MoreCoordinatorResult {
         let vc = OrderBuilder(services: services).build()
         vc.viewModel.onBackAction = router.popModule
         vc.viewModel.toMain = showMain
+        vc.viewModel.onMap = showMap
+        router.push(vc, hideBottomBar: true)
+    }
+    
+    private func showMap() {
+        let vc = YandexMapBuilder(services: services).build()
+        vc.viewModel.onBackAction = router.popModule
         router.push(vc, hideBottomBar: true)
     }
 }

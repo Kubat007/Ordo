@@ -7,6 +7,7 @@
 
 import UIKit
 import RealHTTP
+import YandexMapsMobile
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -15,6 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        YMKMapKit.setApiKey("1ef5020f-67c1-46ef-8ad7-6cfb97f9fd4a")
+                _ = YMKMapKit.sharedInstance()
+                print("✅ Яндекс Карты инициализированы в SceneDelegate")
+                
+        
         setupWindow(with: windowScene)
         DispatchQueue.global(qos: .userInitiated).async {
             FontFamily.registerAllCustomFonts()

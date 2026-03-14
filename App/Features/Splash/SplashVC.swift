@@ -3,6 +3,7 @@ import Lottie
 
 final class SplashVC: UIViewController {
     private let viewModel: SplashVM
+    private let logo = UIImageView()
     private let animationView: LottieAnimationView
     
     init(viewModel: SplashVM) {
@@ -24,17 +25,29 @@ final class SplashVC: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
+        logo.clipsToBounds = true
+        logo.contentMode = .scaleAspectFill
+        logo.image = Asset.Images.ordoLogo.image
+        
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .playOnce
         animationView.translatesAutoresizingMaskIntoConstraints = false
         
+        view.addSubview(logo)
         view.addSubview(animationView)
         
         animationView.anchor(
-            .centerY(view.centerYAnchor),
+            .bottom(view.bottomAnchor, constant: 16),
             .leading(view.leadingAnchor, constant: 16),
             .trailing(view.trailingAnchor, constant: 16),
             .height(300)
+        )
+        
+        logo.anchor(
+            .bottom(animationView.topAnchor, constant: 32),
+            .leading(view.leadingAnchor, constant: 16),
+            .trailing(view.trailingAnchor, constant: 16),
+            .height(200)
         )
     }
     

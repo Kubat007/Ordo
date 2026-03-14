@@ -166,12 +166,16 @@ extension CollectProductListVC: CollectProductListVMDelegate {
 }
 
 extension CollectProductListVC: CollectProductListCVCellDelegate {
-    func favAction(cell: CollectProductListCVCell, productId: Int ) {
-        let isFavorite = cell.favoriteButton.tintColor == .red
-        let message = isFavorite ? "Добавлено в избранное" : "Удалено из избранного"
-        toast(with: message, messageType: isFavorite ? .success : .warning)
-        isFavorite ? viewModel.sendFavoriteProduct(productId: productId) : print("Запрос на удаление")
-    }
+    func favAction(cell: CollectProductListCVCell, productId: Int, shouldAdd: Bool, favId: Int) {
+            if shouldAdd {
+                viewModel.sendFavoriteProduct(productId: productId)
+                toast(with: "Добавлено в избранное", messageType: .success)
+            } else {
+                let idToDelete = favId
+                viewModel.deleteFavorite(id: productId, favId: idToDelete)
+                toast(with: "Удалено из избранного", messageType: .success)
+            }
+        }
     
     func basketAction(cell: CollectProductListCVCell, model: ListModel.Response.GetCollectProductItems?) {
         let sheet = BottomSheetCart()
